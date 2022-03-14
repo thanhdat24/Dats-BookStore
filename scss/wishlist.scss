@@ -1,0 +1,202 @@
+@import './style';
+
+.navigation {
+
+    .title-nav {
+        background: none;
+        background-image: url('../img/banner/bg-newsleter-fashion-1.jpg');
+        padding: 80px 0px;
+
+        .container {
+
+            h2 {
+                margin-top: 40px;
+                font-size: 48px;
+            }
+
+            .description-nav {
+                margin: 20px 0;
+
+                a {
+                    transition: all .4s;
+
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    .products-cart {
+
+        .update-Complete {
+            border-top: 2px solid $color-primary;
+            padding: 20px;
+            color: #515151;
+            background: #f7f6f7;
+            display: none;
+            margin-bottom: 20px;
+
+            i {
+                color: $color-primary;
+                margin-right: 5px;
+            }
+
+            &.active {
+
+                display: block;
+
+            }
+
+        }
+
+        .table {
+            @include media(sm) {
+                display: none;
+            }
+
+            .stocked {
+                color: rgb(28, 202, 28);
+            }
+        }
+
+        .cart-mobile {
+            display: none;
+
+            @include media (sm) {
+                display: block;
+            }
+
+            .product-item {
+                position: relative;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+
+                .item-wrapper {
+
+                    .product-thumbnail {
+                        display: inline-block;
+                        max-width: 60px;
+                        margin-right: 20px;
+                        cursor: pointer;
+
+                        img {
+                            width: 100%;
+                        }
+
+                    }
+
+                    .item-details {
+                        width: 100%;
+
+                        .product-name {
+
+                            font-weight: 700px;
+                            font-size: 16px;
+                            cursor: pointer;
+                        }
+
+                        .price {
+                            margin: 15px 0px;
+                            color: #999999;
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+
+                .stock {
+                    color: #999999;
+                    font-weight: 700;
+                    font-size: 14px;
+                    margin: 10px 0;
+
+                    span {
+                        font-weight: 100;
+                        color: $color-i;
+                    }
+                }
+
+                .addcartitem {
+                    text-align: center;
+                    background: black;
+                    padding: 5px 10px;
+                    color: $color-white;
+                    border-radius: 5px;
+                }
+
+                .erase {
+
+                    position: absolute;
+                    bottom: 15px;
+                    right: 15px;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    border: 1px solid black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+            }
+
+        }
+
+        h2 {
+            margin-top: 50px;
+        }
+
+        .share-on {
+            margin-top: 15px;
+
+            li {
+
+                a {
+                    margin-right: 15px;
+                    font-size: 26px;
+
+                    i {
+                        transition: all .4s;
+
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+
+                }
+
+                .facebook {
+                    color: rgb(56, 56, 231);
+                }
+
+                .twitter {
+                    color: cyan;
+                }
+
+                .pinterest {
+                    color: rgb(248, 53, 53);
+                }
+
+                .mail {
+                    color: rgb(218, 218, 70);
+                }
+
+                .whatsapp {
+                    color: rgb(44, 194, 44);
+                }
+
+            }
+
+        }
+
+    }
+
+}

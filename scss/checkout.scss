@@ -1,0 +1,223 @@
+@import './style';
+
+.main-content-checkout {
+
+    .container {
+
+        .title-checkout {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .checkout {
+            width: 100%;
+            align-items: flex-start;
+
+            @include media(md) {
+
+                justify-content: center;
+                margin: 0 !important;
+            }
+
+            .checkout-left {
+                padding-right: 50px;
+
+                .heading {
+                    font-size: 28px;
+                    color: $color-i;
+                }
+
+                .content {
+                    .input-group {
+                        margin: 20px 0px;
+
+                        input,
+                        select {
+                            border: 1px solid $color-border-grey;
+                            max-width: 100%;
+                            padding: 0 20px;
+                            width: 100%;
+                            background: #fff;
+                            height: 50px;
+                            border-radius: 3px;
+                            flex: 1;
+                            margin-top: 10px;
+                            font-size: 16px;
+                            outline: none;
+                        }
+
+                        select {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .form-group {
+                        .input-group {
+                            width: 48%;
+
+                            input {
+                                &:first-child {
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &-right {
+                margin-top: 30px;
+                padding: 40px;
+                color: $color-lgrey;
+                border-top: 1px solid #dfdfdf;
+                border-bottom: 1px solid #dfdfdf;
+                border-left: 1px solid #ececec;
+                border-right: 1px solid #ececec;
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.04);
+
+                .heading {
+                    font-size: 26px;
+                    color: $color-i;
+                }
+
+                table.table1 {
+                    border-collapse: collapse;
+                    width: 100%;
+
+                    tr {
+                        border-bottom: 1px solid #ccc;
+
+                        td,
+                        th {
+                            padding: 20px 0;
+
+
+                            &:last-child {
+                                text-align: right;
+                            }
+                        }
+
+                        text-align: left;
+
+                        &.Subtotal-price {
+                            th {
+                                font-size: 18px;
+                            }
+                        }
+
+                        &.total-price {
+
+                            font-size: 20px;
+
+                            td {
+                                color: $color-primary;
+                            }
+
+                        }
+
+                        &.item {
+
+                            th,
+                            td {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    thead {
+                        tr {
+                            th {
+                                text-align: left;
+                                font-weight: 700;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {}
+                        }
+                    }
+                }
+
+                .payment {
+                    margin-top: 20px;
+
+                    .cash {
+
+                        word-wrap: break-word;
+                        line-height: 30px;
+                        letter-spacing: 1.1;
+                        margin-bottom: 20px;
+
+                    }
+
+                    .order {
+
+                        display: block;
+                        padding: 15px 0;
+                        text-align: center;
+                        margin-top: 30px;
+                    }
+
+                    input[type="checkbox"] {
+
+                        display: none;
+
+                        &:checked {
+
+                            &~label::before {
+                                display: block;
+                            }
+
+                        }
+                    }
+
+                    label {
+                        padding-left: 25px;
+                        position: relative;
+
+                        &::after,
+                        &:before {
+
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0px;
+                            border-radius: 0px;
+                        }
+
+                        &::after {
+
+                            width: 15px;
+                            height: 15px;
+                            border: 1px solid black;
+
+                        }
+
+                        &::before {
+
+                            width: 13px;
+                            height: 12px;
+                            // background: $color-primary;
+                            font-family: "Font Awesome 5 Brands";
+                            content: "\f058";
+                            left: 2.5px;
+                            display: none;
+                            font-size: 24px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

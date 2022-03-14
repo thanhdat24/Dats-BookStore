@@ -1,0 +1,23 @@
+@import './color';
+
+* {
+    padding : 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+input, button ,textarea {
+    outline: none;
+    border: none;
+}
+
+a, button {
+    text-decoration: none;
+    color: $color-i;
+    border: none;
+}
+
