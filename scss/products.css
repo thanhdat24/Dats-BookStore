@@ -6,6 +6,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  transition: all 100ms;
 }
 
 ul,
@@ -34,8 +35,14 @@ button:hover {
   text-decoration: none;
 }
 
-.btn-primary {
-  border-color: transparent !important;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+p {
+  margin-bottom: 0px !important;
 }
 
 @keyframes down {
@@ -131,7 +138,7 @@ button:hover {
 }
 
 * {
-  font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: "Nunito", sans-serif;
 }
 
 .d-flex {
@@ -163,13 +170,32 @@ button:hover {
   margin: 0 auto;
 }
 
-.p-80 {
-  padding: 80px 0;
+.p-60 {
+  padding: 60px 0;
 }
 
 body,
 html {
   scroll-behavior: smooth;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #ec455a;
+  margin: 20px 0;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #ec455a;
+}
+
+h6 {
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 .banner {
@@ -189,7 +215,7 @@ html {
 .banner::before, .banner::after {
   width: 100%;
   height: 100%;
-  transition: all .6s;
+  transition: all 0.6s;
   content: "";
   display: block;
   background-color: rgba(255, 255, 255, 0.4);
@@ -206,11 +232,14 @@ html {
 }
 
 .btn {
-  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 16px;
-  display: inline-block;
-  border-radius: 5px;
-  transition: all .4s;
+  padding: 8px 30px;
+  outline: none;
+  border-radius: 60px;
+  border: none;
+  transition: all 300ms;
 }
 
 .btn-primary {
@@ -221,6 +250,12 @@ html {
 .btn-primary:hover {
   color: #fff;
   background: #ba933e;
+}
+
+.btn--primary {
+  background-color: #ec455a !important;
+  color: #fff !important;
+  border-color: transparent !important;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -235,7 +270,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar {
   width: 8px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .backtotop {
@@ -253,7 +288,7 @@ html::-webkit-scrollbar {
   color: white;
   visibility: hidden;
   opacity: 0;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .backtotop.active {
@@ -1926,7 +1961,7 @@ footer#footer .copyright p a {
 }
 
 .trending .container .banners .banner .content h4 a {
-  font-family: "Red Hat Display", Sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
@@ -2229,7 +2264,7 @@ section.banner .container .element {
 section.banner .container .element .top {
   font-weight: 700;
   color: #444444;
-  font-family: "Red Hat Display", Sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   margin-bottom: 15px;
 }
@@ -2896,6 +2931,7 @@ section.serve .container .services .service:not(:last-child) .content {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  transition: all 100ms;
 }
 
 ul,
@@ -2924,8 +2960,14 @@ button:hover {
   text-decoration: none;
 }
 
-.btn-primary {
-  border-color: transparent !important;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+p {
+  margin-bottom: 0px !important;
 }
 
 @keyframes down {
@@ -3021,7 +3063,7 @@ button:hover {
 }
 
 * {
-  font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: "Nunito", sans-serif;
 }
 
 .d-flex {
@@ -3053,13 +3095,32 @@ button:hover {
   margin: 0 auto;
 }
 
-.p-80 {
-  padding: 80px 0;
+.p-60 {
+  padding: 60px 0;
 }
 
 body,
 html {
   scroll-behavior: smooth;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #ec455a;
+  margin: 20px 0;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #ec455a;
+}
+
+h6 {
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 .banner {
@@ -3079,7 +3140,7 @@ html {
 .banner::before, .banner::after {
   width: 100%;
   height: 100%;
-  transition: all .6s;
+  transition: all 0.6s;
   content: "";
   display: block;
   background-color: rgba(255, 255, 255, 0.4);
@@ -3096,11 +3157,14 @@ html {
 }
 
 .btn {
-  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 16px;
-  display: inline-block;
-  border-radius: 5px;
-  transition: all .4s;
+  padding: 8px 30px;
+  outline: none;
+  border-radius: 60px;
+  border: none;
+  transition: all 300ms;
 }
 
 .btn-primary {
@@ -3111,6 +3175,12 @@ html {
 .btn-primary:hover {
   color: #fff;
   background: #ba933e;
+}
+
+.btn--primary {
+  background-color: #ec455a !important;
+  color: #fff !important;
+  border-color: transparent !important;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -3125,7 +3195,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar {
   width: 8px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .backtotop {
@@ -3143,7 +3213,7 @@ html::-webkit-scrollbar {
   color: white;
   visibility: hidden;
   opacity: 0;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .backtotop.active {
@@ -4614,7 +4684,7 @@ section.top .container .nav-top li a.active {
 }
 
 .navigation .products-cart .container .heading-cart {
-  font-size: 48px;
+  font-size: 30px;
 }
 
 @media screen and (max-width: 768px) {
@@ -4650,10 +4720,17 @@ section.top .container .nav-top li a.active {
 }
 
 .navigation .products-cart .container .control input {
-  background-color: transparent;
-  width: 40px;
-  text-align: center;
-  height: 50px;
+  width: 80px;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 8px;
+  border: 2px solid #e4e4e4;
+  transition: all 200ms ease-out;
+}
+
+.navigation .products-cart .container .control input:focus {
+  border: 2px solid #ec455b8c;
+  transition: all 200ms ease-in;
 }
 
 .navigation .products-cart .container .control a {
@@ -4675,6 +4752,11 @@ section.top .container .nav-top li a.active {
   cursor: pointer;
   width: 25px;
   height: 25px;
+}
+
+.navigation .products-cart .container .erase:hover {
+  color: #ec455a;
+  border: 1px solid #ec455a;
 }
 
 .navigation .products-cart .container table.table {
@@ -4714,17 +4796,17 @@ section.top .container .nav-top li a.active {
 
 .navigation .products-cart .container table.table thead tr td,
 .navigation .products-cart .container table.table tbody tr td {
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.navigation .products-cart .container table.table thead tr td .img,
-.navigation .products-cart .container table.table tbody tr td .img {
-  width: 110px;
-}
-
-.navigation .products-cart .container table.table thead tr td .img img,
-.navigation .products-cart .container table.table tbody tr td .img img {
-  width: 100%;
+.navigation .products-cart .container table.table thead tr td .product-item-cart__image,
+.navigation .products-cart .container table.table tbody tr td .product-item-cart__image {
+  width: 80px;
+  height: 120px;
+  margin-right: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.16);
+  object-fit: cover;
 }
 
 .navigation .products-cart .container .cart-on-mb {
@@ -4780,13 +4862,14 @@ section.top .container .nav-top li a.active {
   height: 43px;
   width: auto;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 2px solid #e5e5e5;
   margin-right: 5px;
 }
 
 .navigation .products-cart .container .coupon-input input:focus {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ec455b8c;
+  transition: all 200ms ease-in;
 }
 
 @media screen and (max-width: 576px) {
@@ -4815,9 +4898,14 @@ section.top .container .nav-top li a.active {
   }
 }
 
+.navigation .products-cart .container .coupon .update {
+  border: 1px solid transparent !important;
+}
+
 .navigation .products-cart .container .coupon .update:hover {
-  color: inherit;
-  background-color: #ebe9eb;
+  color: #ec455a !important;
+  background-color: white !important;
+  border: 1px solid #ec455a !important;
 }
 
 .navigation .products-cart .container .coupon .update.active {
@@ -4855,7 +4943,7 @@ section.top .container .nav-top li a.active {
 }
 
 .navigation .products-cart .container .cart_totals .total span:last-child {
-  color: #ba933e;
+  color: #ec455a;
 }
 
 .navigation .products-cart .container .cart_totals .checkout {
@@ -4870,12 +4958,8 @@ section.top .container .nav-top li a.active {
   padding: 15px 20px;
 }
 
-.navigation .products-cart .container .cart_totals .checkout a i {
-  margin-left: 10px;
-}
-
 .navigation .products-cart .container .comeback {
-  padding: 15px 30px;
+  padding: 10px 30px;
   margin-top: 50px;
 }
 

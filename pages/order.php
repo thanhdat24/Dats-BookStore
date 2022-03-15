@@ -94,10 +94,11 @@ if (isset($_GET['id'])) {
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>Tên hàng hoá</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Kho</th>
+                                <th>Tổng</th>
                             </tr>
                         </thead>
                         <tbody id="addToCard">
@@ -114,9 +115,9 @@ if (isset($_GET['id'])) {
                                         </a>
                                     </td>
                                     <td>
-                                        <div class="img">
-                                            <img src="./public/uploads/book-images/<?php echo $value['Hinh1'] ?>" alt="">
-                                        </div>
+                                        <a href="">
+                                            <img class="product-item-cart__image" src="./public/uploads/book-images/<?php echo $value['Hinh1'] ?>" alt="">
+                                        </a>
                                     </td>
                                     <td>
                                         <a href="#" class="heading-product">
@@ -131,11 +132,18 @@ if (isset($_GET['id'])) {
                                             <!-- <a class="dash-1" href=""><i class="bi bi-dash"></i></a>
                                             <input type="text" min="1" max="5" class="InputAmountProduct" value="<?php echo $value['SoLuong'] ?>">
                                             <a class="plus-1" href=""><i class="bi bi-plus"></i></a> -->
-                                            <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=5 value="<?php echo $value['SoLuong'] ?>" class="InputAmountProduct">
+                                            <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong'] ?>" class="InputAmountProduct">
                                         </div>
                                     </td>
+                                    <td>
+                                        <p>
+                                            <?php echo $value['SoLuongHang'] ?> quyển
+                                        </p>
+                                    </td>
                                     <td> <?php echo currency_format($value['SoLuong'] * $value['Gia']);
-                                            $_SESSION['TongTien'] += $value['SoLuong'] * $value['Gia'] ?></td>
+                                            $_SESSION['TongTien'] += $value['SoLuong'] * $value['Gia'] ?>
+                                    </td>
+
                                 </tr>
                             <?php
 
@@ -151,14 +159,11 @@ if (isset($_GET['id'])) {
                     <div class="coupon d-flex a-center j-between">
                         <div class="coupon-input d-flex a-center">
                             <input type="text" placeholder="Coupon Code">
-                            <a href="#" class="btn btn-primary">
-                                Apply Coupon
+                            <a href="#" class="btn btn--primary">
+                                Áp phiếu giảm giá
                             </a>
                         </div>
-                        <input type="submit" class="btn btn-primary update" name="btn_update_cart" value="Cập nhật giỏ hàng">
-                        <!-- <a href="?page=update" class="btn btn-primary update">
-                            Cập nhật giỏ hàng
-                        </a> -->
+                        <p><input type="submit" class="btn btn--primary update" name="btn_update_cart" value="Cập nhật giỏ hàng"></p>
                     </div>
 
                     <div class="cart_totals">
@@ -177,7 +182,7 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="checkout">
-                            <a href="checkout.html" class="btn btn-primary">Proceed To Checkout
+                            <a href="checkout.html" class="btn btn--primary">Thanh toán
                                 <i class="bi bi-chevron-right"></i>
                             </a>
                         </div>
@@ -192,11 +197,11 @@ if (isset($_GET['id'])) {
     ?>
         <div class="products-cart cart-list1 p-80">
             <div class="container">
-                <h2 class="heading-cart">
-                    Cart
-                </h2>
-                <p>Giỏ hàng của bạn không có bất kỳ mặt hàng nào</p>
-                <a href="?page=home" class="btn btn-primary comeback">Quay lại</a>
+                <h3 class="heading-cart">
+                    Giỏ hàng
+                </h3>
+                <p>Bạn chưa chọn quyển sách nào!</p>
+                <a href="?page=home" class="btn btn--primary comeback">Quay lại</a>
                 </p>
             </div>
         </div>

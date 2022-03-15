@@ -4,4 +4,4 @@
 $id = (int) $_GET['id'];
 delete_cart($id);
 
-redirect("?page=order");
+redirect("?page=cart");

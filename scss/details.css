@@ -4,6 +4,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  transition: all 100ms;
 }
 
 ul,
@@ -32,8 +33,14 @@ button:hover {
   text-decoration: none;
 }
 
-.btn-primary {
-  border-color: transparent !important;
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+p {
+  margin-bottom: 0px !important;
 }
 
 @keyframes down {
@@ -129,7 +136,7 @@ button:hover {
 }
 
 * {
-  font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: "Nunito", sans-serif;
 }
 
 .d-flex {
@@ -161,13 +168,32 @@ button:hover {
   margin: 0 auto;
 }
 
-.p-80 {
-  padding: 80px 0;
+.p-60 {
+  padding: 60px 0;
 }
 
 body,
 html {
   scroll-behavior: smooth;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #ec455a;
+  margin: 20px 0;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #ec455a;
+}
+
+h6 {
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 .banner {
@@ -187,7 +213,7 @@ html {
 .banner::before, .banner::after {
   width: 100%;
   height: 100%;
-  transition: all .6s;
+  transition: all 0.6s;
   content: "";
   display: block;
   background-color: rgba(255, 255, 255, 0.4);
@@ -204,11 +230,14 @@ html {
 }
 
 .btn {
-  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
   font-size: 16px;
-  display: inline-block;
-  border-radius: 5px;
-  transition: all .4s;
+  padding: 8px 30px;
+  outline: none;
+  border-radius: 60px;
+  border: none;
+  transition: all 300ms;
 }
 
 .btn-primary {
@@ -219,6 +248,12 @@ html {
 .btn-primary:hover {
   color: #fff;
   background: #ba933e;
+}
+
+.btn--primary {
+  background-color: #ec455a !important;
+  color: #fff !important;
+  border-color: transparent !important;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -233,7 +268,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar {
   width: 8px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .backtotop {
@@ -251,7 +286,7 @@ html::-webkit-scrollbar {
   color: white;
   visibility: hidden;
   opacity: 0;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .backtotop.active {
@@ -1685,178 +1720,102 @@ footer#footer .copyright p a {
   color: #fff;
 }
 
-@media screen and (max-width: 576px) {
-  .main-details-products {
-    padding: 40px 0;
-  }
+.main-details-products .container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
-.main-details-products .container .row .left {
+.main-details-products .container .book-detail {
+  margin: 20px 0;
+  padding: 40px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+  border-radius: 30px;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 
-.main-details-products .container .row .left img {
-  width: 100%;
+.main-details-products .container .book-detail img {
+  width: 280px;
+  height: 460px;
   object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.144);
 }
 
-.main-details-products .container .row .left .swiper-container {
-  width: 100%;
-  height: 300px;
-  margin: 20px auto;
-}
-
-.main-details-products .container .row .left .swiper-container .swiper-slide-container {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  height: 100%;
-  max-width: 100%;
-  width: 70%;
-  margin: auto;
+.main-details-products .container .book-detail .book-detail__info {
+  justify-self: start;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.main-details-products .container .row .left .swiper-container .swiper-slide-container img {
-  width: 444px;
-  height: 444px;
-}
-
-.main-details-products .container .row .left .gallery-top {
-  height: auto;
-  width: 100%;
-}
-
-.main-details-products .container .row .left .gallery-thumbs {
-  height: auto;
-  box-sizing: border-box;
-  padding: 10px 0;
-  cursor: pointer;
-}
-
-.main-details-products .container .row .left .gallery-thumbs .swiper-slide {
-  width: 20%;
-  height: 100%;
-  opacity: 0.4;
-}
-
-.main-details-products .container .row .left .gallery-thumbs .swiper-slide-active {
-  opacity: 1;
-}
-
-.main-details-products .container .row .left .gallery-thumbs .swiper-slide-container {
-  width: 95%;
-}
-
-.main-details-products .container .row .right .heading {
-  font-size: 27px;
-}
-
-.main-details-products .container .row .right .rate {
-  margin: 10px 0;
-}
-
-.main-details-products .container .row .right .rate p {
-  display: inline-block;
-  color: #787878;
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.main-details-products .container .row .right .rate p span:first-child {
-  cursor: pointer;
-}
-
-.main-details-products .container .row .right .rate i {
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__rate i {
   color: #fdd836;
   font-size: 14px;
 }
 
-.main-details-products .container .row .right .price {
-  font-size: 20px;
-  color: #ec455a;
-  font-weight: 600;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__rate .book-detail__info__reviews {
+  display: inline-block;
 }
 
-.main-details-products .container .row .right .description-products {
-  margin: 20px 0;
-  line-height: 30px;
-  color: #444444;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__rate .book-detail__info__reviews span {
+  color: #787878;
 }
 
-.main-details-products .container .row .right .action {
-  margin-bottom: 40px;
-}
-
-.main-details-products .container .row .right .action .cotrol-item {
-  border-radius: 4px;
-  background-color: #f5f5f5;
-  display: inline-flex;
-  padding: 0px 5px;
-  padding-top: 5px;
-  margin-right: 10px;
-}
-
-.main-details-products .container .row .right .action .cotrol-item input {
-  background-color: transparent;
-  width: 40px;
-  text-align: center;
-  height: 50px;
-}
-
-.main-details-products .container .row .right .action .cotrol-item a {
-  margin-bottom: 0px;
-}
-
-.main-details-products .container .row .right .action .addcartitem {
-  background: #f7566b;
-  color: white;
-  padding: 15px 20px;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__rate .book-detail__info__reviews span:first-child {
   cursor: pointer;
 }
 
-.main-details-products .container .row .right .action .addcartitem:hover {
-  background: #df4155;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__title {
+  font-size: 23px;
+  font-weight: bold;
+  color: #272727;
+  margin: 10px 0;
 }
 
-.main-details-products .container .row .right .sku {
-  line-height: 32px;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__price {
+  font-size: 23px;
+  font-weight: bold;
+  color: #ec455a;
+  margin: 10px 0;
 }
 
-.main-details-products .container .row .right .sku span {
-  font-weight: 700;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__detail {
+  margin: 20px 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-flow: column;
+  grid-gap: 10px;
 }
 
-.main-details-products .container .description .heading-des {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.main-details-products .container .description .heading-des h3 {
-  color: #1a1a1a;
+.main-details-products .container .book-detail .book-detail__info .book-detail__info__detail .book-detail__info__detail__title {
+  font-weight: bold;
   font-size: 18px;
-  padding: 0 0 5px;
-  font-weight: 700;
-  border-bottom: 2px solid #ba933e;
 }
 
-.main-details-products .container .description .heading-des::after, .main-details-products .container .description .heading-des::before {
-  content: "";
-  height: 1px;
-  background: #ccc;
-  width: 40%;
-  display: block;
-}
-
-.main-details-products .container .description .content {
+.main-details-products .container .book-detail .book-detail__info .book-detail__button {
+  width: fit-content;
   margin-top: 20px;
-  word-wrap: break-word;
-  color: #444444;
-  line-height: 30px;
+}
+
+.main-details-products .container .book-detail__content {
+  padding: 20px;
+}
+
+.main-details-products .container .book-detail__content .book-detail__content__title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+
+.main-details-products .container .book-detail__content .book-detail__content__content {
+  line-height: 25px;
+  font-size: 18px;
+  text-align: justify;
 }
 
 section.top {

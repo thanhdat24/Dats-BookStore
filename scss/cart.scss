@@ -48,7 +48,7 @@ section.top {
   .products-cart {
     .container {
       .heading-cart {
-        font-size: 48px;
+        font-size: 30px;
 
         @include media(sm) {
           margin-bottom: 40px;
@@ -81,10 +81,16 @@ section.top {
         padding-top: 5px;
 
         input {
-          background-color: transparent;
-          width: 40px;
-          text-align: center;
-          height: 50px;
+          width: 80px;
+          padding: 5px 10px;
+          outline: none;
+          border-radius: 8px;
+          border: 2px solid rgb(228, 228, 228);
+          transition: all 200ms ease-out;
+          &:focus {
+            border: 2px solid #ec455b8c;
+            transition: all 200ms ease-in;
+          }
         }
 
         a {
@@ -107,6 +113,10 @@ section.top {
         cursor: pointer;
         width: 25px;
         height: 25px;
+        &:hover {
+          color: #ec455a;
+          border: 1px solid #ec455a;
+        }
       }
 
       table.table {
@@ -119,9 +129,14 @@ section.top {
 
         thead,
         tbody {
+          padding-top: 10px;
           tr {
+            padding-bottom: 10px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
+            &:hover {
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+              border-radius: 15px;
+            }
             th,
             .heading-product {
               font-size: 16px;
@@ -138,14 +153,15 @@ section.top {
             }
 
             td {
-              font-size: 14px;
+              font-size: 16px;
 
-              .img {
-                width: 110px;
-
-                img {
-                  width: 100%;
-                }
+              .product-item-cart__image {
+                width: 80px;
+                height: 120px;
+                margin-right: 10px;
+                border-radius: 15px;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.16);
+                object-fit: cover;
               }
             }
           }
@@ -198,12 +214,13 @@ section.top {
             height: 43px;
             width: auto;
             padding: 10px;
-            border-radius: 4px;
+            border-radius: 8px;
             border: 2px solid $color-border-grey;
             margin-right: 5px;
 
             &:focus {
-              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+              border: 2px solid #ec455b8c;
+              transition: all 200ms ease-in;
             }
           }
 
@@ -233,11 +250,12 @@ section.top {
         }
 
         .update {
-        //   opacity: 0.6;
-
+          //   opacity: 0.6;
+          border: 1px solid transparent !important;
           &:hover {
-            color: inherit;
-            background-color: $color-secondary;
+            color: #ec455a !important;
+            background-color: white !important;
+            border: 1px solid #ec455a !important;
             // cursor: not-allowed;
           }
 
@@ -277,7 +295,7 @@ section.top {
 
           span {
             &:last-child {
-              color: $color-primary;
+              color: #ec455a;
             }
           }
         }
@@ -291,16 +309,12 @@ section.top {
 
           a {
             padding: 15px 20px;
-
-            i {
-              margin-left: 10px;
-            }
           }
         }
       }
 
       .comeback {
-        padding: 15px 30px;
+        padding: 10px 30px;
         // display: ;
         margin-top: 50px;
       }

@@ -29,11 +29,11 @@
                               <div class="col-6 col-md-4 col-xl-3 item">
                                   <div class="product" data-id=<?php echo $item['MSHH'] ?> id="dataID">
                                       <div class="img">
-                                          <a href="?page=detail_product&id=<?php echo $item['MSHH'] ?>">
+                                          <a href="?page=detail&id=<?php echo $item['MSHH'] ?>">
                                               <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
                                           </a>
-                                          <a href="?page=order&id=<?php echo $item['MSHH'] ?>">
-                                              <button class="btn a-center d-flex addCartItem">
+                                          <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
+                                              <button class="btn btn--primary a-center d-flex addCartItem">
                                                   <i class="bi bi-handbag"></i> Thêm vào giỏ
                                               </button>
                                           </a>

@@ -105,7 +105,7 @@ while ($item = mysqli_fetch_array($sql_detail)) {
                         <p><?= $item['TenLoaiHang'] ?></p>
                         <p><?= $item['SoLuongHang'] ?></p>
                     </div>
-                    <a href="?page=order&id=<?php echo $item['MSHH'] ?>">
+                    <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
                         <button class="btn btn--primary book-detail__button">
                             <i class="bi bi-handbag"></i> Thêm vào giỏ +
                         </button>

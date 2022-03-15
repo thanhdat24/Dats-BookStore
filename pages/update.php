@@ -2,7 +2,7 @@
 if (isset($_POST['btn_update_cart'])) {
     update_cart($_POST['soluong']);
 
-    redirect('?page=order');
+    redirect('?page=cart');
 
     show_array($_POST);
 };
