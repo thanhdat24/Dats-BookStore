@@ -21,8 +21,9 @@
     <link rel="stylesheet" hre f="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="./scss/details.css">
-    <!-- <link rel="stylesheet" href="./scss/cart.css">
-    <link rel="stylesheet" href="./scss/products.css"> -->
+    <link rel="stylesheet" href="./scss/cart.css">
+    <!-- <link rel="stylesheet" href="./scss/products.css"> -->
+    <link rel="stylesheet" href="./scss/checkout.css">
 
     <link rel="stylesheet" href="./scss/index.css">
 
@@ -41,7 +42,7 @@
 
     <script src="public/js/owlcarousel.js"></script>
     <script src="public/js/details.js" type="text/javascript"></script>
-    <script src="public/js/main.js" type="text/javascript"></script>
+    <!-- <script src="public/js/main.js" type="text/javascript"></script> -->
     <script src="public/js/swiper.js" type="text/javascript"></script>
 
 

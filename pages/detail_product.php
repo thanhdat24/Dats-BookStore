@@ -130,9 +130,11 @@ while ($row_detail = mysqli_fetch_array($sql_detail)) {
                             <input type="text" class="InputAmountProduct" value="1">
                             <a class="plus-1" href=""><i class="bi bi-plus"></i></a>
                         </div>
-                        <button class="btn a-center d-flex addcartitem">
-                            <i class="bi bi-handbag"></i> Thêm giỏ hàng
-                        </button>
+                        <a href="?page=cart">
+                            <button class=" btn a-center d-flex addcartitem">
+                                <i class="bi bi-handbag"></i> Thêm giỏ hàng
+                            </button>
+                        </a>
                     </div>
                     <div class="sku">
                         <span>SKU :</span> FUW237-1<br>

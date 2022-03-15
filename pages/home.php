@@ -32,9 +32,11 @@
                                           <a href="?page=detail_product&id=<?php echo $item['MSHH'] ?>">
                                               <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
                                           </a>
-                                          <button class="btn a-center d-flex addCartItem">
-                                              <i class="bi bi-handbag"></i> Thêm vào giỏ
-                                          </button>
+                                          <a href="?page=order&id=<?php echo $item['MSHH'] ?>">
+                                              <button class="btn a-center d-flex addCartItem">
+                                                  <i class="bi bi-handbag"></i> Thêm vào giỏ
+                                              </button>
+                                          </a>
                                           <ul class="action action1">
                                               <li class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
                                               </li>
@@ -109,3 +111,30 @@
           </div>
       </div>
   </section>
+
+  <script>
+      function addMiniCart(id) {
+
+          const idxSame = miniCart.findIndex(val => val.id == id)
+          // get a product = id and push miniCart
+          const ele = products.find(val => val.id == id)
+          // have ID 
+          if (idxSame != -1) {
+
+              miniCart[idxSame].quantity = ++miniCart[idxSame].quantity
+
+          } else {
+
+              const newValue = {
+                  ...ele,
+                  quantity: 1
+              }
+
+              miniCart.push(newValue)
+          }
+
+          $('.loaded').removeClass('active')
+
+          setLocal(miniCart, 'dataCart')
+      }
+  </script>
