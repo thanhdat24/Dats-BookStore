@@ -198,6 +198,11 @@ h6 {
   margin: 10px 0;
 }
 
+a {
+  text-decoration: none !important;
+  color: #4b4b4b !important;
+}
+
 .banner {
   position: relative;
 }
@@ -3123,6 +3128,11 @@ h6 {
   margin: 10px 0;
 }
 
+a {
+  text-decoration: none !important;
+  color: #4b4b4b !important;
+}
+
 .banner {
   position: relative;
 }
@@ -4770,9 +4780,21 @@ section.top .container .nav-top li a.active {
   }
 }
 
+.navigation .products-cart .container table.table thead,
+.navigation .products-cart .container table.table tbody {
+  padding-top: 10px;
+}
+
 .navigation .products-cart .container table.table thead tr,
 .navigation .products-cart .container table.table tbody tr {
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navigation .products-cart .container table.table thead tr:hover,
+.navigation .products-cart .container table.table tbody tr:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
+  border-radius: 15px;
 }
 
 .navigation .products-cart .container table.table thead tr th,

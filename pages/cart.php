@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#" class="heading-product">
+                                        <a href="?page=detail&id=<?= $value['MSHH'] ?>" class="heading-product">
                                             <?php echo $value['TenHH'] ?>
                                         </a>
                                     </td>
@@ -150,7 +150,7 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="checkout">
-                            <a href="checkout.html" class="btn btn--primary">Thanh toán
+                            <a href="?page=checkout" class="btn btn--primary">Thanh toán
                                 <i class="bi bi-chevron-right"></i>
                             </a>
                         </div>

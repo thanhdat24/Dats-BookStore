@@ -6,107 +6,93 @@
         </div>
     </div>
 
-    <div class="main-content-checkout p-80">
+    <div class="main-content-checkout p-60">
         <div class="container">
+            <h3 class="title">Thanh toán</h3>
+            <?php
+            if (isset($_SESSION['carts']) && !empty($_SESSION['carts'])) {
+            ?>
+                <form action="" method="post">
+                    <div class="cart-detail">
+                        <ul class="cart-detail__book">
+                            <?php foreach ($_SESSION['carts'] as $key => $book) { ?>
+                                <li class="cart-detail__book__item">
+                                    <a href="?page=detail&id=<?= $book['MSHH'] ?>"><img class="cart-detail__book__item__image" src="./public/uploads/book-images/<?= $book['Hinh1'] ?>" alt="">
+                                    </a>
+                                    <div class="cart-detail__book__item__info">
+                                        <a href="?page=detail&id=<?= $book['MSHH'] ?>" class="cart-detail__book__item__info__title">
+                                            <?= $book['TenHH'] ?>
+                                        </a>
+                                        <input type="number" hidden id="priceOfBook<?= $key ?>" value="<?= $book['Gia'] ?>">
+                                        <p class="cart-detail__book__item__info__price"><?= number_format($book['Gia'], 0) ?>đ</p>
+                                        <p>Kho: còn <?= $book['SoLuongHang'] ?> quyển</p>
+                                        <label class="cart-detail__book__item__info__number" for="numOfBook<?= $book['MSHH'] ?>">Số lượng: <?= $book['SoLuong'] ?></label>
+                                    </div>
+                                </li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                        <div class="cart-detail__user-info">
+                            <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
+                            <div class="cart-detail__user-info__detail">
+                                <input hidden type="text" name="MSKH" value="<?= $_SESSION['userDetail']['MSKH'] ?>">
+                                <p><b>Tên người nhận:</b></p>
+                                <input type="text" id="priceOfBook<?= $key ?>" value="" placeholder="Nhập tên của bạn...">
+                                <p><b>Số điện thoại:</b></p>
+                                <input type="text" id="phoneOfBook<?= $key ?>" value="" placeholder="Nhập số điện thoại của bạn...">
+                                <div class="cart-detail__user-info__detail__address">
+                                    <b>Địa chỉ nhận hàng:</b>
+                                    <div> <textarea rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></di>
+                                    </div>
 
-            <h2 class="title-checkout">
-                Checkout
-            </h2>
-
-            <form action="" class="checkout row j-between">
-                <div class="checkout-left col-sm-12 col-md-12 col-lg-6 col-xl-7">
-                    <h3 class="heading">
-                        Billing details
-                    </h3>
-                    <div class="content">
-                        <div class="form-group d-flex a-center j-between">
-                            <div class="input-group">
-                                <label for="name">First name</label><br>
-                                <input type="text">
+                                    <div class="cart-detail__user-info__detail__total">
+                                        <b>Tổng tiền:</b>
+                                        <b id="total" class="price"> <?= currency_format($_SESSION['TongTien']) ?></b>
+                                    </div>
+                                    <div class="cart-detail__user-info__detail__total">
+                                        <button class="btn btn--primary">Đặt hàng</button>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                </form>
+            <?php
+            } else {
+            ?>
+                <form action="" method="post">
+                    <div class="cart-detail">
+                        <ul class="cart-detail__book">
+                            <p>Bạn chưa chọn quyển sách nào!</p>
+                        </ul>
+                        <div class="cart-detail__user-info">
+                            <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
+                            <div class="cart-detail__user-info__detail">
+                                <input hidden type="text" name="MSKH" value="<?= $_SESSION['userDetail']['MSKH'] ?>">
+                                <p><b>Tên người nhận:</b></p>
+                                <input type="text" id="priceOfBook<?= $key ?>" value="" placeholder="Nhập tên của bạn...">
+                                <p><b>Số điện thoại:</b></p>
+                                <input type="text" id="phoneOfBook<?= $key ?>" value="" placeholder="Nhập số điện thoại của bạn...">
+                                <div class="cart-detail__user-info__detail__address">
+                                    <b>Địa chỉ nhận hàng:</b>
+                                    <div> <textarea rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></di>
+                                    </div>
 
-                            <div class="input-group">
-                                <label for="name">Last name</label><br>
-                                <input type="text">
+                                    <div class="cart-detail__user-info__detail__total">
+                                        <b>Tổng tiền:</b>
+                                        <b id="total" class="price"> <?= currency_format($_SESSION['TongTien']) ?></b>
+                                    </div>
+                                    <div class="cart-detail__user-info__detail__total">
+                                        <button class="btn btn--primary">Đặt hàng</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="name">Company name (optional)</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="input-group">
-                            <label for="name">Country / Region</label><br>
-                            <select name="" id="">
-                                <option value="">afghanistan</option>
-                                <option value="">albana</option>
-                                <option value="">algeria</option>
-                                <option value="">american</option>
-                                <option value="">aruba</option>
-                                <option value="">bahamas</option>
-                                <option value="">china</option>
-                                <option value="">congo</option>
-                                <option value="">djibouti</option>
-                                <option value="">ecuador</option>
-                                <option value="">france</option>
-                                <option value="">gabon</option>
-                                <option value="">japan</option>
-                                <option value="">vietnam</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="name">Street address *</label><br>
-                            <input type="text" placeholder="House number and street name">
-                            <input type="text" placeholder="Apartment, suite, unit , etc.">
-
-                        </div>
-                        <div class="input-group">
-                            <label for="name">Town / City</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="input-group">
-                            <label for="name">Phone</label><br>
-                            <input type="text">
-                        </div>
-                        <div class="input-group">
-                            <label for="name">Email address</label><br>
-                            <input type="text">
                         </div>
                     </div>
-
-                </div>
-                <div class="checkout-right col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                    <h3 class="heading">
-                        Your order
-                    </h3>
-                    <table class="table1">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ListCheckOut">
-
-                        </tbody>
-                    </table>
-                    <div class="payment">
-
-                        <div class="cash">
-                            Your personal data will be used to process your order, support your experience throughout
-                            this
-                            website, and for other purposes described in our privacy policy.
-                        </div>
-
-                        <input type="checkbox" id="primacy">
-                        <label for="primacy"> I have read and agree to the website terms and conditions</label>
-
-                        <a href="#" class="btn btn-primary order">
-                            place Order
-                        </a>
-                    </div>
-                </div>
-
-            </form>
+                </form>
+            <?php
+            }
+            ?>
         </div>
 
     </div>

@@ -78,7 +78,6 @@ while ($item = mysqli_fetch_array($sql_detail)) {
 ?>
     <section class="main-details-products">
         <div class="container">
-            <div class="seperate"></div>
             <h3 class="title">Chi tiết hàng hoá</h3>
             <div class="book-detail">
                 <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">

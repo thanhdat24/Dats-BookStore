@@ -196,6 +196,11 @@ h6 {
   margin: 10px 0;
 }
 
+a {
+  text-decoration: none !important;
+  color: #4b4b4b !important;
+}
+
 .banner {
   position: relative;
 }
