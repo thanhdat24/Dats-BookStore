@@ -10,12 +10,12 @@
         <div class="container">
             <h3 class="title">Thanh toán</h3>
             <?php
-            if (isset($_SESSION['carts']) && !empty($_SESSION['carts'])) {
+            if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
             ?>
                 <form action="" method="post">
                     <div class="cart-detail">
                         <ul class="cart-detail__book">
-                            <?php foreach ($_SESSION['carts'] as $key => $book) { ?>
+                            <?php foreach ($_SESSION['carts']['buy'] as $key => $book) { ?>
                                 <li class="cart-detail__book__item">
                                     <a href="?page=detail&id=<?= $book['MSHH'] ?>"><img class="cart-detail__book__item__image" src="./public/uploads/book-images/<?= $book['Hinh1'] ?>" alt="">
                                     </a>
@@ -48,7 +48,7 @@
 
                                     <div class="cart-detail__user-info__detail__total">
                                         <b>Tổng tiền:</b>
-                                        <b id="total" class="price"> <?= currency_format($_SESSION['TongTien']) ?></b>
+                                        <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                     </div>
                                     <div class="cart-detail__user-info__detail__total">
                                         <button class="btn btn--primary">Đặt hàng</button>
@@ -80,7 +80,7 @@
 
                                     <div class="cart-detail__user-info__detail__total">
                                         <b>Tổng tiền:</b>
-                                        <b id="total" class="price"> <?= currency_format($_SESSION['TongTien']) ?></b>
+                                        <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                     </div>
                                     <div class="cart-detail__user-info__detail__total">
                                         <button class="btn btn--primary">Đặt hàng</button>

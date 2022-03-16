@@ -52,64 +52,8 @@
 
 <body>
     <header>
-        <div class="header_first">
-            <div class="container d-flex a-center j-between">
-                <div class="header_first-contact d-flex a-center j-between">
-                    <a href="tel: 0911336236"><i class="bi bi-telephone-outbound"></i>(+39) 35 2568 4593</a>
-                    <a href="mailto:baodakmil123@gmail.com"><i class="far fa-envelope"></i>hello@domain.com</a>
-                </div>
-                <div class="outstanding d-flex a-center j-between">
-                    <p class="content">
-                        Free shipping on all orders over $79
-                        <a href="#" class="btn">
-                            Shop Now!
-                        </a>
-                    </p>
-                </div>
-                <div class="menu d-flex a-center j-between">
-                    <div class="region">
-                        <ul class="d-flex a-center j-between">
-                            <li>
-                                <a href="#">English <i class="fas fa-chevron-down"></i></a>
-                                <ul class="second-nav">
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">Japanese</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Usd <i class="fas fa-chevron-down"></i></a>
-                                <ul class="second-nav">
-                                    <li><a href="#">Euro</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <nav class="menu-icon">
-                        <ul class="d-flex a-center j-between">
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fas fa-envelope"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
         <div class="main-header">
             <div class="container d-flex a-center j-between">
-
                 <div class="bar-mobile">
                     <div class="bar">
                         <i class="fas fa-bars"></i>
@@ -120,109 +64,30 @@
                         <img src="./img/logo/logo_x2.png" alt="">
                     </a>
                 </div>
-
-                <nav class="main-nav d-flex">
-                    <ul class="d-flex a-center">
-                        <li>
-                            <a class="active" href="#">Home</a>
-                        </li>
-                        <li class="notRelative">
-                            <a href="products.html">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="second-nav1 nav-mini d-flex">
-                                <li>
-                                    <p class="heading">Shop Layout</p>
-                                    <ul class="list-item">
-                                        <li><a href="#">Full Width</a></li>
-                                        <li><a href="#">Grid View</a></li>
-                                        <li><a href="#">List View</a></li>
-                                        <li><a href="#">Left Sidebar</a></li>
-                                        <li><a href="#">Sidebar Right</a></li>
-                                        <li><a href="#">Wishlist</a></li>
-                                        <li><a href="#">Checkout</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <p class="heading">Product Layout</p>
-                                    <ul class="list-item">
-                                        <li><a href="#">Big Image Scroll</a></li>
-                                        <li><a href="#">Product Carousel</a></li>
-                                        <li><a href="#">Product Grid</a></li>
-                                        <li><a href="#">Vertical Right</a></li>
-                                        <li><a href="#">Vertical Left</a></li>
-                                        <li><a href="#">Horizontal Layout</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <p class="heading">Product Type</p>
-                                    <ul class="list-item">
-                                        <li><a href="#">Simple Product</a></li>
-                                        <li><a href="#">Variables Product</a></li>
-                                        <li><a href="#">Group Product</a></li>
-                                        <li><a href="#">Special Product</a></li>
-                                        <li><a href="#">Furniture</a></li>
-                                        <li><a href="#">Decoration</a></li>
-                                        <li><a href="#">Chairs</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <p class="heading">Product Categories</p>
-                                    <ul class="list-item">
-                                        <li><a href="#">Furniture</a></li>
-                                        <li><a href="#">Jewelly</a></li>
-                                        <li><a href="#">Fashion</a></li>
-                                        <li><a href="#">Chairs</a></li>
-                                        <li><a href="#">Lighting Lamp</a></li>
-                                        <li><a href="#">Sofas</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                        </li>
-                        <li>
-                            <a href="#">Page <i class="fas fa-chevron-down"></i></a>
-                            <ul class="second-nav nav-mini">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">My Account</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Blog <i class="fas fa-chevron-down"></i>
-                            </a>
-                            <ul class="second-nav nav-mini">
-                                <li><a href="#">Big Image</a></li>
-                                <li><a href="#">Grid Layout</a></li>
-                                <li><a href="#">Left Sidebar</a></li>
-                                <li><a href="#">Right Sidebar</a></li>
-                            </ul>
-
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-
-                <div class="menu d-flex a-center">
-
-                    <div class="login-regis d-flex j-between a-center">
-                        <a class="d-flex a-center" href="login.html"><i class="far fa-user"></i>Login <span>/</span></a>
-                        <a href="register.html">Register</a>
+                <form class="header__search" action="" method="post">
+                    <input type="text" name="key" placeholder="Tên sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
+                </form>
+                <div class="header__user d-flex a-center">
+                    <div class="header__user__cart">
+                        <a href="?page=cart"><i class="bi bi-handbag"></i></a>
+                        <!-- <span class="header__user__cart__badge">0</span> -->
+                        <?php $SoLuongGioHang = get_num_order_cart();
+                        if ($SoLuongGioHang > 0) {
+                        ?>
+                            <span class="header__user__cart__badge"><?php echo $SoLuongGioHang ?></span>
+                        <?php } else {
+                        ?>
+                            <span class="header__user__cart__badge">0</span>
+                        <?php } ?>
                     </div>
-
-                    <div class="mini-menu">
-                        <ul class="d-flex a-center j-between">
-                            <li class="item addWishlist">
-                                <a href="./wishlist.html"><i class="bi bi-heart"></i></a>
-                                <span class="before">0</span>
-                            </li>
-                            <li class="item cart-item">
-                                <a href="#"><i class="bi bi-handbag"></i></a>
-                                <span class="before">0</span>
-                            </li>
-                            <li id="search"><a href="#"><i class="bi bi-search"></i></a></li>
-                        </ul>
+                    <div class="header__login-button">
+                        <a href=""><button class="btn btn--primary">Đăng nhập</button></a>
                     </div>
+                    <!-- <div class="header__register-button">
+                        <a href=""><button class="btn btn--primary">Đăng Ký</button></a>
+
+                    </div> -->
+
                 </div>
             </div>
         </div>

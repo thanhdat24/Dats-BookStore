@@ -15,17 +15,20 @@ if (isset($_GET['id'])) {
     // $_SESSION['carts']; // bién lưu sản phẩm khách hàng muốn mua 
 
     if (!isset($_SESSION['carts']) || empty($_SESSION['carts'])) {
-        $_SESSION['carts'][$id] = $item;
-        $_SESSION['carts'][$id]['SoLuong'] = 1;
+        $_SESSION['carts']['buy'][$id] = $item;
+        $_SESSION['carts']['buy'][$id]['SoLuong'] = 1;
     } else {
-        if (array_key_exists($id, $_SESSION['carts'])) {
-            $_SESSION['carts'][$id]['SoLuong'] += 1;
+        if (array_key_exists($id, $_SESSION['carts']['buy'])) {
+            $_SESSION['carts']['buy'][$id]['SoLuong'] += 1;
         } else {
-            $_SESSION['carts'][$id] = $item;
-            $_SESSION['carts'][$id]['SoLuong'] = 1;
+            $_SESSION['carts']['buy'][$id] = $item;
+            $_SESSION['carts']['buy'][$id]['SoLuong'] = 1;
         }
         header('Location: ?page=cart');
     }
+
+    update_info_cart();
+    // show_array($_SESSION['carts']);
 }
 ?>
 
@@ -40,8 +43,8 @@ if (isset($_GET['id'])) {
 
 <nav class="navigation">
     <?php
-    $_SESSION['TongTien'] = 0;
-    if (isset($_SESSION['carts']) && !empty($_SESSION['carts'])) {
+    $_SESSION['SoLuongGioHang'] = 0;
+    if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
     ?>
         <form action="?page=update" method="POST">
             <div class="products-cart cart-list1 p-60">
@@ -72,7 +75,7 @@ if (isset($_GET['id'])) {
                         <tbody id="addToCard">
                             <?php
 
-                            foreach ($_SESSION['carts'] as $key => $value) {
+                            foreach ($_SESSION['carts']['buy'] as $key => $value) {
                             ?>
                                 <tr class="product-item-cart" data-id="<?php echo $value['MSHH'] ?>">
                                     <td>
@@ -100,7 +103,7 @@ if (isset($_GET['id'])) {
                                             <!-- <a class="dash-1" href=""><i class="bi bi-dash"></i></a>
                                             <input type="text" min="1" max="5" class="InputAmountProduct" value="<?php echo $value['SoLuong'] ?>">
                                             <a class="plus-1" href=""><i class="bi bi-plus"></i></a> -->
-                                            <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong'] ?>" class="InputAmountProduct">
+                                            <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>" class="InputAmountProduct">
                                         </div>
                                     </td>
                                     <td>
@@ -108,8 +111,8 @@ if (isset($_GET['id'])) {
                                             <?php echo $value['SoLuongHang'] ?> quyển
                                         </p>
                                     </td>
-                                    <td> <?php echo currency_format($value['SoLuong'] * $value['Gia']);
-                                            $_SESSION['TongTien'] += $value['SoLuong'] * $value['Gia'] ?>
+                                    <td> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
+                                            ?>
                                     </td>
 
                                 </tr>
@@ -141,12 +144,12 @@ if (isset($_GET['id'])) {
 
                         <div class="sub-totals d-flex a-center j-between">
                             <span>Tổng phụ</span>
-                            <span class="subtotal"><?php echo currency_format($_SESSION['TongTien']) ?></span>
+                            <span class="subtotal"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
 
                         <div class="total d-flex a-center j-between">
                             <span> Tổng </span>
-                            <span class="total-product"><?php echo currency_format($_SESSION['TongTien']) ?></span>
+                            <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
 
                         <div class="checkout">
