@@ -117,7 +117,7 @@ while ($item = mysqli_fetch_array($sql_detail)) {
                 <p class="book-detail__content__content"><?= $item['GhiChu'] ?></p>
             </div>
 
-            <h3>Bình luận</h3>
+            <h3>Đánh Giá - Nhận Xét Từ Khách Hàng</h3>
         </div>
     </section>
 <?php

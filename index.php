@@ -2,8 +2,10 @@
 ob_start();
 session_start();
 // session_destroy();
-
+//data
+require 'data/popularBook.php';
 require('db/connect.php');
+// lib
 require 'lib/url.php';
 require 'lib/data.php';
 require 'lib/cart.php';

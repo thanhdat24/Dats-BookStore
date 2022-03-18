@@ -6,12 +6,35 @@
             $list_product[] = $row;
         }
     }
-    // show_array($list_product)
+    // show_array($list_popular)
     ?>
   <div class="slider">
       <div class="owl-carousel owl-theme" id="main-slider">
 
       </div>
+  </div>
+
+  <div class="container">
+      <div class="popular-book__title">
+          <h3>Sách bán chạy trong tháng</h3>
+      </div>
+      <section class="popular-book">
+          <?php foreach ($list_popular as $key => $popularBook) : ?>
+              <div class="popular-book__item">
+                  <img class="popular-book__item__image" src="./public/uploads/book-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book">
+                  <div class="popular-book__item__info">
+                      <div class="popular-book__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
+                      <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
+                      <div class="popular-book__item__info__content"><?= $popularBook['GhiChu'] ?></div>
+                      <a href="?page=cart&id=<?php echo $popularBook['MSHH'] ?>">
+                          <button class="btn btn--primary a-center d-flex btn--primary--hover">
+                              <i class="bi bi-handbag"></i> Thêm vào giỏ
+                          </button>
+                      </a>
+                  </div>
+              </div>
+          <?php endforeach; ?>
+      </section>
   </div>
 
 
@@ -111,30 +134,3 @@
           </div>
       </div>
   </section>
-
-  <script>
-      function addMiniCart(id) {
-
-          const idxSame = miniCart.findIndex(val => val.id == id)
-          // get a product = id and push miniCart
-          const ele = products.find(val => val.id == id)
-          // have ID 
-          if (idxSame != -1) {
-
-              miniCart[idxSame].quantity = ++miniCart[idxSame].quantity
-
-          } else {
-
-              const newValue = {
-                  ...ele,
-                  quantity: 1
-              }
-
-              miniCart.push(newValue)
-          }
-
-          $('.loaded').removeClass('active')
-
-          setLocal(miniCart, 'dataCart')
-      }
-  </script>

@@ -25,7 +25,6 @@
                                         </a>
                                         <input type="number" hidden id="priceOfBook<?= $key ?>" value="<?= $book['Gia'] ?>">
                                         <p class="cart-detail__book__item__info__price"><?= number_format($book['Gia'], 0) ?>đ</p>
-                                        <p>Kho: còn <?= $book['SoLuongHang'] ?> quyển</p>
                                         <label class="cart-detail__book__item__info__number" for="numOfBook<?= $book['MSHH'] ?>">Số lượng: <?= $book['SoLuong'] ?></label>
                                     </div>
                                 </li>
@@ -47,15 +46,16 @@
                                     </div>
 
                                     <div class="cart-detail__user-info__detail__total">
-                                        <b>Tổng tiền:</b>
+                                        <b>Thành tiền:</b>
                                         <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                     </div>
                                     <div class="cart-detail__user-info__detail__total">
-                                        <button class="btn btn--primary">Đặt hàng</button>
+                                        <button class="btn btn--primary">Đặt mua</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </form>
             <?php
             } else {
@@ -79,11 +79,11 @@
                                     </div>
 
                                     <div class="cart-detail__user-info__detail__total">
-                                        <b>Tổng tiền:</b>
+                                        <b>Thành tiền:</b>
                                         <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                     </div>
                                     <div class="cart-detail__user-info__detail__total">
-                                        <button class="btn btn--primary">Đặt hàng</button>
+                                        <button class="btn btn--primary">Đặt mua</button>
                                     </div>
                                 </div>
                             </div>

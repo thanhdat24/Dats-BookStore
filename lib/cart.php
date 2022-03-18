@@ -48,6 +48,7 @@ function get_num_order_cart()
     if (isset($_SESSION['carts'])) {
         return $_SESSION['carts']['info']['SoLuongGioHang'];
     }
+    // update_info_cart();
     return false;
 }
 

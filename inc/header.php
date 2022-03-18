@@ -15,14 +15,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./scss/style.css">
-
+    <link rel="stylesheet" href="./scss/footer.css">
+    <!-- <link rel="stylesheet" href="./scss/style.css"> -->
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" hre f="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="./scss/details.css">
     <link rel="stylesheet" href="./scss/cart.css">
-    <!-- <link rel="stylesheet" href="./scss/products.css"> -->
     <link rel="stylesheet" href="./scss/checkout.css">
 
     <link rel="stylesheet" href="./scss/index.css">
@@ -40,10 +40,10 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./owlcarousel/owl.carousel.min.js"></script>
 
-    <script src="public/js/owlcarousel.js"></script>
     <script src="public/js/details.js" type="text/javascript"></script>
-    <!-- <script src="public/js/main.js" type="text/javascript"></script> -->
+    <script src="public/js/main.js" type="text/javascript"></script>
     <script src="public/js/swiper.js" type="text/javascript"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
 
 
 
@@ -70,7 +70,6 @@
                 <div class="header__user d-flex a-center">
                     <div class="header__user__cart">
                         <a href="?page=cart"><i class="bi bi-handbag"></i></a>
-                        <!-- <span class="header__user__cart__badge">0</span> -->
                         <?php $SoLuongGioHang = get_num_order_cart();
                         if ($SoLuongGioHang > 0) {
                         ?>
