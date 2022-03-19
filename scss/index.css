@@ -196,8 +196,16 @@ h6 {
 }
 
 a {
-  text-decoration: none !important;
-  color: #4b4b4b !important;
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+p.error {
+  color: #ff4842 !important;
+  font-size: 12px !important;
+  margin-top: 3px;
+  margin-right: 14px;
+  margin-left: 14px;
 }
 
 .banner {
@@ -709,7 +717,7 @@ header .header_first {
 
 header .header_first .container {
   max-width: 100%;
-  width: 97%;
+  width: 78%;
 }
 
 header .header_first .container a {
@@ -855,7 +863,7 @@ header .main-header {
 
 header .main-header .container {
   max-width: 100%;
-  width: 97%;
+  width: 78%;
   position: relative;
 }
 
@@ -1085,17 +1093,17 @@ header .main-header .container .header__user .header__register-button .header__m
   display: none;
 }
 
-header .main-header .container .header__user .header__user__cart {
+header .main-header .container .header__user__cart {
   margin-right: 20px;
   position: relative;
 }
 
-header .main-header .container .header__user .header__user__cart i {
+header .main-header .container .header__user__cart i {
   font-size: 30px;
   color: #ec455a;
 }
 
-header .main-header .container .header__user .header__user__cart__badge {
+header .main-header .container .header__user__cart__badge {
   border-radius: 50%;
   font-size: 11px;
   text-align: center;
@@ -1107,8 +1115,50 @@ header .main-header .container .header__user .header__user__cart__badge {
   left: 70%;
 }
 
-header .main-header .container .header__user .header__user__cart:hover {
+header .main-header .container .header__user__cart:hover {
   opacity: 0.8;
+}
+
+header .main-header .container .header__user__username span {
+  cursor: pointer;
+  color: #ec455a;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+header .main-header .container .header__user__username span:hover {
+  opacity: 0.8;
+}
+
+header .main-header .container .header__user__avatar {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 0 0 2px #ec455a;
+}
+
+header .main-header .container .header__user__avatar img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100%;
+}
+
+header .main-header .container .header__user__avatar:hover {
+  opacity: 0.9;
+}
+
+header .main-header .container .header__user__avatar:hover .header__user__logout {
+  display: block;
+}
+
+header .main-header .container .header__user__avatar .header__user__logout {
+  padding: 10px 0;
+  transform: translateX(-10%);
+  width: 95px;
+  display: none;
 }
 
 header .main-header.active {

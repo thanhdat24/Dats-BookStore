@@ -1,4 +1,7 @@
   <?php
+    get_header();
+    ?>
+  <?php
     $sql_product = mysqli_query($con, "SELECT *FROM hanghoa");
     $list_product = array();
     if (mysqli_num_rows($sql_product) > 0) {
@@ -21,7 +24,7 @@
       <section class="popular-book">
           <?php foreach ($list_popular as $key => $popularBook) : ?>
               <div class="popular-book__item">
-                  <img class="popular-book__item__image" src="./public/uploads/book-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book">
+                  <a href="?page=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-book__item__image" src="./public/uploads/book-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
                   <div class="popular-book__item__info">
                       <div class="popular-book__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
                       <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
@@ -134,3 +137,7 @@
           </div>
       </div>
   </section>
+
+  <?php
+    get_footer();
+    ?>

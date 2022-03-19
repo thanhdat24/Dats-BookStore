@@ -1,3 +1,7 @@
+<?php
+get_header();
+?>
+
 <style>
     .update {
         color: #fff !important;
@@ -172,3 +176,7 @@ if (isset($_GET['id'])) {
         ?>
     </div>
 </div>
+
+<?php
+get_footer();
+?>

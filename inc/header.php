@@ -1,3 +1,13 @@
+<?php
+if (isset($_SESSION['userLogin'])) {
+    $item = userDetail($_SESSION['userLogin']['email']);
+
+    $_SESSION['userDetail'] = $item;
+
+    // show_array($_SESSION['userDetail']);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +26,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./scss/style.css">
     <link rel="stylesheet" href="./scss/footer.css">
-    <!-- <link rel="stylesheet" href="./scss/style.css"> -->
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" hre f="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -24,6 +33,7 @@
     <link rel="stylesheet" href="./scss/details.css">
     <link rel="stylesheet" href="./scss/cart.css">
     <link rel="stylesheet" href="./scss/checkout.css">
+
 
     <link rel="stylesheet" href="./scss/index.css">
 
@@ -53,7 +63,7 @@
 <body>
     <header>
         <div class="main-header">
-            <div class="container d-flex a-center j-between">
+            <div class="container d-flex a-center j-between header">
                 <div class="bar-mobile">
                     <div class="bar">
                         <i class="fas fa-bars"></i>
@@ -67,7 +77,8 @@
                 <form class="header__search" action="" method="post">
                     <input type="text" name="key" placeholder="Tên sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
                 </form>
-                <div class="header__user d-flex a-center">
+
+                <div class="header__user d-flex a-center j-between">
                     <div class="header__user__cart">
                         <a href="?page=cart"><i class="bi bi-handbag"></i></a>
                         <?php $SoLuongGioHang = get_num_order_cart();
@@ -79,15 +90,23 @@
                             <span class="header__user__cart__badge">0</span>
                         <?php } ?>
                     </div>
-                    <div class="header__login-button">
-                        <a href=""><button class="btn btn--primary">Đăng nhập</button></a>
-                    </div>
-                    <!-- <div class="header__register-button">
-                        <a href=""><button class="btn btn--primary">Đăng Ký</button></a>
+                    <?php if (isLogin()) : ?>
+                        <a class=" header__user__username" href="/profile">
+                            <span><?= $_SESSION['userDetail']['HoTenKH'] ?>
+                            </span>
+                            <div class="header__user__avatar">
+                                <img src="./public/img/dat-avatar.jpg" alt="User Avatar">
+                                <div class="header__user__logout"><a href="?page=logout">Đăng xuất</a></div>
 
-                    </div> -->
-
+                            </div>
+                        </a>
+                    <?php else : ?>
+                        <div class="header__login-button">
+                            <a href="?page=login"><button class="btn btn--primary">Đăng nhập</button></a>
+                        </div>
+                    <?php endif; ?>
                 </div>
+
             </div>
         </div>
     </header>

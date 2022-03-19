@@ -196,8 +196,16 @@ h6 {
 }
 
 a {
-  text-decoration: none !important;
-  color: #4b4b4b !important;
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+p.error {
+  color: #ff4842 !important;
+  font-size: 12px !important;
+  margin-top: 3px;
+  margin-right: 14px;
+  margin-left: 14px;
 }
 
 .banner {

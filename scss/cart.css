@@ -196,8 +196,16 @@ h6 {
 }
 
 a {
-  text-decoration: none !important;
-  color: #4b4b4b !important;
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+p.error {
+  color: #ff4842 !important;
+  font-size: 12px !important;
+  margin-top: 3px;
+  margin-right: 14px;
+  margin-left: 14px;
 }
 
 .banner {
@@ -1867,12 +1875,15 @@ section.top .container .nav-top li a.active {
   display: flex;
   align-items: center;
   padding: 6px 8px;
+  color: #000 !important;
+  font-weight: 600;
 }
 
 .main-content-products .container .products-cart__book__update__back:hover {
   background-color: rgba(145, 158, 171, 0.08);
   border-radius: 8px;
   padding: 6px 8px;
+  color: #000;
 }
 
 .main-content-products .container .products-cart .products-cart__totals {

@@ -1,4 +1,8 @@
 <?php
+get_header();
+?>
+
+<?php
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
@@ -143,3 +147,6 @@ while ($item = mysqli_fetch_array($sql_detail)) {
         </div>
     </div>
 </div>
+<?php
+get_footer();
+?>

@@ -53,7 +53,7 @@ header {
 
     .container {
       max-width: 100%;
-      width: 97%;
+      width: 78%;
 
       a {
         transition: all 0.4s;
@@ -212,11 +212,10 @@ header {
     font-size: 16px;
     box-shadow: 0px 0px 3px #ccc;
 
-    .container {
+    .header {
       max-width: 100%;
-      width: 97%;
+      width: 78%;
       position: relative;
-
       li {
         i {
           font-size: 16px;
@@ -434,7 +433,7 @@ header {
           }
         }
 
-        .header__user__cart {
+        &__cart {
           margin-right: 20px;
           position: relative;
           i {
@@ -452,9 +451,53 @@ header {
             top: 70%;
             left: 70%;
           }
+
           &:hover {
             opacity: 0.8;
           }
+        }
+        &__username {
+          span {
+            cursor: pointer;
+            color: #ec455a;
+            font-family: "Nunito", sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+        &__avatar {
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 2px solid rgba(255, 255, 255, 0);
+          box-shadow: 0 0 0 2px #ec455a;
+          img {
+            object-fit: cover;
+            border-radius: 50%;
+            width: 100%;
+          }
+          &:hover {
+            opacity: 0.9;
+          }
+          &:hover .header__user__logout {
+            display: block;
+          }
+          .header__user__logout {
+            padding: 10px 0;
+            transform: translateX(-10%);
+            width: 100px;
+            display: none;
+            a:hover {
+              color: #1a1a1a;
+            }
+          }
+        }
+        & > * {
+          margin-left: 20px;
         }
       }
     }
@@ -982,4 +1025,3 @@ ul.side-sticky-icons {
     }
   }
 }
-

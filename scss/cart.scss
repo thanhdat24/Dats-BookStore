@@ -227,10 +227,13 @@ section.top {
             display: flex;
             align-items: center;
             padding: 6px 8px;
+            color: #000 !important;
+            font-weight: 600;
             &:hover {
               background-color: rgba(145, 158, 171, 0.08);
               border-radius: 8px;
               padding: 6px 8px;
+              color: #000;
             }
           }
         }
