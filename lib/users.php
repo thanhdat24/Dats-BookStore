@@ -88,3 +88,16 @@ function userDetail($email)
     $result = mysqli_fetch_assoc($query);
     return $result;
 }
+
+function checkUserExits($Email)
+{
+    $checkUserExits = db_num_rows("SELECT * FROM khachhang WHERE Email = '{$Email}'");
+    if ($checkUserExits > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+

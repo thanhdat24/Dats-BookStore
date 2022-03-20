@@ -144,7 +144,7 @@ if (isset($_GET['id'])) {
                             <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
                         <div class="coupon d-flex a-center j-between">
-                            <input type="text" placeholder="Mã giảm giá">
+                            <input type="text" placeholder="Nhập mã giảm giá">
                             <div class="coupon-btn">
                                 <span>Áp dụng</span>
                             </div>

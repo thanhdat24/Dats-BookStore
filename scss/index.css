@@ -202,10 +202,19 @@ a {
 
 p.error {
   color: #ff4842 !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   margin-top: 3px;
   margin-right: 14px;
-  margin-left: 14px;
+  margin-left: 17px;
+  font-style: oblique;
+}
+
+.invalid-feedback {
+  font-size: 14px !important;
+  margin-top: 3px;
+  margin-right: 14px;
+  margin-left: 17px;
+  color: #ff4842 !important;
 }
 
 .banner {
@@ -861,43 +870,43 @@ header .main-header {
   box-shadow: 0px 0px 3px #ccc;
 }
 
-header .main-header .container {
+header .main-header .header {
   max-width: 100%;
   width: 78%;
   position: relative;
 }
 
-header .main-header .container li i {
+header .main-header .header li i {
   font-size: 16px;
   color: #666;
 }
 
-header .main-header .container li:hover > a {
+header .main-header .header li:hover > a {
   color: #ba933e;
 }
 
-header .main-header .container li:hover > a i {
+header .main-header .header li:hover > a i {
   color: #ba933e;
 }
 
-header .main-header .container .bar-mobile {
+header .main-header .header .bar-mobile {
   flex: 1;
   font-size: 24px;
   display: none;
   margin-left: 20px;
 }
 
-header .main-header .container .bar-mobile .bar {
+header .main-header .header .bar-mobile .bar {
   height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
-  header .main-header .container .bar-mobile {
+  header .main-header .header .bar-mobile {
     display: block;
   }
 }
 
-header .main-header .container .logo {
+header .main-header .header .logo {
   height: 85px;
   display: flex;
   align-items: center;
@@ -906,17 +915,17 @@ header .main-header .container .logo {
 }
 
 @media screen and (max-width: 1200px) {
-  header .main-header .container .logo {
+  header .main-header .header .logo {
     flex: 0;
   }
 }
 
-header .main-header .container .logo img {
+header .main-header .header .logo img {
   cursor: pointer;
   max-width: 130px;
 }
 
-header .main-header .container .header__search {
+header .main-header .header .header__search {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -924,7 +933,7 @@ header .main-header .container .header__search {
   position: relative;
 }
 
-header .main-header .container .header__search input[type="text"] {
+header .main-header .header .header__search input[type="text"] {
   width: 80%;
   height: 42px;
   border: none;
@@ -936,16 +945,16 @@ header .main-header .container .header__search input[type="text"] {
   border: solid 2px #ec455b00;
 }
 
-header .main-header .container .header__search input[type="text"]:focus {
+header .main-header .header .header__search input[type="text"]:focus {
   border: solid 2px #ec455b79;
   transition: all 0.3s ease-in-out;
 }
 
-header .main-header .container .header__search input[type="text"]::placeholder {
+header .main-header .header .header__search input[type="text"]::placeholder {
   color: #8a8a8a;
 }
 
-header .main-header .container .header__search .header__search__icon {
+header .main-header .header .header__search .header__search__icon {
   position: absolute;
   text-decoration: none;
   width: 18px;
@@ -953,7 +962,7 @@ header .main-header .container .header__search .header__search__icon {
   cursor: pointer;
 }
 
-header .main-header .container nav.main-nav {
+header .main-header .header nav.main-nav {
   flex: 2;
   padding: 0 5px;
   justify-content: center;
@@ -961,20 +970,20 @@ header .main-header .container nav.main-nav {
 }
 
 @media screen and (max-width: 1200px) {
-  header .main-header .container nav.main-nav {
+  header .main-header .header nav.main-nav {
     display: none;
   }
 }
 
-header .main-header .container nav.main-nav ul {
+header .main-header .header nav.main-nav ul {
   text-align: center;
 }
 
-header .main-header .container nav.main-nav ul li {
+header .main-header .header nav.main-nav ul li {
   position: relative;
 }
 
-header .main-header .container nav.main-nav ul li a {
+header .main-header .header nav.main-nav ul li a {
   display: flex;
   align-items: center;
   padding: 17px 24px;
@@ -982,25 +991,25 @@ header .main-header .container nav.main-nav ul li a {
   height: 85px;
 }
 
-header .main-header .container nav.main-nav ul li a i {
+header .main-header .header nav.main-nav ul li a i {
   margin-top: 3px;
   font-size: 10px;
   margin-left: 7px;
 }
 
-header .main-header .container nav.main-nav ul li a.active {
+header .main-header .header nav.main-nav ul li a.active {
   color: #ba933e;
 }
 
-header .main-header .container nav.main-nav ul li a.active i {
+header .main-header .header nav.main-nav ul li a.active i {
   color: #ba933e;
 }
 
-header .main-header .container nav.main-nav ul li.notRelative {
+header .main-header .header nav.main-nav ul li.notRelative {
   position: unset;
 }
 
-header .main-header .container nav.main-nav ul li .nav-mini {
+header .main-header .header nav.main-nav ul li .nav-mini {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
   background: #fff;
   position: absolute;
@@ -1010,18 +1019,18 @@ header .main-header .container nav.main-nav ul li .nav-mini {
   transition: all 0.5s;
 }
 
-header .main-header .container nav.main-nav ul li .nav-mini a {
+header .main-header .header nav.main-nav ul li .nav-mini a {
   height: auto;
 }
 
-header .main-header .container nav.main-nav ul li .second-nav {
+header .main-header .header nav.main-nav ul li .second-nav {
   top: 100%;
   left: 0px;
   min-width: 200px;
   transform: scaleY(0);
 }
 
-header .main-header .container nav.main-nav ul li .second-nav1 {
+header .main-header .header nav.main-nav ul li .second-nav1 {
   min-width: 900px;
   background-image: url(https://blueskytechco.com/rubix/wp-content/uploads/2021/05/bg_update.png);
   background-repeat: no-repeat;
@@ -1037,73 +1046,73 @@ header .main-header .container nav.main-nav ul li .second-nav1 {
   font-size: 16px;
 }
 
-header .main-header .container nav.main-nav ul li .second-nav1 .heading {
+header .main-header .header nav.main-nav ul li .second-nav1 .heading {
   font-weight: 700;
   margin-bottom: 25px;
   text-transform: capitalize;
 }
 
-header .main-header .container nav.main-nav ul li .second-nav1 .list-item {
+header .main-header .header nav.main-nav ul li .second-nav1 .list-item {
   width: 100%;
 }
 
-header .main-header .container nav.main-nav ul li .second-nav1 .list-item li a {
+header .main-header .header nav.main-nav ul li .second-nav1 .list-item li a {
   display: block;
   width: 100%;
   padding: 8px 0px;
   text-align: left;
 }
 
-header .main-header .container nav.main-nav ul li .second-nav1 > li {
+header .main-header .header nav.main-nav ul li .second-nav1 > li {
   width: 25%;
   max-width: 280px;
 }
 
-header .main-header .container nav.main-nav ul li:hover .second-nav {
+header .main-header .header nav.main-nav ul li:hover .second-nav {
   visibility: visible;
   transform: scaleY(1);
 }
 
-header .main-header .container nav.main-nav ul li:hover .second-nav1 {
+header .main-header .header nav.main-nav ul li:hover .second-nav1 {
   visibility: visible;
   transform: translateX(-50%) scaleY(1);
 }
 
-header .main-header .container .header__user {
+header .main-header .header .header__user {
   justify-content: space-between;
 }
 
-header .main-header .container .header__user .header__login-button,
-header .main-header .container .header__user .header__register-button {
+header .main-header .header .header__user .header__login-button,
+header .main-header .header .header__user .header__register-button {
   display: flex;
   align-items: center;
 }
 
-header .main-header .container .header__user .header__login-button button,
-header .main-header .container .header__user .header__register-button button {
+header .main-header .header .header__user .header__login-button button,
+header .main-header .header .header__user .header__register-button button {
   font-size: 14px;
   padding: 5px 20px;
   margin-right: 10px;
 }
 
-header .main-header .container .header__user .header__login-button .header__menu img,
-header .main-header .container .header__user .header__register-button .header__menu img {
+header .main-header .header .header__user .header__login-button .header__menu img,
+header .main-header .header .header__user .header__register-button .header__menu img {
   width: 18px;
   cursor: pointer;
   display: none;
 }
 
-header .main-header .container .header__user__cart {
+header .main-header .header .header__user__cart {
   margin-right: 20px;
   position: relative;
 }
 
-header .main-header .container .header__user__cart i {
+header .main-header .header .header__user__cart i {
   font-size: 30px;
   color: #ec455a;
 }
 
-header .main-header .container .header__user__cart__badge {
+header .main-header .header .header__user__cart__badge {
   border-radius: 50%;
   font-size: 11px;
   text-align: center;
@@ -1115,11 +1124,11 @@ header .main-header .container .header__user__cart__badge {
   left: 70%;
 }
 
-header .main-header .container .header__user__cart:hover {
+header .main-header .header .header__user__cart:hover {
   opacity: 0.8;
 }
 
-header .main-header .container .header__user__username span {
+header .main-header .header .header__user__username span {
   cursor: pointer;
   color: #ec455a;
   font-family: "Nunito", sans-serif;
@@ -1127,11 +1136,11 @@ header .main-header .container .header__user__username span {
   font-size: 16px;
 }
 
-header .main-header .container .header__user__username span:hover {
+header .main-header .header .header__user__username span:hover {
   opacity: 0.8;
 }
 
-header .main-header .container .header__user__avatar {
+header .main-header .header .header__user__avatar {
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -1140,25 +1149,33 @@ header .main-header .container .header__user__avatar {
   box-shadow: 0 0 0 2px #ec455a;
 }
 
-header .main-header .container .header__user__avatar img {
+header .main-header .header .header__user__avatar img {
   object-fit: cover;
   border-radius: 50%;
   width: 100%;
 }
 
-header .main-header .container .header__user__avatar:hover {
+header .main-header .header .header__user__avatar:hover {
   opacity: 0.9;
 }
 
-header .main-header .container .header__user__avatar:hover .header__user__logout {
+header .main-header .header .header__user__avatar:hover .header__user__logout {
   display: block;
 }
 
-header .main-header .container .header__user__avatar .header__user__logout {
+header .main-header .header .header__user__avatar .header__user__logout {
   padding: 10px 0;
   transform: translateX(-10%);
-  width: 95px;
+  width: 100px;
   display: none;
+}
+
+header .main-header .header .header__user__avatar .header__user__logout a:hover {
+  color: #1a1a1a;
+}
+
+header .main-header .header .header__user > * {
+  margin-left: 20px;
 }
 
 header .main-header.active {

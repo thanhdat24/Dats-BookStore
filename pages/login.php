@@ -80,7 +80,7 @@ if (isset($_POST['btn-login'])) {
                 <?php } ?>
             </div>
             <input type="submit" name="btn-login" class="btn btn--primary" value="Đăng nhập">
-            <div style="margin-left:auto; margin-top: 10px;">Chưa có tài khoản? <a href="?page=singup" style="font-weight: bold; color: red; margin-left: 10px;">Đăng ký</a></div>
+            <div style="margin-left:auto; margin-top: 10px;">Chưa có tài khoản? <a href="?page=signup" style="font-weight: bold; color: red; margin-left: 10px;">Đăng ký</a></div>
 
         </form>
     </div>
