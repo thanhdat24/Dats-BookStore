@@ -1,15 +1,7 @@
    <?php
     get_header();
     ?>
-   <div class="title-nav">
-       <div class="container">
-           <p class="description-nav">
-               <a href="index.html">Home</a> / <span>Checkout</span>
-           </p>
-       </div>
-   </div>
-
-   <div class="main-content-checkout p-60">
+   <div class="main-content-checkout p-40">
        <div class="container">
            <h3 class="title">Thanh toán</h3>
            <?php

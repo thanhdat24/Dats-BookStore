@@ -11,72 +11,6 @@ if (isset($_GET['id'])) {
 
 $sql_detail = mysqli_query($con, "SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE MSHH='$id'");
 ?>
-
-<div class="cart">
-    <div class="products-cart">
-        <h4 class="d-flex j-between a-center">
-            Your Cart
-        </h4>
-        <span class="close">
-            &times;
-        </span>
-
-        <div class="mini-cart a-center j-between">
-
-            <div class="mini-cart-list">
-                <ul id="mini-cart-product">
-
-                </ul>
-            </div>
-
-            <div class="mini-cart-bottom">
-
-                <div class="total d-flex a-center j-between">
-
-                    <strong>
-                        Subtotal:
-                    </strong>
-
-                    <div class="sub-total">
-                        $600.00
-                    </div>
-
-                </div>
-
-                <div class="group-btn">
-
-                    <a href="cart.html" class="btn btn-primary viewCart">
-
-                        View Cart
-
-                    </a>
-                    <a href="checkout.html" class="btn btn-primary bill">
-
-                        Checkout
-
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="no-product">
-            No products in the cart.
-        </div>
-
-    </div>
-</div>
-
-<section class="top">
-    <div class="container">
-
-        <ul class="nav-top d-flex a-center">
-
-        </ul>
-
-    </div>
-</section>
 <?php
 while ($item = mysqli_fetch_array($sql_detail)) {
 ?>
@@ -131,12 +65,6 @@ while ($item = mysqli_fetch_array($sql_detail)) {
 <div class="compare-product">
 
     <div class="compare-product-box">
-
-        <div class="top">
-            <p class="heading">
-                Compare Products
-            </p>
-        </div>
 
         <table class="comparelist content">
 

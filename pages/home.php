@@ -63,17 +63,6 @@
                                                   <i class="bi bi-handbag"></i> Thêm vào giỏ
                                               </button>
                                           </a>
-                                          <ul class="action action1">
-                                              <li class="wishlist"><i class="far fa-heart"></i><span>Add to Wishlist</span>
-                                              </li>
-                                              <li class="compare action-disable"><i class="fas fa-sliders-h"></i> <span>Compare</span> </li>
-                                              <li class="detail" data-bs-toggle="modal" data-bs-target="#detailModal"><i class="fas fa-eye"></i><span>View Details</span></li>
-                                          </ul>
-                                          <ul class="action action2">
-                                              <li class="wishlist"><i class="far fa-heart"></i><span></span>
-                                              </li>
-                                              <li class="addCartItem"><i class="bi bi-handbag"></i></li>
-                                          </ul>
                                       </div>
                                       <div class="content">
                                           <h4><?php echo $item['TenHH'] ?></h4>
@@ -121,12 +110,6 @@
   <section class="compare-product">
 
       <div class="compare-product-box">
-
-          <div class="top">
-              <p class="heading">
-                  Compare Products
-              </p>
-          </div>
 
           <table class="comparelist content">
 

@@ -169,13 +169,17 @@ p {
   margin: 0 auto;
 }
 
-.p-60 {
-  padding: 60px 0;
+.p-40 {
+  padding: 40px 0;
 }
 
 body,
 html {
   scroll-behavior: smooth;
+}
+
+h1 {
+  margin-bottom: 0;
 }
 
 h3 {
@@ -908,23 +912,22 @@ header .main-header .header .bar-mobile .bar {
   }
 }
 
-header .main-header .header .logo {
-  height: 85px;
+header .main-header .header .header__logo {
   display: flex;
   align-items: center;
-  cursor: inherit;
-  flex: 1;
 }
 
-@media screen and (max-width: 1200px) {
-  header .main-header .header .logo {
-    flex: 0;
-  }
+header .main-header .header .header__logo lord-icon {
+  color: "red";
 }
 
-header .main-header .header .logo img {
-  cursor: pointer;
-  max-width: 130px;
+header .main-header .header .header__logo .header__name {
+  line-height: 1.1;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: #ff213d;
+  margin-left: 20px;
 }
 
 header .main-header .header .header__search {
@@ -3130,13 +3133,17 @@ p {
   margin: 0 auto;
 }
 
-.p-60 {
-  padding: 60px 0;
+.p-40 {
+  padding: 40px 0;
 }
 
 body,
 html {
   scroll-behavior: smooth;
+}
+
+h1 {
+  margin-bottom: 0;
 }
 
 h3 {
@@ -3869,23 +3876,22 @@ header .main-header .header .bar-mobile .bar {
   }
 }
 
-header .main-header .header .logo {
-  height: 85px;
+header .main-header .header .header__logo {
   display: flex;
   align-items: center;
-  cursor: inherit;
-  flex: 1;
 }
 
-@media screen and (max-width: 1200px) {
-  header .main-header .header .logo {
-    flex: 0;
-  }
+header .main-header .header .header__logo lord-icon {
+  color: "red";
 }
 
-header .main-header .header .logo img {
-  cursor: pointer;
-  max-width: 130px;
+header .main-header .header .header__logo .header__name {
+  line-height: 1.1;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: #ff213d;
+  margin-left: 20px;
 }
 
 header .main-header .header .header__search {

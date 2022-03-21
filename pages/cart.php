@@ -36,14 +36,6 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<section class="top">
-    <div class="container">
-        <ul class="nav-top d-flex a-center">
-            <li><a href="insdex.html"> Home <span>/</span></a></li>
-            <li><a class="active">Cart</a></li>
-        </ul>
-    </div>
-</section>
 
 <div class="main-content-products">
     <div class="container">
@@ -155,20 +147,52 @@ if (isset($_GET['id'])) {
                             </a>
                         </div>
                     </div>
-
                 </div>
             </form>
         <?php
         } else {
         ?>
-            <div class="products-cart cart-list1 p-80">
-                <div class="container">
-                    <h3 class="heading-cart">
-                        Giỏ hàng
-                    </h3>
-                    <p>Bạn chưa chọn quyển sách nào!</p>
-                    <a href="?page=home" class="btn btn--primary comeback">Quay lại</a>
-                    </p>
+            <div class="products-cart">
+                <div class="products-cart__book__empty">
+                    <img class="empty" src="./public/img/illustration_empty_cart.svg" alt="empty content">
+                    <h3>Giỏ hàng rỗng</h3>
+                    <p>Có vẻ như bạn không có quyển sách nào trong giỏ hàng của mình.</p>
+                    <div class="back__home">
+                        <a href="?page=home"><span class="iconify" data-icon="eva:arrow-ios-back-fill" data-width="22" data-height="22"></span>Tiếp tục mua sắm</a>
+                    </div>
+                </div>
+                <div class="products-cart__totals totals__empty">
+                    <div class="heading">
+                        Tổng giỏ hàng
+                    </div>
+
+                    <div class="sub-totals d-flex a-center j-between">
+                        <span>Tạm tính</span>
+                        <span class="subtotal"><?php echo currency_format(get_total_cart()) ?></span>
+                    </div>
+                    <div class="discount d-flex a-center j-between">
+                        <span>Giảm giá</span>
+                        <span class="subtotal">-</span>
+                    </div>
+                    <div class="shipping d-flex a-center j-between">
+                        <span>Shipping</span>
+                        <span class="subtotal">Free</span>
+                    </div>
+                    <div class="total d-flex a-center j-between">
+                        <span> Tổng cộng</span>
+                        <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
+                    </div>
+                    <div class="coupon d-flex a-center j-between">
+                        <input type="text" placeholder="Nhập mã giảm giá">
+                        <div class="coupon-btn">
+                            <span>Áp dụng</span>
+                        </div>
+                    </div>
+                    <div class="checkout disabled">
+                        <a href="?page=checkout" class="btn btn--primary btn-checkout">Mua hàng
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         <?php

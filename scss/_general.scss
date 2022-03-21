@@ -34,13 +34,16 @@
   margin: 0 auto;
 }
 
-.p-60 {
-  padding: 60px 0;
+.p-40 {
+  padding: 40px 0;
 }
 
 body,
 html {
   scroll-behavior: smooth;
+}
+h1 {
+  margin-bottom: 0;
 }
 h3 {
   font-size: 25px;

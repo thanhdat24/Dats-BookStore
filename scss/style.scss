@@ -247,23 +247,22 @@ header {
           display: block;
         }
       }
-
-      .logo {
-        height: 85px;
+      .header__logo {
         display: flex;
         align-items: center;
-        cursor: inherit;
-        flex: 1;
-
-        @include media(lg) {
-          flex: 0;
+        lord-icon {
+          color: "red";
         }
-
-        img {
-          cursor: pointer;
-          max-width: 130px;
+        .header__name {
+          line-height: 1.1;
+          font-family: "Poppins", sans-serif;
+          font-weight: bold;
+          font-size: 22px;
+          color: #ff213d;
+          margin-left: 20px;
         }
       }
+
       .header__search {
         display: flex;
         align-items: center;
