@@ -43,27 +43,11 @@
     height: 75%;
     box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
     position: relative;
-    .active {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      font-size: 13px;
-      padding: 0px 8px;
-      height: 22px;
-      min-width: 22px;
-      border-radius: 6px;
-      align-items: center;
-      display: inline-flex;
-      justify-content: center;
-      color: rgb(34, 154, 22);
-      background-color: rgba(84, 214, 44, 0.16);
-      font-weight: bold;
-    }
     &__avatar {
       width: 135px;
       height: 135px;
       border-radius: 100%;
-      border: 2px dashed #e5e7eb;
+      border: 2px dashed #ec455a;
       color: #212b36;
       display: inline-flex;
       line-height: 24px;

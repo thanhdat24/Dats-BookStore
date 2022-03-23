@@ -39,15 +39,6 @@
             if (!checkUserExits($Email)) {
                 $password = md5($password);
                 $sql = "INSERT INTO khachhang(HoTenKH,DiaChi,SoDienThoai,Email,password) VALUES ('$HoTenKH','$DiaChi','$phone','$Email','$password')";
-                // $data = array(
-                //     'HoTenKH' => $HoTenKH,
-                //     'DiaChi' => $DiaChi,
-                //     'Email' => $Email,
-                //     'SoDienThoai' => $phone,
-                //     'password' => $password,
-                //     // 'Confirm_Password' => $Confirm_Password,
-                // );
-                // addUser($data);
                 $result = mysqli_query($con, $sql);
                 if ($result) {
                     redirect("?page=login");
@@ -134,7 +125,6 @@
      <script type="text/javascript">
          $.validator.setDefaults({
              submitHandler: function() {
-                 alert("Success!")
                  form.submit();
              }
          })

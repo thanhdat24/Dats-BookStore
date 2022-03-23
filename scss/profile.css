@@ -219,6 +219,8 @@ p.error {
   margin-right: 14px;
   margin-left: 17px;
   color: #ff4842 !important;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .back__home {
@@ -1773,28 +1775,11 @@ ul.side-sticky-icons li .before {
   position: relative;
 }
 
-.profile__item__card .active {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 13px;
-  padding: 0px 8px;
-  height: 22px;
-  min-width: 22px;
-  border-radius: 6px;
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  color: #229a16;
-  background-color: rgba(84, 214, 44, 0.16);
-  font-weight: bold;
-}
-
 .profile__item__card__avatar {
   width: 135px;
   height: 135px;
   border-radius: 100%;
-  border: 2px dashed #e5e7eb;
+  border: 2px dashed #ec455a;
   color: #212b36;
   display: inline-flex;
   line-height: 24px;

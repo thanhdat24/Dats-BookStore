@@ -14,7 +14,6 @@
             <div class="profile__item">
                 <h3>Thông tin tài khoản</h3>
                 <div class="profile__item__card">
-                    <span class="active">ACTIVE</span>
                     <div class="profile__item__card__avatar">
                         <span class="profile__item__card__span">
                             <img src="./public/img/dat-avatar.jpg" alt="./public/img/dat-avatar.jpg" class="profile__item__card__img">

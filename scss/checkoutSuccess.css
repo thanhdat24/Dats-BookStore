@@ -219,6 +219,8 @@ p.error {
   margin-right: 14px;
   margin-left: 17px;
   color: #ff4842 !important;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .back__home {

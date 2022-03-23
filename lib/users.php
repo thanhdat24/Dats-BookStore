@@ -68,6 +68,7 @@ function logout()
     unset($_SESSION['isLogin']);
     unset($_SESSION['userLogin']);
     unset($_SESSION['carts']);
+    unset($_SESSION['customer']);
     redirect("?page=home");
 }
 
@@ -98,6 +99,3 @@ function checkUserExits($Email)
         return false;
     }
 }
-
-
-

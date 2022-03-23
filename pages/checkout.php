@@ -1,13 +1,46 @@
    <?php
     get_header();
     ?>
+   <?php
+    if (isset($_SESSION['userLogin'])) {
+        $item = userDetail($_SESSION['userLogin']['email']);
+        $_SESSION['customer'] = $item;
+        // show_array($_SESSION['customer']);
+    }
+    global   $MSKH, $phone, $DiaChi, $TongTien;
+    if (!empty(($_SESSION['carts']['buy']))) {
+        foreach ($_SESSION['carts']['buy'] as $key => $book) {
+            $SoLuong = $book['SoLuong'];
+            $Gia = $book['Gia'];
+            $TongTien += $book['SoLuong'] * $book['Gia'];
+        }
+    }
+    // show_array($_SESSION['carts']['buy']);
+
+    if (isset($_POST['btn-order'])) {
+        $MSKH = $_POST['MSKH'];
+        $phone = $_POST['phone'];
+        $DiaChi = $_POST['DiaChi'];
+        $sql_dathang = "INSERT INTO dathang(MSKH,SoDienThoai,DiaChi,TongTien) VALUES ('$MSKH','$phone','$DiaChi','$TongTien')";
+        $result_dathang = mysqli_query($con, $sql_dathang);
+        if ($result_dathang) {
+            $SoDonDH = mysqli_insert_id($con);
+            foreach ($_SESSION['carts']['buy'] as $value) {
+                mysqli_query($con, "INSERT INTO chitietdathang(SoDonDH,MSHH, SoLuong,GiaDatHang) VALUES ('$SoDonDH','$value[MSHH]','$value[SoLuong]','$value[Gia]')");
+            }
+            redirect("?page=checkoutSuccess");
+        } else {
+            echo "Đặt hàng thất bại!";
+        }
+    }
+    ?>
    <div class="main-content-checkout p-40">
        <div class="container">
            <h3 class="title">Thanh toán</h3>
            <?php
             if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
             ?>
-               <form action="?page=checkoutSuccess" method="post">
+               <form id="checkout" action="" method="post">
                    <div class="cart-detail">
                        <ul class="cart-detail__book">
                            <?php foreach ($_SESSION['carts']['buy'] as $key => $book) { ?>
@@ -27,17 +60,18 @@
                             }
                             ?>
                        </ul>
-                       <div class="cart-detail__user-info">
-                           <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
-                           <div class="cart-detail__user-info__detail">
-                               <input hidden type="text" name="MSKH" value="<?= $_SESSION['userDetail']['MSKH'] ?>">
-                               <p><b>Tên người nhận:</b></p>
-                               <input type="text" id="priceOfBook<?= $key ?>" value="" placeholder="Nhập tên của bạn...">
-                               <p><b>Số điện thoại:</b></p>
-                               <input type="text" id="phoneOfBook<?= $key ?>" value="" placeholder="Nhập số điện thoại của bạn...">
-                               <div class="cart-detail__user-info__detail__address">
-                                   <b>Địa chỉ nhận hàng:</b>
-                                   <div> <textarea rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></di>
+                       <?php if (isset($_SESSION['isLogin'])) { ?>
+                           <div class="cart-detail__user-info">
+                               <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
+                               <div class="cart-detail__user-info__detail">
+                                   <input hidden type="text" name="MSKH" value="<?= $_SESSION['customer']['MSKH'] ?>">
+                                   <p><b>Tên người nhận:</b></p>
+                                   <input type="text" id="HoTenKH" name="HoTenKH" value="<?= $_SESSION['customer']['HoTenKH'] ?>" placeholder=" Nhập tên của bạn...">
+                                   <p><b>Số điện thoại:</b></p>
+                                   <input name="phone" type="text" id="phone" value="<?= $_SESSION['customer']['SoDienThoai'] ?>" placeholder="Nhập số điện thoại của bạn...">
+                                   <div class="cart-detail__user-info__detail__address">
+                                       <b>Địa chỉ nhận hàng:</b>
+                                       <div> <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></div>
                                    </div>
 
                                    <div class="cart-detail__user-info__detail__total">
@@ -45,53 +79,129 @@
                                        <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                    </div>
                                    <div class="cart-detail__user-info__detail__total">
-                                       <button class="btn btn--primary">Đặt mua</button>
+                                       <button class="btn btn--primary" name="btn-order">Đặt mua</button>
                                    </div>
                                </div>
                            </div>
-                       </div>
-                   </div>
-               </form>
-           <?php
-            } else {
-            ?>
-               <form action="" method="post">
-                   <div class="cart-detail">
-                       <ul class="cart-detail__book">
-                           <p>Bạn chưa chọn quyển sách nào!</p>
-                       </ul>
-                       <div class="cart-detail__user-info">
-                           <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
-                           <div class="cart-detail__user-info__detail">
-                               <input hidden type="text" name="MSKH" value="<?= $_SESSION['userDetail']['MSKH'] ?>">
-                               <p><b>Tên người nhận:</b></p>
-                               <input type="text" id="priceOfBook<?= $key ?>" value="" placeholder="Nhập tên của bạn...">
-                               <p><b>Số điện thoại:</b></p>
-                               <input type="text" id="phoneOfBook<?= $key ?>" value="" placeholder="Nhập số điện thoại của bạn...">
-                               <div class="cart-detail__user-info__detail__address">
-                                   <b>Địa chỉ nhận hàng:</b>
-                                   <div> <textarea rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></di>
-                                   </div>
+                       <?php } else { ?>
+                           <div class="cart-detail__user-info">
+                               <div class="cart-detail__user-info__title">
+                                   Thông tin giỏ hàng
+                               </div>
+                               <p class="cart-detail__user-info__text">Bạn chưa đăng nhập, hãy <a href="?page=login">đăng nhập</a> để đặt hàng!</p>
+                           </div>
 
-                                   <div class="cart-detail__user-info__detail__total">
-                                       <b>Thành tiền:</b>
-                                       <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
-                                   </div>
-                                   <div class="cart-detail__user-info__detail__total disabled">
-                                       <button class="btn btn--primary">Đặt mua</button>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
+                       <?php } ?>
                    </div>
-               </form>
-           <?php
-            }
-            ?>
        </div>
+       </form>
+   <?php
+            } else {
+    ?>
+       <form action="" method="post">
+           <div class="cart-detail">
+               <div class="cart-detail__book__empty">
+                   <img class="empty" src="./public/img/illustration_empty_cart.svg" alt="empty content">
+                   <h3>Giỏ hàng rỗng</h3>
+                   <p>Có vẻ như bạn không có quyển sách nào trong giỏ hàng của mình.</p>
+                   <div class="back__home">
+                       <a href="?page=home"><span class="iconify" data-icon="eva:arrow-ios-back-fill" data-width="22" data-height="22"></span>Tiếp tục mua sắm</a>
+                   </div>
+               </div>
+               <?php if (isset($_SESSION['isLogin'])) { ?>
+                   <div class="cart-detail__user-info">
+                       <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
+                       <div class="cart-detail__user-info__detail">
+                           <input hidden type="text" name="MSKH" value="<?= $_SESSION['userDetail']['MSKH'] ?>">
+                           <p><b>Tên người nhận:</b></p>
+                           <input type="text" id="priceOfBook<?= $key ?>" value="" placeholder="Nhập tên của bạn...">
+                           <p><b>Số điện thoại:</b></p>
+                           <input type="text" id="phoneOfBook<?= $key ?>" value="" placeholder="Nhập số điện thoại của bạn...">
+                           <div class="cart-detail__user-info__detail__address">
+                               <b>Địa chỉ nhận hàng:</b>
+                               <div> <textarea rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></di>
+                               </div>
+
+                               <div class="cart-detail__user-info__detail__total">
+                                   <b>Thành tiền:</b>
+                                   <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
+                               </div>
+                               <div class="cart-detail__user-info__detail__total disabled">
+                                   <button class="btn btn--primary">Đặt mua</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               <?php } else {
+                ?>
+                   <div class="cart-detail__user-info">
+                       <div class="cart-detail__user-info__title">
+                           Thông tin giỏ hàng
+                       </div>
+                       <p class="cart-detail__user-info__text">Bạn chưa đăng nhập, hãy <a href="?page=login">đăng nhập</a> để đặt hàng!</p>
+                   </div>
+               <?php } ?>
+
+           </div>
+       </form>
+
+
+   <?php
+            }
+    ?>
+   </div>
 
    </div>
 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script type="text/javascript" src="./public/js/jquery.validate.js"></script>
+
+   <script type="text/javascript">
+       $.validator.setDefaults({
+           submitHandler: function() {
+               form.submit();
+           }
+       })
+       $(document).ready(function() {
+           $("#checkout").validate({
+               rules: {
+                   HoTenKH: "required",
+                   phone: {
+                       required: true,
+                       minlength: 10,
+                       maxlength: 10,
+                   },
+                   DiaChi: "required",
+               },
+               messages: {
+                   HoTenKH: "*Vui lòng nhập họ tên!",
+                   phone: {
+                       required: "*Vui lòng nhập số điện thoại!",
+                       minlength: "*Số điện thoại phải gồm 10 số!",
+                       maxlength: "*Số điện thoại phải gồm 10 số!",
+                   },
+                   DiaChi: "*Vui lòng nhập địa chỉ giao hàng!"
+               },
+               errorElement: "div",
+               errorPlacement: function(error, element) {
+                   error.addClass("invalid-feedback");
+                   $(".invalid-feedback").css("font-style", "italic")
+                   if (element.prop("type") === "checkbox") {
+                       error.insertAfter(element.siblings("label"))
+                   } else {
+                       error.insertAfter(element)
+                   }
+               },
+               highlight: function(element, errorClass, validClass) {
+                   $(element).addClass("is-invalid").removeClass("is-valid")
+
+               },
+               unhighlight: function(element, errorClass, validClass) {
+                   $(element).addClass("is-valid").removeClass("is-invalid")
+               },
+           })
+       })
+   </script>
    <?php
     get_footer();
     ?>
