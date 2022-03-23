@@ -33,6 +33,8 @@ if (isset($_SESSION['userLogin'])) {
     <link rel="stylesheet" href="./scss/details.css">
     <link rel="stylesheet" href="./scss/cart.css">
     <link rel="stylesheet" href="./scss/checkout.css">
+    <link rel="stylesheet" href="./scss/profile.css">
+    <link rel="stylesheet" href="./scss/checkoutSuccess.css">
 
 
     <link rel="stylesheet" href="./scss/index.css">
@@ -92,7 +94,7 @@ if (isset($_SESSION['userLogin'])) {
                         <?php } ?>
                     </div>
                     <?php if (isLogin()) : ?>
-                        <a class=" header__user__username" href="/profile">
+                        <a class=" header__user__username" href="?page=profile">
                             <span><?= $_SESSION['userDetail']['HoTenKH'] ?>
                             </span>
                             <div class="header__user__avatar">

@@ -221,6 +221,44 @@ p.error {
   color: #ff4842 !important;
 }
 
+.back__home {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  transform: translateY(46px);
+}
+
+.back__home a {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.back__home a:hover {
+  background-color: rgba(145, 158, 171, 0.08);
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #000;
+}
+
+.disabled a {
+  color: rgba(145, 158, 171, 0.8) !important;
+  box-shadow: none !important;
+  background-color: rgba(145, 158, 171, 0.24) !important;
+  pointer-events: none;
+  cursor: default;
+}
+
+.disabled button {
+  color: rgba(145, 158, 171, 0.8) !important;
+  box-shadow: none !important;
+  background-color: rgba(145, 158, 171, 0.24) !important;
+  pointer-events: none;
+  cursor: default;
+}
+
 .banner {
   position: relative;
 }
@@ -2009,6 +2047,54 @@ ul.side-sticky-icons li .before {
   color: #ba933e;
   font-weight: 700;
   font-size: 14px;
+}
+
+.trending .container .trending-product nav {
+  display: flex;
+  justify-content: center;
+}
+
+.trending .container .trending-product nav #navCategory {
+  z-index: 999;
+  margin-bottom: 36px;
+  color: #4b4b4b;
+  font-family: "Nunito", sans-serif;
+  width: 70%;
+  font-weight: bold;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 15px;
+  justify-items: center;
+}
+
+.trending .container .trending-product nav #navCategory li {
+  cursor: pointer;
+}
+
+.trending .container .trending-product nav #navCategory .nav__item {
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.trending .container .trending-product nav #navCategory .nav__item:hover {
+  color: #ec455a;
+}
+
+.trending .container .trending-product nav #navCategory .nav__item--active {
+  color: #ec455a;
+  position: relative;
+  transition: all 200ms ease-in-out;
+  font-size: 18px;
+}
+
+.trending .container .trending-product nav #navCategory .nav__item--active::before {
+  display: inline;
+  content: "\2022";
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transition: transform 300ms ease-in-out;
 }
 
 .trending .container .trending-product .trending-product__list .listProduct {

@@ -277,6 +277,47 @@
       }
     }
     .trending-product {
+      nav {
+        display: flex;
+        justify-content: center;
+        #navCategory {
+          z-index: 999;
+          margin-bottom: 36px;
+          color: #4b4b4b;
+          font-family: "Nunito", sans-serif;
+          width: 70%;
+          font-weight: bold;
+          font-size: 16px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-gap: 20px 15px;
+          justify-items: center;
+          li {
+            cursor: pointer;
+          }
+          .nav__item {
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+            &:hover {
+              color: #ec455a;
+            }
+          }
+          .nav__item--active {
+            color: #ec455a;
+            position: relative;
+            transition: all 200ms ease-in-out;
+            font-size: 18px;
+            &::before {
+              display: inline;
+              content: "\2022";
+              position: absolute;
+              top: 90%;
+              left: 50%;
+              transition: transform 300ms ease-in-out;
+            }
+          }
+        }
+      }
       .trending-product__list {
         .listProduct {
           text-align: center;

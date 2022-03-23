@@ -372,13 +372,7 @@ section.top {
             width: 100%;
           }
         }
-        .disabled a {
-          color: rgba(145, 158, 171, 0.8) !important;
-          box-shadow: none !important;
-          background-color: rgba(145, 158, 171, 0.24) !important;
-          pointer-events: none;
-          cursor: default;
-        }
+
       }
       &__book__empty {
         width: 96%;
@@ -405,25 +399,6 @@ section.top {
           font-size: 16px;
           font-weight: 400;
           color: rgb(99, 115, 129);
-        }
-        .back__home {
-          position: absolute;
-          bottom: 0;
-          left: 0px;
-          transform: translateY(46px);
-          a {
-            display: flex;
-            align-items: center;
-            padding: 6px 8px;
-            color: #000 !important;
-            font-weight: 600;
-            &:hover {
-              background-color: rgba(145, 158, 171, 0.08);
-              border-radius: 8px;
-              padding: 6px 8px;
-              color: #000;
-            }
-          }
         }
       }
       .totals__empty {

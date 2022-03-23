@@ -7,7 +7,7 @@
            <?php
             if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
             ?>
-               <form action="" method="post">
+               <form action="?page=checkoutSuccess" method="post">
                    <div class="cart-detail">
                        <ul class="cart-detail__book">
                            <?php foreach ($_SESSION['carts']['buy'] as $key => $book) { ?>
@@ -77,7 +77,7 @@
                                        <b>Thành tiền:</b>
                                        <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                    </div>
-                                   <div class="cart-detail__user-info__detail__total">
+                                   <div class="cart-detail__user-info__detail__total disabled">
                                        <button class="btn btn--primary">Đặt mua</button>
                                    </div>
                                </div>

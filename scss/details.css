@@ -221,6 +221,44 @@ p.error {
   color: #ff4842 !important;
 }
 
+.back__home {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  transform: translateY(46px);
+}
+
+.back__home a {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.back__home a:hover {
+  background-color: rgba(145, 158, 171, 0.08);
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #000;
+}
+
+.disabled a {
+  color: rgba(145, 158, 171, 0.8) !important;
+  box-shadow: none !important;
+  background-color: rgba(145, 158, 171, 0.24) !important;
+  pointer-events: none;
+  cursor: default;
+}
+
+.disabled button {
+  color: rgba(145, 158, 171, 0.8) !important;
+  box-shadow: none !important;
+  background-color: rgba(145, 158, 171, 0.24) !important;
+  pointer-events: none;
+  cursor: default;
+}
+
 .banner {
   position: relative;
 }

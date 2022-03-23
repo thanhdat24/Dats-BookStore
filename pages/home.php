@@ -2,11 +2,33 @@
     get_header();
     ?>
   <?php
-    $sql_product = mysqli_query($con, "SELECT *FROM hanghoa");
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    } else {
+        $id = "";
+    }
+    $sql_product = mysqli_query($con, "SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
     $list_product = array();
     if (mysqli_num_rows($sql_product) > 0) {
         while ($row = mysqli_fetch_assoc($sql_product)) {
             $list_product[] = $row;
+        }
+    }
+
+    $sql_product_all = mysqli_query($con, "SELECT *FROM hanghoa");
+    $list_product_all = array();
+    if (mysqli_num_rows($sql_product_all) > 0) {
+        while ($row = mysqli_fetch_assoc($sql_product_all)) {
+            $list_product_all[] = $row;
+        }
+    }
+
+
+    $sql_product_type = mysqli_query($con, "SELECT *FROM loaihanghoa");
+    $list_product_type = array();
+    if (mysqli_num_rows($sql_product_type) > 0) {
+        while ($row = mysqli_fetch_assoc($sql_product_type)) {
+            $list_product_type[] = $row;
         }
     }
     // show_array($list_popular)
@@ -47,10 +69,21 @@
               <div class="title">
                   <h3><span>Tất cả sách</span></h3>
               </div>
-              <?php if (!empty($list_product)) {
+              <nav>
+                  <ul id="navCategory" class="nav">
+                      <?php foreach ($list_product_type as $key => $category) : ?>
+                          <?php if ($key + 1 <= 13) : ?>
+                              <a onclick="addCategory(this)" href="?page=home&id=<?= $category['MaLoaiHang'] ?>" class="nav__item" value="<?= $category['MaLoaiHang'] ?>"><?= $category['TenLoaiHang'] ?></a>
+                          <?php endif; ?>
+                          <?php if ($key + 1 == 14) : ?>
+                              <li class="nav__item">...</li>
+                          <?php endif; ?>
+                      <?php endforeach; ?>
+              </nav>
+              <?php if (!empty($list_product) && isset($_GET['id'])) {
                 ?>
                   <div class="trending-product__list">
-                      <div class="listProduct row products1" id="products1">
+                      <div class="listProduct row products1" id="category-book">
                           <?php foreach ($list_product as $item) { ?>
                               <div class="col-6 col-md-4 col-xl-3 item">
                                   <div class="product" data-id=<?php echo $item['MSHH'] ?> id="dataID">
@@ -77,7 +110,38 @@
                       </div>
                   </div>
               <?php
-                } ?>
+                } else {
+                ?>
+                  <div class="trending-product__list">
+                      <div class="listProduct row products1" id="category-book">
+                          <?php foreach ($list_product_all as $item) { ?>
+                              <div class="col-6 col-md-4 col-xl-3 item">
+                                  <div class="product" data-id=<?php echo $item['MSHH'] ?> id="dataID">
+                                      <div class="img">
+                                          <a href="?page=detail&id=<?php echo $item['MSHH'] ?>">
+                                              <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
+                                          </a>
+                                          <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
+                                              <button class="btn btn--primary a-center d-flex addCartItem">
+                                                  <i class="bi bi-handbag"></i> Thêm vào giỏ
+                                              </button>
+                                          </a>
+                                      </div>
+                                      <div class="content">
+                                          <h4><?php echo $item['TenHH'] ?></h4>
+                                          <div class="price">
+                                              <?php echo currency_format($item['Gia']) ?>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          <?php } ?>
+
+                      </div>
+                  </div>
+              <?php
+                }
+                ?>
 
           </div>
 
