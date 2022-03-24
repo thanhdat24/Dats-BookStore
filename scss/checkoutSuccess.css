@@ -167,10 +167,6 @@ p {
   margin: 0 auto;
 }
 
-.p-40 {
-  padding: 40px 0;
-}
-
 body,
 html {
   scroll-behavior: smooth;

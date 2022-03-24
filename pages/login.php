@@ -22,10 +22,8 @@ if (isset($_POST['btn-login'])) {
     if (empty($error)) {
         if (checkLogin($email, $password)) {
             $_SESSION['isLogin'] = true;
-            $_SESSION['userLogin'] = array(
-                'email' => $email,
-            );
-            // $_SESSION['userLogin'] = $email;
+            $item = userDetail($email);
+            $_SESSION['userLogin'] = $item;
             redirect();
         } else {
             $error['account'] = 'Tên đăng nhập hoặc mật khẩu không đúng';

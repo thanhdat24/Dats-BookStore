@@ -79,4 +79,68 @@
   &__info {
     margin-top: 70px;
   }
+  &__order {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 5px rgba(44, 44, 44, 0.295);
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 300ms ease-out;
+      margin-top: 10px;
+      h6 {
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(194, 194, 194, 0.411);
+      }
+      &__book {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        &:hover {
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+          border-radius: 15px;
+        }
+        img {
+          width: 80px;
+          height: 120px;
+
+          margin-right: 10px;
+
+          border-radius: 15px;
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.158);
+          object-fit: cover;
+        }
+        .profile__order__item__info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          &__title {
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* number of lines to show */
+            -webkit-box-orient: vertical;
+          }
+          &__price {
+            color: #ec455a;
+            font-weight: bold;
+          }
+        }
+      }
+      &__state {
+        margin-top: 10px;
+        line-height: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .profile__order__item__info__price {
+          color: #ec455a;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

@@ -1,11 +1,11 @@
 <?php
-if (isset($_SESSION['userLogin'])) {
-    $item = userDetail($_SESSION['userLogin']['email']);
+// if (isset($_SESSION['userLogin'])) {
+//     $item = userDetail($_SESSION['userLogin']['email']);
 
-    $_SESSION['userDetail'] = $item;
+//     $_SESSION['userDetail'] = $item;
 
-    // show_array($_SESSION['userDetail']);
-}
+//     // show_array($_SESSION['userDetail']);
+// }
 
 ?>
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ if (isset($_SESSION['userLogin'])) {
                     </div>
                     <?php if (isLogin()) : ?>
                         <a class=" header__user__username" href="?page=profile">
-                            <span><?= $_SESSION['userDetail']['HoTenKH'] ?>
+                            <span><?= $_SESSION['userLogin']['HoTenKH'] ?>
                             </span>
                             <div class="header__user__avatar">
                                 <img src="./public/img/dat-avatar.jpg" alt="User Avatar">

@@ -2,11 +2,11 @@
     get_header();
     ?>
    <?php
-    if (isset($_SESSION['userLogin'])) {
-        $item = userDetail($_SESSION['userLogin']['email']);
-        $_SESSION['customer'] = $item;
-        // show_array($_SESSION['customer']);
-    }
+    // if (isset($_SESSION['userLogin'])) {
+    //     $item = userDetail($_SESSION['userLogin']['email']);
+    //     $_SESSION['userLogin'] = $item;
+    //     // show_array($_SESSION['userLogin']);
+    // }
     global   $MSKH, $phone, $DiaChi, $TongTien;
     if (!empty(($_SESSION['carts']['buy']))) {
         foreach ($_SESSION['carts']['buy'] as $key => $book) {
@@ -34,7 +34,7 @@
         }
     }
     ?>
-   <div class="main-content-checkout p-40">
+   <div class="main-content-checkout">
        <div class="container">
            <h3 class="title">Thanh toán</h3>
            <?php
@@ -64,11 +64,11 @@
                            <div class="cart-detail__user-info">
                                <div class="cart-detail__user-info__title">Thông tin nhận hàng</div>
                                <div class="cart-detail__user-info__detail">
-                                   <input hidden type="text" name="MSKH" value="<?= $_SESSION['customer']['MSKH'] ?>">
+                                   <input hidden type="text" name="MSKH" value="<?= $_SESSION['userLogin']['MSKH'] ?>">
                                    <p><b>Tên người nhận:</b></p>
-                                   <input type="text" id="HoTenKH" name="HoTenKH" value="<?= $_SESSION['customer']['HoTenKH'] ?>" placeholder=" Nhập tên của bạn...">
+                                   <input type="text" id="HoTenKH" name="HoTenKH" value="<?= $_SESSION['userLogin']['HoTenKH'] ?>" placeholder=" Nhập tên của bạn...">
                                    <p><b>Số điện thoại:</b></p>
-                                   <input name="phone" type="text" id="phone" value="<?= $_SESSION['customer']['SoDienThoai'] ?>" placeholder="Nhập số điện thoại của bạn...">
+                                   <input name="phone" type="text" id="phone" value="<?= $_SESSION['userLogin']['SoDienThoai'] ?>" placeholder="Nhập số điện thoại của bạn...">
                                    <div class="cart-detail__user-info__detail__address">
                                        <b>Địa chỉ nhận hàng:</b>
                                        <div> <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></div>
