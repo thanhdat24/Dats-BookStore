@@ -1,13 +1,3 @@
-<?php
-// if (isset($_SESSION['userLogin'])) {
-//     $item = userDetail($_SESSION['userLogin']['email']);
-
-//     $_SESSION['userDetail'] = $item;
-
-//     // show_array($_SESSION['userDetail']);
-// }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dat's Bookstore</title>
-    <link rel="icon" href="https://blueskytechco.com/rubix/wp-content/uploads/2021/01/favi.png" sizes="16x16">
-    <link rel="icon" href="https://blueskytechco.com/rubix/wp-content/uploads/2021/01/favi.png" sizes="192x192">
+    <link rel="icon" href="./public/img/icon.svg" sizes="16x16">
+    <link rel="icon" href="./public/img/icon.svg" sizes="192x192">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="./owlcarousel/assets/owl.theme.default.min.css">

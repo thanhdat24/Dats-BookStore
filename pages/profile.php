@@ -6,7 +6,7 @@
         // $item = userDetail($_SESSION['userLogin']['email']);
         // $orderDetail = get_all_order($_SESSION['userLogin']['email']);
         $email = $_SESSION['userLogin']['Email'];
-        $sql = "SELECT d.SoDonDH, h.TenHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC LIMIT 5";
+        $sql = "SELECT d.SoDonDH, h.TenHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
         $query = mysqli_query($con, $sql);
 
@@ -46,6 +46,7 @@
             while ($order = mysqli_fetch_array($query)) {
             ?>
                 <div class="profile__order__item">
+                 
                     <h6>Đơn hàng #<span style="color:blue"><?= $order['SoDonDH'] ?></span></h6>
                     <ul>
                         <li class="profile__order__item__book">
@@ -60,7 +61,6 @@
                             </div>
                         </li>
                     </ul>
-
                     <div class="profile__order__item__state">
                         <b>Tổng tiền: <span class="profile__order__item__info__price"><?= currency_format($order['TongTien']) ?></span>
                         </b>

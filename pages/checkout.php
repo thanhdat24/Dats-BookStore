@@ -7,7 +7,7 @@
     //     $_SESSION['userLogin'] = $item;
     //     // show_array($_SESSION['userLogin']);
     // }
-    global   $MSKH, $phone, $DiaChi, $TongTien;
+    global   $MSKH, $DiaChi, $TongTien;
     if (!empty(($_SESSION['carts']['buy']))) {
         foreach ($_SESSION['carts']['buy'] as $key => $book) {
             $SoLuong = $book['SoLuong'];
@@ -19,9 +19,8 @@
 
     if (isset($_POST['btn-order'])) {
         $MSKH = $_POST['MSKH'];
-        $phone = $_POST['phone'];
         $DiaChi = $_POST['DiaChi'];
-        $sql_dathang = "INSERT INTO dathang(MSKH,SoDienThoai,DiaChi,TongTien) VALUES ('$MSKH','$phone','$DiaChi','$TongTien')";
+        $sql_dathang = "INSERT INTO dathang(MSKH,DiaChi,TongTien) VALUES ('$MSKH','$DiaChi','$TongTien')";
         $result_dathang = mysqli_query($con, $sql_dathang);
         if ($result_dathang) {
             $SoDonDH = mysqli_insert_id($con);
@@ -66,9 +65,9 @@
                                <div class="cart-detail__user-info__detail">
                                    <input hidden type="text" name="MSKH" value="<?= $_SESSION['userLogin']['MSKH'] ?>">
                                    <p><b>Tên người nhận:</b></p>
-                                   <input type="text" id="HoTenKH" name="HoTenKH" value="<?= $_SESSION['userLogin']['HoTenKH'] ?>" placeholder=" Nhập tên của bạn...">
+                                   <p class="ml-3"><?= $_SESSION['userLogin']['HoTenKH'] ?></p>
                                    <p><b>Số điện thoại:</b></p>
-                                   <input name="phone" type="text" id="phone" value="<?= $_SESSION['userLogin']['SoDienThoai'] ?>" placeholder="Nhập số điện thoại của bạn...">
+                                   <p class="ml-3"><?= $_SESSION['userLogin']['SoDienThoai'] ?></p>
                                    <div class="cart-detail__user-info__detail__address">
                                        <b>Địa chỉ nhận hàng:</b>
                                        <div> <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></div>
@@ -127,7 +126,7 @@
                                    <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                </div>
                                <div class="cart-detail__user-info__detail__total disabled">
-                                   <button class="btn btn--primary">Đặt mua</button>
+                                   <button class="btn btn--primary" name="btn-order">Đặt mua</button>
                                </div>
                            </div>
                        </div>
@@ -144,8 +143,6 @@
 
            </div>
        </form>
-
-
    <?php
             }
     ?>
@@ -165,21 +162,9 @@
        $(document).ready(function() {
            $("#checkout").validate({
                rules: {
-                   HoTenKH: "required",
-                   phone: {
-                       required: true,
-                       minlength: 10,
-                       maxlength: 10,
-                   },
                    DiaChi: "required",
                },
                messages: {
-                   HoTenKH: "*Vui lòng nhập họ tên!",
-                   phone: {
-                       required: "*Vui lòng nhập số điện thoại!",
-                       minlength: "*Số điện thoại phải gồm 10 số!",
-                       maxlength: "*Số điện thoại phải gồm 10 số!",
-                   },
                    DiaChi: "*Vui lòng nhập địa chỉ giao hàng!"
                },
                errorElement: "div",
