@@ -26,6 +26,10 @@
     <link rel="stylesheet" href="./scss/profile.css">
     <link rel="stylesheet" href="./scss/checkoutSuccess.css">
 
+    <!-- include the style -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
     <link rel="stylesheet" href="./scss/index.css">
 
@@ -48,7 +52,8 @@
 
     <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
 
-
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
 </head>
 

@@ -9,6 +9,24 @@
         $sql = "SELECT d.SoDonDH, h.TenHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
         $query = mysqli_query($con, $sql);
+
+        $_SESSION['userLogin'] = userDetail($email);
+    }
+
+    if (isset($_POST['btn_update'])) {
+
+        $updateInfo = "CALL edit_kh('" . $_POST["MSKH"] . "',  '" . $_POST["HoTenKH"] . "' ,'" . $_POST["DiaChi"] . "', '" . $_POST["SoDienThoai"] . "' )";
+        $result = mysqli_query($con, $updateInfo);
+
+        // if ($result > 0) {
+        //     $_SESSION['alert']['success'] = true;
+        //     $_SESSION['alert']['messages'] = "Cập nhật khách hàng thành công";
+        // } else {
+        //     $_SESSION['alert']['success'] = false;
+        //     $_SESSION['alert']['messages'] = $result;
+        // }
+
+        redirect("?page=profile");
     }
 
     ?>
@@ -25,16 +43,18 @@
                 </div>
             </div>
             <div class="profile__item">
+                <!-- <?php require "./pages/shared/noti.php" ?> -->
                 <form action="" method="post" class="profile__info">
+                    <input hidden type="text" name="MSKH" value="<?= $_SESSION['userLogin']['MSKH'] ?>">
                     <label for="name">Họ tên: </label>
                     <input type="text" name="HoTenKH" id="name" value="<?= $_SESSION['userLogin']['HoTenKH'] ?>">
                     <label for="email">Email: </label>
-                    <input type="text" name="Email" id="email" value="<?= $_SESSION['userLogin']['Email'] ?>">
+                    <input disabled type="text" name="Email" id="email" value="<?= $_SESSION['userLogin']['Email'] ?>" style="cursor: not-allowed;">
                     <label for="phone">Số điện thoại: </label>
                     <input type="text" name="SoDienThoai" id="phone" value="<?= $_SESSION['userLogin']['SoDienThoai'] ?>">
                     <label for="address">Địa chỉ: </label>
                     <input type="text" name="DiaChi" id="address" value="<?= $_SESSION['userLogin']['DiaChi'] ?>">
-                    <button class="btn btn--primary">Cập nhật thông tin</button>
+                    <button name="btn_update" class="btn btn--primary">Cập nhật thông tin</button>
                 </form>
             </div>
         </div>
@@ -44,7 +64,7 @@
             while ($order = mysqli_fetch_array($query)) {
             ?>
                 <div class="profile__order__item">
-                 
+
                     <h6>Đơn hàng #<span style="color:blue"><?= $order['SoDonDH'] ?></span></h6>
                     <ul>
                         <li class="profile__order__item__book">
