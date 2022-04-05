@@ -27,7 +27,7 @@
             foreach ($_SESSION['carts']['buy'] as $value) {
                 mysqli_query($con, "INSERT INTO chitietdathang(SoDonDH,MSHH, SoLuong,GiaDatHang) VALUES ('$SoDonDH','$value[MSHH]','$value[SoLuong]','$value[Gia]')");
             }
-            redirect("?page=checkoutSuccess");
+            redirect("?page=checkout&action=success");
         } else {
             echo "Đặt hàng thất bại!";
         }

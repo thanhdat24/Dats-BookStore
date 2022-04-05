@@ -40,7 +40,6 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./owlcarousel/owl.carousel.min.js"></script>
 
     <script src="public/js/details.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
@@ -55,7 +54,7 @@
 
 <body>
     <header>
-        <div class="main-header">
+        <div class="main-header pt-3">
             <div class="container d-flex a-center j-between header">
                 <div class="bar-mobile">
                     <div class="bar">
@@ -63,8 +62,7 @@
                     </div>
                 </div>
                 <a href="?page=home" class="header__logo">
-                    <lord-icon src="https://cdn.lordicon.com/wxnxiano.json" trigger="hover" colors="primary:#ee6d66,secondary:#ec455a" style="width:80px;height:80px">
-                    </lord-icon>
+                    <img src="./public/img/icon.svg" alt="logo" style="width:64px;height:64px">
                     <h1 class="header__name">Dat's <br> Bookstore</h1>
                 </a>
                 <form class="header__search" action="" method="post">

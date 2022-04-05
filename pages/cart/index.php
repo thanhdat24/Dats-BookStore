@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
         $_SESSION['SoLuongGioHang'] = 0;
         if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
         ?>
-            <form action="?page=update" method="POST">
+            <form action="?page=cart&action=update" method="POST">
                 <div class="products-cart">
                     <div class="products-cart__book">
                         <!-- <h2 class="heading-cart" style="color:#ec455a; font-weight:bold">
@@ -94,7 +94,7 @@ if (isset($_GET['id'])) {
                                                 ?>
                                         </td>
                                         <td>
-                                            <a href="?page=delete&id=<?php echo $value['MSHH'] ?>">
+                                            <a href="?page=cart&action=delete&id=<?php echo $value['MSHH'] ?>">
                                                 <div class="trash">
                                                     <span class="iconify" data-icon="eva:trash-2-outline" style="color: #637381;" data-width="22" data-height="22"></span>
                                                 </div>

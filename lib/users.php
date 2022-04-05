@@ -98,3 +98,4 @@ function checkUserExits($Email)
         return false;
     }
 }
+

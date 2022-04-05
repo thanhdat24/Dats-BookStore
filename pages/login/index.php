@@ -26,7 +26,7 @@ if (isset($_POST['btn-login'])) {
             $_SESSION['userLogin'] = $item;
             redirect();
         } else {
-            $error['account'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
+            $error['errorAccount'] = 'Tên đăng nhập hoặc mật khẩu không đúng';
         }
     }
 }
@@ -49,9 +49,9 @@ if (isset($_POST['btn-login'])) {
     <div class="login__background">
         <form class="login__form" action="" method="POST">
             <h1 class="login__form__title">Đăng nhập <br> Dat's Bookstore</h1>
-            <?php if (!empty($error['account'])) { ?>
+            <?php if (!empty($error['errorAccount'])) { ?>
                 <div class="errorMessage">
-                    <p class="error"><?php echo $error['account'] ?></p>
+                    <p class="error"><?php echo $error['errorAccount'] ?></p>
                 </div>
             <?php } ?>
 

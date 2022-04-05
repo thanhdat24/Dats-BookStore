@@ -61,7 +61,7 @@
       <section class="popular-book">
           <?php foreach ($list_popular as $key => $popularBook) : ?>
               <div class="popular-book__item">
-                  <a href="?page=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-book__item__image" src="./public/uploads/book-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
+                  <a href="?page=home&action=detail&id=<?php echo $popularBook['MSHH'] ?>"> <img class="popular-book__item__image" src="./public/uploads/book-images/<?= $popularBook['Hinh1'] ?>" alt="Best Seller Book"></a>
                   <div class="popular-book__item__info">
                       <div class="popular-book__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
                       <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
@@ -103,7 +103,7 @@
                               <div class="col-6 col-md-4 col-xl-3 item">
                                   <div class="product" data-id=<?php echo $item['MSHH'] ?> id="dataID">
                                       <div class="img">
-                                          <a href="?page=detail&id=<?php echo $item['MSHH'] ?>">
+                                          <a href="?page=home&action=detail&id=<?php echo $item['MSHH'] ?>">
                                               <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
                                           </a>
                                           <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
@@ -133,7 +133,7 @@
                                   <div class="col-6 col-md-4 col-xl-3 item">
                                       <div class="product" data-id=<?php echo $book['MSHH'] ?> id="dataID">
                                           <div class="img">
-                                              <a href="?page=detail&id=<?php echo $book['MSHH'] ?>">
+                                              <a href="?page=home&action=detail&id=<?php echo $book['MSHH'] ?>">
                                                   <img src="./public/uploads/book-images/<?php echo $book['Hinh1'] ?>" alt="">
                                               </a>
                                               <a href="?page=cart&id=<?php echo $book['MSHH'] ?>">
@@ -161,7 +161,7 @@
 
           </div>
           <nav aria-label="Page navigation example ">
-              <ul class="pagination justify-content-end">
+              <ul class="pagination justify-content-end mt-4">
 
                   <?php if ($page > 1) : ?>
                       <li class="page-item">

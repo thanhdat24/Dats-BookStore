@@ -9,8 +9,6 @@
         $sql = "SELECT d.SoDonDH, h.TenHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
         $query = mysqli_query($con, $sql);
-
-        // show_array($order_details123);
     }
 
     ?>

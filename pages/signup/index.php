@@ -40,13 +40,15 @@
                 $password = md5($password);
                 $sql = "INSERT INTO khachhang(HoTenKH,DiaChi,SoDienThoai,Email,password) VALUES ('$HoTenKH','$DiaChi','$phone','$Email','$password')";
                 $result = mysqli_query($con, $sql);
+                show_array($result);
+
                 if ($result) {
                     redirect("?page=login");
                 } else {
                     echo "Thất bại";
                 }
             } else {
-                $error['account'] = 'Email đã tồn tại';
+                $error['existAccount'] = 'Email đã tồn tại';
             }
         }
     }
@@ -71,11 +73,11 @@
      <div class="login__background" style="height:100%">
          <form id="signupForm" class="login__form" action="" method="post">
              <h1 class="login__form__title">Đăng ký tài khoản <br> Dat's Bookstore</h1>
-             <?php if (!empty($error['account'])) { ?>
+             <?php if (!empty($error['existAccount'])) : ?>
                  <div class="errorMessage">
-                     <p class="error"><?php echo $error['account'] ?></p>
+                     <p class="error"><?php echo $error['existAccount'] ?></p>
                  </div>
-             <?php } ?>
+             <?php endif; ?>
              <div class="login__form__input">
                  <label for="HoTenKH">Họ tên <span style="color:red; font-weight: normal;">(*)</span></label>
                  <input value="" id="HoTenKH" type="text" name="HoTenKH" placeholder="Nhập họ tên của bạn...">
@@ -121,7 +123,7 @@
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script type="text/javascript" src="./public/js/jquery.validate.js"></script>
-     
+
      <script type="text/javascript">
          $.validator.setDefaults({
              submitHandler: function() {
