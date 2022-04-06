@@ -37,10 +37,8 @@ while ($item = mysqli_fetch_array($sql_detail)) {
                     <div class="book-detail__info__detail">
                         <p class="book-detail__info__detail__title">Mã sách:</p>
                         <p class="book-detail__info__detail__title">Thể loại:</p>
-                        <p class="book-detail__info__detail__title">Kho:</p>
                         <p><?= $item['MSHH'] ?></p>
                         <p><?= $item['TenLoaiHang'] ?></p>
-                        <p><?= $item['SoLuongHang'] ?></p>
                     </div>
                     <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
                         <button class="btn btn--primary book-detail__button">
@@ -62,19 +60,6 @@ while ($item = mysqli_fetch_array($sql_detail)) {
 }
 ?>
 
-<div class="compare-product">
-
-    <div class="compare-product-box">
-
-        <table class="comparelist content">
-
-        </table>
-
-        <div class="close">
-            &times;
-        </div>
-    </div>
-</div>
 <?php
 get_footer();
 ?>

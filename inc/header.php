@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="./owlcarousel/assets/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./scss/style.css">
     <link rel="stylesheet" href="./scss/footer.css">
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
@@ -25,11 +26,6 @@
     <link rel="stylesheet" href="./scss/checkout.css">
     <link rel="stylesheet" href="./scss/profile.css">
     <link rel="stylesheet" href="./scss/checkoutSuccess.css">
-
-    <!-- include the style -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-    <!-- include a theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
     <link rel="stylesheet" href="./scss/index.css">
 
@@ -52,8 +48,6 @@
 
     <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
 
-    <!-- JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
 </head>
 
