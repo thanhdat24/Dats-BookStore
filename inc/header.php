@@ -9,8 +9,6 @@
     <link rel="icon" href="./public/img/icon.svg" sizes="16x16">
     <link rel="icon" href="./public/img/icon.svg" sizes="192x192">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="./owlcarousel/assets/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
@@ -41,7 +39,6 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script src="public/js/details.js" type="text/javascript"></script>
     <script src="public/js/main.js" type="text/javascript"></script>
     <script src="public/js/swiper.js" type="text/javascript"></script>
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>

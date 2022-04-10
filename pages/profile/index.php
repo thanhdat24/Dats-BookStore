@@ -6,17 +6,22 @@
         // $item = userDetail($_SESSION['userLogin']['email']);
         // $orderDetail = get_all_order($_SESSION['userLogin']['email']);
         $email = $_SESSION['userLogin']['Email'];
-        $sql = "SELECT d.SoDonDH, h.TenHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
+        $sql = "SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
         $query = mysqli_query($con, $sql);
 
+        $chitietdathang  = db_fetch_array($sql);
+        $dathang  = db_fetch_array("SELECT *FROM dathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ");
+        // show_array($row);
+        // show_array(db_fetch_array($sql));
+        // = mysqli_fetch_array($query);
         $_SESSION['userLogin'] = userDetail($email);
     }
 
     if (isset($_POST['btn_update'])) {
 
         $updateInfo = "CALL edit_kh('" . $_POST["MSKH"] . "',  '" . $_POST["HoTenKH"] . "' ,'" . $_POST["DiaChi"] . "', '" . $_POST["SoDienThoai"] . "' )";
-        $result = mysqli_query($con, $updateInfo);
+        mysqli_query($con, $updateInfo);
 
         // if ($result > 0) {
         //     $_SESSION['alert']['success'] = true;
@@ -30,6 +35,7 @@
     }
 
     ?>
+
     <div class="container">
         <div class="profile">
             <div class="profile__item">
@@ -61,30 +67,34 @@
         <div class="profile__order">
             <h3>Lịch sử mua hàng</h3>
             <?php
-            while ($order = mysqli_fetch_array($query)) {
+            foreach ($dathang as $key => $item) :
             ?>
                 <div class="profile__order__item">
 
-                    <h6>Đơn hàng #<span style="color:blue"><?= $order['SoDonDH'] ?></span></h6>
+                    <h6>Đơn hàng #<span style="color:blue"><?= $item['SoDonDH'] ?></span></h6>
                     <ul>
-                        <li class="profile__order__item__book">
-                            <a href="" ?><img class="profile__order__item__image" src="./public/uploads/book-images/<?= $order['Hinh1'] ?>" alt="">
-                            </a>
-                            <div class="profile__order__item__info">
-                                <a href="" class="profile__order__item__info__title">
-                                    <?= $order['TenHH'] ?>
-                                </a>
-                                <p class="profile__order__item__info__price"><?= currency_format($order['GiaDatHang']) ?></p>
-                                <p>Số lượng: <?= $order['SoLuong'] ?></p>
-                            </div>
-                        </li>
+                        <?php foreach ($chitietdathang as $key => $order) : ?>
+                            <?php if ($order['SoDonDH'] === $item['SoDonDH']) : ?>
+                                <li class="profile__order__item__book">
+                                    <a href="?page=home&action=detail&id=<?php echo $order['MSHH'] ?>" ?><img class="profile__order__item__image" src="./public/uploads/book-images/<?= $order['Hinh1'] ?>" alt="">
+                                    </a>
+                                    <div class="profile__order__item__info">
+                                        <a href="" class="profile__order__item__info__title">
+                                            <?= $order['TenHH'] ?>
+                                        </a>
+                                        <p class="profile__order__item__info__price"><?= currency_format($order['GiaDatHang']) ?></p>
+                                        <p>Số lượng: <?= $order['SoLuong'] ?></p>
+                                    </div>
+                                </li>
                     </ul>
-                    <div class="profile__order__item__state">
-                        <b>Tổng tiền: <span class="profile__order__item__info__price"><?= currency_format($order['TongTien']) ?></span>
-                        </b>
-                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <div class="profile__order__item__state">
+                <b>Tổng tiền: <span class="profile__order__item__info__price"><?= currency_format($item['TongTien']) ?></span>
+                </b>
+            </div>
                 </div>
-            <?php } ?>
+            <?php endforeach; ?>
         </div>
     </div>
 

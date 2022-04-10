@@ -42,6 +42,20 @@ function db_fetch_row($query_string)
     mysqli_free_result($mysqli_result);
     return $result;
 }
+
+//Lấy một mảng trong database
+function db_fetch_array($query_string)
+{
+    global $con;
+    $result = array();
+    $mysqli_result = db_query($query_string);
+    while ($row = mysqli_fetch_assoc($mysqli_result)) {
+        $result[] = $row;
+    }
+    mysqli_free_result($mysqli_result);
+    return $result;
+}
+
 //Lấy số bản ghi
 function db_num_rows($query_string)
 {

@@ -7,8 +7,8 @@
             Đồ án Công nghệ web - CT275 Nhóm 01
         </div>
         <ul class="footer__info__social">
-            <li><a href="" target="_blank"><img src="./public/img/icon-facebook.svg" alt="Facebook icon"></a></li>
-            <li><a href="" target="_blank"><img src="./public/img/icon-github.svg"></a></li>
+            <li><a href="https://www.facebook.com/datle243/" target="_blank"><img src="./public/img/icon-facebook.svg" alt="Facebook icon"></a></li>
+            <li><a href="https://github.com/thanhdat24" target="_blank"><img src="./public/img/icon-github.svg"></a></li>
             <li><a href="" target="_blank"><img src="./public/img/icon-linked.svg" alt="Linked icon"></a></li>
         </ul>
         <div class="footer__copyright">
