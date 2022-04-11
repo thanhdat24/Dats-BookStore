@@ -1,0 +1,45 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  transition: all 100ms;
+}
+
+body,
+html {
+  font-family: $font-title;
+  font-size: 1rem;
+  line-height: 1;
+  scroll-behavior: smooth;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+  border: none;
+}
+
+a,
+button {
+  text-decoration: none;
+
+  border: none;
+  &:hover {
+    color: none;
+    text-decoration: none;
+  }
+}
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+p {
+  margin-bottom: 0px !important;
+}

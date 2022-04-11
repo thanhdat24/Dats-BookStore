@@ -1,0 +1,40 @@
+.popup-container {
+  height: 100%;
+  outline: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding: 30px 0;
+  .popup-detail {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 1px 1px 80px -8px;
+    // width: 100%;
+    padding: 37px;
+    max-width: 480px;
+    margin: auto;
+    &__cart {
+      text-align: center;
+      position: relative;
+      &__content {
+        text-align: left;
+        margin-top: 20px;
+        p {
+          padding-bottom: 16px;
+          a {
+            font-family:$font-title;
+            font-weight: bold;
+            color: $primary-color;
+            &:hover {
+              color: $primary-color;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

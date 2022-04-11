@@ -20,18 +20,10 @@ if (isset($_POST['key'])) {
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./scss/footer.css">
-
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" hre f="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    <link rel="stylesheet" href="./scss/details.css">
-    <link rel="stylesheet" href="./scss/cart.css">
-    <link rel="stylesheet" href="./scss/checkout.css">
-    <link rel="stylesheet" href="./scss/profile.css">
-    <link rel="stylesheet" href="./scss/checkoutSuccess.css">
-
-    <link rel="stylesheet" href="./scss/index.css">
+    <link rel="stylesheet" href="./public/css/main.css">
 
 
     <!-- font icon -->
@@ -57,12 +49,7 @@ if (isset($_POST['key'])) {
 <body>
     <header>
         <div class="main-header pt-3">
-            <div class="container d-flex a-center j-between header">
-                <div class="bar-mobile">
-                    <div class="bar">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
+            <div class="container header">
                 <a href="?page=home" class="header__logo">
                     <img src="./public/img/icon.svg" alt="logo" style="width:64px;height:64px">
                     <h1 class="header__name">Dat's <br> Bookstore</h1>
@@ -71,7 +58,7 @@ if (isset($_POST['key'])) {
                     <input type="text" name="key" placeholder="Tìm sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
                 </form>
 
-                <div class="header__user d-flex a-center j-between">
+                <div class="header__user d-flex align-items-center justify-content-between">
                     <div class="header__user__cart">
                         <a href="?page=cart"><i class="bi bi-handbag"></i></a>
                         <?php $SoLuongGioHang = get_num_order_cart();

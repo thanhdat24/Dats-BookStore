@@ -1,0 +1,28 @@
+/* Theme Light */
+//Helpers
+@import "./Helpers/variables";
+@import "./Helpers/mixin";
+@import "./Helpers/general";
+
+// Vendors
+
+//Base
+@import "./Base/reset";
+
+//Layouts
+@import "./Layouts/header";
+@import "./Layouts/footer";
+
+//Components
+@import "./Components/button";
+
+//Pages
+@import "./Pages/cart";
+@import "./Pages/index";
+@import "./Pages/checkout";
+@import "./Pages/details";
+@import "./Pages/login";
+@import "./Pages/checkoutSuccess";
+@import "./Pages/profile.scss";
+
+//Theme

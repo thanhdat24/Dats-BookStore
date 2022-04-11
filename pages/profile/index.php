@@ -71,7 +71,7 @@
             ?>
                 <div class="profile__order__item">
 
-                    <h6>Đơn hàng #<span style="color:blue"><?= $item['SoDonDH'] ?></span></h6>
+                    <h6>Đơn hàng #<span style="color:blue; font-weight:600"><?= $item['SoDonDH'] ?></span></h6>
                     <ul>
                         <?php foreach ($chitietdathang as $key => $order) : ?>
                             <?php if ($order['SoDonDH'] === $item['SoDonDH']) : ?>

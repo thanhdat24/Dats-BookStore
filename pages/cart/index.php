@@ -47,14 +47,6 @@ if (isset($_GET['id'])) {
             <form action="?page=cart&action=update" method="POST">
                 <div class="products-cart">
                     <div class="products-cart__book">
-                        <!-- <h2 class="heading-cart" style="color:#ec455a; font-weight:bold">
-                                Giỏ hàng
-                            </h2> -->
-                        <div class="update-Complete">
-
-                            <i class="fas fa-check-circle"></i> Cart updated.
-
-                        </div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -74,10 +66,10 @@ if (isset($_GET['id'])) {
                                     <tr class="product-item-cart" data-id="<?php echo $value['MSHH'] ?>">
                                         <td>
                                             <div class="product-item-cart__name">
-                                                <a href="?page=detail&id=<?php echo $value['MSHH'] ?>">
+                                                <a href="?page=home&action=detail&id=<?php echo $value['MSHH'] ?>">
                                                     <img class="product-item-cart__image" src="./public/uploads/book-images/<?php echo $value['Hinh1'] ?>" alt="">
                                                 </a>
-                                                <a href="?page=detail&id=<?= $value['MSHH'] ?>" class="heading-product">
+                                                <a href="?page=home&action=detail&id=<?= $value['MSHH'] ?>" class="heading-product">
                                                     <?php echo $value['TenHH'] ?>
                                                 </a>
                                             </div>
@@ -86,7 +78,7 @@ if (isset($_GET['id'])) {
                                             <?php echo currency_format($value['Gia']) ?>
                                         </td>
                                         <td>
-                                            <div class="control a-center">
+                                            <div class="control align-items-center">
                                                 <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>" class="InputAmountProduct">
                                             </div>
                                         </td>
@@ -119,23 +111,23 @@ if (isset($_GET['id'])) {
                             Tổng giỏ hàng
                         </div>
 
-                        <div class="sub-totals d-flex a-center j-between">
+                        <div class="sub-totals d-flex align-items-center justify-content-between">
                             <span>Tạm tính</span>
                             <span class="subtotal"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
-                        <div class="discount d-flex a-center j-between">
+                        <div class="discount d-flex align-items-center justify-content-between">
                             <span>Giảm giá</span>
                             <span class="subtotal">-</span>
                         </div>
-                        <div class="shipping d-flex a-center j-between">
+                        <div class="shipping d-flex align-items-center justify-content-between">
                             <span>Shipping</span>
                             <span class="subtotal">Free</span>
                         </div>
-                        <div class="total d-flex a-center j-between">
+                        <div class="total d-flex align-items-center justify-content-between">
                             <span> Tổng cộng</span>
                             <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
-                        <div class="coupon d-flex a-center j-between">
+                        <div class="coupon d-flex align-items-center justify-content-between">
                             <input type="text" placeholder="Nhập mã giảm giá">
                             <div class="coupon-btn">
                                 <span>Áp dụng</span>
@@ -166,23 +158,23 @@ if (isset($_GET['id'])) {
                         Tổng giỏ hàng
                     </div>
 
-                    <div class="sub-totals d-flex a-center j-between">
+                    <div class="sub-totals d-flex align-items-center justify-content-between">
                         <span>Tạm tính</span>
                         <span class="subtotal"><?php echo currency_format(get_total_cart()) ?></span>
                     </div>
-                    <div class="discount d-flex a-center j-between">
+                    <div class="discount d-flex align-items-center justify-content-between">
                         <span>Giảm giá</span>
                         <span class="subtotal">-</span>
                     </div>
-                    <div class="shipping d-flex a-center j-between">
+                    <div class="shipping d-flex align-items-center justify-content-between">
                         <span>Shipping</span>
                         <span class="subtotal">Free</span>
                     </div>
-                    <div class="total d-flex a-center j-between">
+                    <div class="total d-flex align-items-center justify-content-between">
                         <span> Tổng cộng</span>
                         <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                     </div>
-                    <div class="coupon d-flex a-center j-between">
+                    <div class="coupon d-flex align-items-center justify-content-between">
                         <input type="text" placeholder="Nhập mã giảm giá">
                         <div class="coupon-btn">
                             <span>Áp dụng</span>

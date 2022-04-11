@@ -54,7 +54,7 @@
       </div>
   </div>
 
-  <div class="container">
+  <div class="container pb-2">
       <div class="popular-book__title">
           <h3>Sách bán chạy trong tháng</h3>
       </div>
@@ -67,7 +67,7 @@
                       <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
                       <div class="popular-book__item__info__content"><?= $popularBook['GhiChu'] ?></div>
                       <a href="?page=cart&id=<?php echo $popularBook['MSHH'] ?>">
-                          <button class="btn btn--primary a-center d-flex btn--primary--hover">
+                          <button class="btn btn--primary align-items-center d-flex btn--primary--hover">
                               <i class="bi bi-handbag"></i> Thêm vào giỏ
                           </button>
                       </a>
@@ -88,7 +88,7 @@
                   <ul id="navCategory" class="nav">
                       <?php foreach ($list_product_type as $key => $category) : ?>
                           <?php if ($key + 1 <= 13) : ?>
-                              <a onclick="addCategory(this)" href="?page=home&id=<?= $category['MaLoaiHang'] ?>" class="nav__item" value="<?= $category['MaLoaiHang'] ?>"><?= $category['TenLoaiHang'] ?></a>
+                              <a href="?page=home&id=<?= $category['MaLoaiHang'] ?>" class="nav__item" value="<?= $category['MaLoaiHang'] ?>"><?= $category['TenLoaiHang'] ?></a>
                           <?php endif; ?>
                           <?php if ($key + 1 == 14) : ?>
                               <li class="nav__item">...</li>
@@ -97,26 +97,26 @@
               </nav>
               <?php if (!empty($list_product) && isset($_GET['id'])) {
                 ?>
-                  <div class="trending-product__list">
-                      <div class="listProduct row products1" id="category-book">
+                  <div class="category-book">
+                      <div class="listProduct row" id="category-book">
                           <?php foreach ($list_product as $item) { ?>
-                              <div class="col-6 col-md-4 col-xl-3 item">
-                                  <div class="product" data-id=<?php echo $item['MSHH'] ?> id="dataID">
-                                      <div class="img">
+                              <div class="col-6 col-md-4 col-xl-3 ">
+                                  <div class="category-book__item" data-id=<?php echo $item['MSHH'] ?> id="dataID">
+                                      <div class="category-book__item__image">
                                           <a href="?page=home&action=detail&id=<?php echo $item['MSHH'] ?>">
                                               <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
                                           </a>
                                           <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
-                                              <button class="btn btn--primary a-center d-flex addCartItem">
+                                              <button class="btn btn--primary align-items-center d-flex addCartItem">
                                                   <i class="bi bi-handbag"></i> Thêm vào giỏ
                                               </button>
                                           </a>
                                       </div>
-                                      <div class="content">
-                                          <h4><?php echo $item['TenHH'] ?></h4>
-                                          <div class="price">
-                                              <?php echo currency_format($item['Gia']) ?>
-                                          </div>
+                                      <div class="category-book__item__title">
+                                          <?php echo $item['TenHH'] ?>
+                                      </div>
+                                      <div class="category-book__item__price">
+                                          <?php echo currency_format($item['Gia']) ?>
                                       </div>
                                   </div>
                               </div>
@@ -127,26 +127,26 @@
               <?php
                 } else {
                 ?>
-                  <div class="trending-product__list">
-                      <div class="listProduct row products1" id="category-book">
+                  <div class="category-book">
+                      <div class="listProduct row" id="category-book">
                           <?php if (!empty($data)) : foreach ($data as $book) : ?>
-                                  <div class="col-6 col-md-4 col-xl-3 item">
-                                      <div class="product" data-id=<?php echo $book['MSHH'] ?> id="dataID">
-                                          <div class="img">
+                                  <div class="col-6 col-md-4 col-xl-3">
+                                      <div class="category-book__item" data-id=<?php echo $book['MSHH'] ?> id="dataID">
+                                          <div class="category-book__item__image">
                                               <a href="?page=home&action=detail&id=<?php echo $book['MSHH'] ?>">
                                                   <img src="./public/uploads/book-images/<?php echo $book['Hinh1'] ?>" alt="">
                                               </a>
                                               <a href="?page=cart&id=<?php echo $book['MSHH'] ?>">
-                                                  <button class="btn btn--primary a-center d-flex addCartItem">
+                                                  <button class="btn btn--primary align-items-center d-flex addCartItem">
                                                       <i class="bi bi-handbag"></i> Thêm vào giỏ
                                                   </button>
                                               </a>
                                           </div>
-                                          <div class="content">
-                                              <h4><?php echo $book['TenHH'] ?></h4>
-                                              <div class="price">
-                                                  <?php echo currency_format($book['Gia']) ?>
-                                              </div>
+                                          <div class="category-book__item__title">
+                                              <?php echo $book['TenHH'] ?>
+                                          </div>
+                                          <div class="category-book__item__price">
+                                              <?php echo currency_format($book['Gia']) ?>
                                           </div>
                                       </div>
                                   </div>

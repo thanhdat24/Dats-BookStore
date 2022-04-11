@@ -64,8 +64,8 @@
      <title>Document</title>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
-     <link rel="stylesheet" href="./scss/login.css">
-     <link rel="stylesheet" href="./scss/index.css">
+     <link rel="stylesheet" href="./public/css/main.css">
+
  </head>
 
  <body>
