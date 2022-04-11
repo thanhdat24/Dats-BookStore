@@ -1,3 +1,9 @@
+<?php
+if (isset($_POST['key'])) {
+    $_SESSION['key'] =  $_POST['key'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,8 +67,8 @@
                     <img src="./public/img/icon.svg" alt="logo" style="width:64px;height:64px">
                     <h1 class="header__name">Dat's <br> Bookstore</h1>
                 </a>
-                <form class="header__search" action="" method="post">
-                    <input type="text" name="key" placeholder="Tên sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
+                <form class="header__search" action="?page=search" method="post">
+                    <input type="text" name="key" placeholder="Tìm sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
                 </form>
 
                 <div class="header__user d-flex a-center j-between">
