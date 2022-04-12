@@ -44,7 +44,7 @@
     // dem so luong san pham // 40sp
     $rowCount = count($list_product_all);
 
-    // tong so tranh
+    // tong so trang
     $totalPages = ceil($rowCount / $products);
 
     ?>
@@ -67,8 +67,8 @@
                       <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
                       <div class="popular-book__item__info__content"><?= $popularBook['GhiChu'] ?></div>
                       <a href="?page=cart&id=<?php echo $popularBook['MSHH'] ?>">
-                          <button class="btn btn--primary align-items-center d-flex btn--primary--hover">
-                              <i class="bi bi-handbag"></i> Thêm vào giỏ
+                          <button class="btn btn--primary align-items-center d-flex btn--primary--hover ">
+                              <i class="mr-1 bi bi-handbag"></i> Thêm vào giỏ
                           </button>
                       </a>
                   </div>
@@ -161,7 +161,7 @@
 
           </div>
           <nav aria-label="Page navigation example ">
-              <ul class="pagination justify-content-end mt-4">
+              <ul class="pagination justify-content-center mt-4">
 
                   <?php if ($page > 1) : ?>
                       <li class="page-item">

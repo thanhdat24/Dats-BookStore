@@ -44,7 +44,7 @@
                     </div>
                 <?php elseif (isset($data) && is_string($data)) : ?>
                     <div class="d-flex justify-content-center"><img src="./public/img/404.svg" display="block" alt="Not Found" style="display: block; max-width: 400px; width: 100%; margin-bottom: 1.5rem; "></div>
-                    <div class="d-flex justify-content-center"><a href="?page=home" style="padding: 6px 16px; border-radius: 4px; color: #fff; background-color: #ec455a; box-shadow: 0px 4px 16px rgb(43, 52, 69, 0,10); text-align: center">Trang Chủ</a></div>
+                    <div class="d-flex justify-content-center"><a href="?page=home" style="padding: 8px 16px; border-radius: 4px; color: #fff; background-color: #ec455a; box-shadow: 0px 4px 16px rgb(43, 52, 69, 0,10); text-align: center">Trang Chủ</a></div>
                 <?php endif; ?>
             </div>
         </div>

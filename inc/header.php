@@ -55,7 +55,7 @@ if (isset($_POST['key'])) {
                     <h1 class="header__name">Dat's <br> Bookstore</h1>
                 </a>
                 <form class="header__search" action="?page=search" method="post">
-                    <input type="text" name="key" placeholder="Tìm sản phẩm..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
+                    <input type="text" name="key" placeholder="Tìm kiếm sách..."><input type="image" class="header__search__icon" src="./public/img/search.svg" alt="Search icon">
                 </form>
 
                 <div class="header__user d-flex align-items-center justify-content-between">

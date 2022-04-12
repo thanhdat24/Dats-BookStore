@@ -1,13 +1,11 @@
-/* Theme Light */
 //Helpers
 @import "./Helpers/variables";
 @import "./Helpers/mixin";
 @import "./Helpers/general";
 
-// Vendors
-
 //Base
 @import "./Base/reset";
+@import "./Base/customize";
 
 //Layouts
 @import "./Layouts/header";
@@ -18,11 +16,9 @@
 
 //Pages
 @import "./Pages/cart";
-@import "./Pages/index";
+@import "./Pages/home";
 @import "./Pages/checkout";
 @import "./Pages/details";
 @import "./Pages/login";
 @import "./Pages/checkoutSuccess";
-@import "./Pages/profile.scss";
-
-//Theme
+@import "./Pages/profile";
