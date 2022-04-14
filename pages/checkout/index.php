@@ -20,9 +20,9 @@
     if (isset($_POST['btn-order'])) {
         $MSKH = $_POST['MSKH'];
         $DiaChi = $_POST['DiaChi'];
-        $sql_dathang = "INSERT INTO dathang(MSKH,DiaChi,TongTien) VALUES ('$MSKH','$DiaChi','$TongTien')";
-        $result_dathang = mysqli_query($con, $sql_dathang);
-        if ($result_dathang) {
+        $sql_dondathang = "INSERT INTO dondathang(MSKH,DiaChi,TongTien) VALUES ('$MSKH','$DiaChi','$TongTien')";
+        $result_dondathang = mysqli_query($con, $sql_dondathang);
+        if ($result_dondathang) {
             $SoDonDH = mysqli_insert_id($con);
             foreach ($_SESSION['carts']['buy'] as $value) {
                 mysqli_query($con, "INSERT INTO chitietdathang(SoDonDH,MSHH, SoLuong,GiaDatHang) VALUES ('$SoDonDH','$value[MSHH]','$value[SoLuong]','$value[Gia]')");

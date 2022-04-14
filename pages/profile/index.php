@@ -6,12 +6,12 @@
         // $item = userDetail($_SESSION['userLogin']['email']);
         // $orderDetail = get_all_order($_SESSION['userLogin']['email']);
         $email = $_SESSION['userLogin']['Email'];
-        $sql = "SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
+        $sql = "SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
         $query = mysqli_query($con, $sql);
 
         $chitietdathang  = db_fetch_array($sql);
-        $dathang  = db_fetch_array("SELECT *FROM dathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ");
+        $dondathang  = db_fetch_array("SELECT *FROM dondathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ");
         // show_array($row);
         // show_array(db_fetch_array($sql));
         // = mysqli_fetch_array($query);
@@ -67,7 +67,7 @@
         <div class="profile__order">
             <h3>Lịch sử mua hàng</h3>
             <?php
-            foreach ($dathang as $key => $item) :
+            foreach ($dondathang as $key => $item) :
             ?>
                 <div class="profile__order__item">
 
