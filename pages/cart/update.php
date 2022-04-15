@@ -5,7 +5,5 @@ if (isset($_POST['btn_update_cart'])) {
     $_SESSION['updateCartStatusCode'] = "success";
 
     redirect('?page=cart');
-
-    show_array($_POST);
 };
 

@@ -81,6 +81,42 @@
         unset($_SESSION['deleteCartStatusMessage']);
         unset($_SESSION['deleteCartStatusCode']);
     }
+
+    if (isset($_SESSION['updateProfileStatusMessage']) && $_SESSION['updateProfileStatusMessage'] != "") {
+    ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['updateProfileStatusCode'] ?>',
+                title: '<?php echo $_SESSION['updateProfileStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 2000,
+                position: 'top-right',
+                customClass: 'swal2-toast',
+                backdrop: false
+            })
+        </script>
+    <?php
+        unset($_SESSION['updateProfileStatusMessage']);
+        unset($_SESSION['updateProfileStatusCode']);
+    }
+
+    if (isset($_SESSION['addCartStatusMessage']) && $_SESSION['addCartStatusMessage'] != "") {
+    ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['addCartStatusCode'] ?>',
+                title: '<?php echo $_SESSION['addCartStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 2000,
+                position: 'top-right',
+                customClass: 'swal2-toast',
+                backdrop: false
+            })
+        </script>
+    <?php
+        unset($_SESSION['addCartStatusMessage']);
+        unset($_SESSION['addCartStatusCode']);
+    }
     ?>
 
     <!-- JJquery Validate -->

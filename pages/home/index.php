@@ -66,7 +66,7 @@
                       <div class="popular-book__item__info__title"><a href=""><?= $popularBook['TenHH'] ?></a></div>
                       <div class="popular-book__item__info__price"><?= number_format($popularBook['Gia'], 0, '', ',') ?>đ </div>
                       <div class="popular-book__item__info__content"><?= $popularBook['GhiChu'] ?></div>
-                      <a href="?page=cart&id=<?php echo $popularBook['MSHH'] ?>">
+                      <a href="?page=home&action=add&id=<?php echo $popularBook['MSHH'] ?>">
                           <button class="btn btn--primary align-items-center d-flex btn--primary--hover ">
                               <i class="mr-1 bi bi-handbag"></i> Thêm vào giỏ
                           </button>
@@ -106,7 +106,7 @@
                                           <a href="?page=home&action=detail&id=<?php echo $item['MSHH'] ?>">
                                               <img src="./public/uploads/book-images/<?php echo $item['Hinh1'] ?>" alt="">
                                           </a>
-                                          <a href="?page=cart&id=<?php echo $item['MSHH'] ?>">
+                                          <a href="?page=home&action=add&id=<?php echo $item['MSHH'] ?>">
                                               <button class="btn btn--primary align-items-center d-flex addCartItem">
                                                   <i class="bi bi-handbag"></i> Thêm vào giỏ
                                               </button>
@@ -136,7 +136,7 @@
                                               <a href="?page=home&action=detail&id=<?php echo $book['MSHH'] ?>">
                                                   <img src="./public/uploads/book-images/<?php echo $book['Hinh1'] ?>" alt="">
                                               </a>
-                                              <a href="?page=cart&id=<?php echo $book['MSHH'] ?>">
+                                              <a href="?page=home&action=add&id=<?php echo $book['MSHH'] ?>">
                                                   <button class="btn btn--primary align-items-center d-flex addCartItem">
                                                       <i class="bi bi-handbag"></i> Thêm vào giỏ
                                                   </button>

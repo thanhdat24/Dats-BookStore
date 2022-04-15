@@ -25,7 +25,7 @@
                                             <a href="?page=home&action=detail&id=<?php echo $book['MSHH'] ?>">
                                                 <img src="./public/uploads/book-images/<?php echo $book['Hinh1'] ?>" alt="">
                                             </a>
-                                            <a href="?page=cart&id=<?php echo $book['MSHH'] ?>">
+                                            <a href="?page=home&action=add&id=<?php echo $book['MSHH'] ?>">
                                                 <button class="btn btn--primary align-items-center d-flex addCartItem">
                                                     <i class="bi bi-handbag"></i> Thêm vào giỏ
                                                 </button>
