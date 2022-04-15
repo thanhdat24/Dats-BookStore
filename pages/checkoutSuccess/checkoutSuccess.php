@@ -21,9 +21,9 @@
         </div>
         <hr>
         <div class="back__home d-flex w-100 justify-content-between">
-          <a href="?page=home"><span class="iconify" data-icon="eva:arrow-ios-back-fill" data-width="22" data-height="22"></span>Tiếp tục mua sắm</a>
+          <a href="?page=home"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
 
-          <a href="?page=profile">Xem đơn đặt hàng<span class="iconify" data-icon="eva:arrow-ios-forward-fill" data-width="22" data-height="22"></span></a>
+          <a href="?page=profile">Xem đơn đặt hàng<i class="fa fa-angle-right"></i></a>
         </div>
       </div>
 

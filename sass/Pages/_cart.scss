@@ -180,6 +180,10 @@
             padding: 6px 8px;
             color: #000 !important;
             font-weight: 600;
+            i {
+              font-size: $fs-2;
+              font-weight: $fw-1;
+            }
             &:hover {
               background-color: rgba(145, 158, 171, 0.08);
               border-radius: $border-radius-2;

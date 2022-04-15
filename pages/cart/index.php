@@ -102,7 +102,7 @@ if (isset($_GET['id'])) {
                         </table>
                         <hr>
                         <div class="products-cart__book__update">
-                            <a href="?page=home" class="products-cart__book__update__back"><span class="iconify" data-icon="eva:arrow-ios-back-fill" data-width="22" data-height="22"></span>Tiếp tục mua sắm</a>
+                            <a href="?page=home" class="products-cart__book__update__back"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
                             <p><input type="submit" class="btn btn--primary btn--primary--hover" name="btn_update_cart" value="Cập nhật giỏ hàng"></p>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ if (isset($_GET['id'])) {
                             <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
                         <div class="coupon d-flex align-items-center justify-content-between">
-                            <input type="text" placeholder="Nhập mã giảm giá">
+                            <input type="text" placeholder="Nhập mã giảm giá (Nếu có)">
                             <div class="coupon-btn">
                                 <span>Áp dụng</span>
                             </div>
@@ -150,7 +150,7 @@ if (isset($_GET['id'])) {
                     <h3>Giỏ hàng rỗng</h3>
                     <p>Có vẻ như bạn không có quyển sách nào trong giỏ hàng của mình.</p>
                     <div class="back__home">
-                        <a href="?page=home"><span class="iconify" data-icon="eva:arrow-ios-back-fill" data-width="22" data-height="22"></span>Tiếp tục mua sắm</a>
+                        <a href="?page=home"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
                     </div>
                 </div>
                 <div class="products-cart__totals totals__empty">
@@ -175,7 +175,7 @@ if (isset($_GET['id'])) {
                         <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                     </div>
                     <div class="coupon d-flex align-items-center justify-content-between">
-                        <input type="text" placeholder="Nhập mã giảm giá">
+                        <input type="text" placeholder="Nhập mã giảm giá (Nếu có)">
                         <div class="coupon-btn">
                             <span>Áp dụng</span>
                         </div>

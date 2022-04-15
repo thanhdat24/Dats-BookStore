@@ -71,6 +71,11 @@ p.error {
   transform: translateY(46px);
 }
 
+.back__home i {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .back__home a {
   display: flex;
   align-items: center;
@@ -183,6 +188,22 @@ p {
   background-color: #ec455a;
   border-color: #ec455a;
   color: #fff;
+}
+
+.swal2-toast {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: auto !important;
+  padding: 0.625em !important;
+  box-shadow: 0 0 0.625em #d9d9d9 !important;
+  overflow-y: hidden !important;
+}
+
+.swal2-toast .swal2-title {
+  margin: 0 !important;
+  margin-left: 5px !important;
+  justify-content: center !important;
 }
 
 .main-header {
@@ -650,6 +671,11 @@ p {
   align-items: center;
   padding: 6px 8px;
   color: #000 !important;
+  font-weight: 600;
+}
+
+.main-content-products .container .products-cart__book__update__back i {
+  font-size: 20px;
   font-weight: 600;
 }
 

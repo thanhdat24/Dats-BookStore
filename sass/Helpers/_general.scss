@@ -2,7 +2,6 @@
   width: 90%;
   max-width: 1411px;
   margin: 0 auto;
-
 }
 
 .container-element {
@@ -51,6 +50,10 @@ p.error {
   bottom: 0;
   left: 0px;
   transform: translateY(46px);
+  i {
+    font-size: $fs-2;
+    font-weight: $fw-1;
+  }
   a {
     display: flex;
     align-items: center;
@@ -82,7 +85,6 @@ p.error {
   }
 }
 
-
 html {
   &::-webkit-scrollbar-thumb {
     background: #999;
@@ -99,6 +101,3 @@ html {
     background-color: #f5f5f5;
   }
 }
-
-
-

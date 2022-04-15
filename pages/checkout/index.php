@@ -104,7 +104,7 @@
                    <h3>Giỏ hàng rỗng</h3>
                    <p>Có vẻ như bạn không có quyển sách nào trong giỏ hàng của mình.</p>
                    <div class="back__home">
-                       <a href="?page=home"><span class="iconify" data-icon="eva:arrow-ios-back-fill" data-width="22" data-height="22"></span>Tiếp tục mua sắm</a>
+                       <a href="?page=home"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
                    </div>
                </div>
                <?php if (isset($_SESSION['isLogin'])) { ?>
@@ -150,7 +150,7 @@
 
    </div>
 
- 
+
    <?php
     get_footer();
     ?>

@@ -46,8 +46,44 @@
         unset($_SESSION['loginStatusMessage']);
         unset($_SESSION['loginStatusCode']);
     }
+
+    if (isset($_SESSION['updateCartStatusMessage']) && $_SESSION['updateCartStatusMessage'] != "") {
     ?>
-    
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['updateCartStatusCode'] ?>',
+                title: '<?php echo $_SESSION['updateCartStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 2000,
+                position: 'top-right',
+                customClass: 'swal2-toast',
+                backdrop: false
+            })
+        </script>
+    <?php
+        unset($_SESSION['updateCartStatusMessage']);
+        unset($_SESSION['updateCartStatusCode']);
+    }
+    if (isset($_SESSION['deleteCartStatusMessage']) && $_SESSION['deleteCartStatusMessage'] != "") {
+    ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['deleteCartStatusCode'] ?>',
+                title: '<?php echo $_SESSION['deleteCartStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 2000,
+                position: 'top-right',
+                customClass: 'swal2-toast',
+                backdrop: false
+            })
+        </script>
+    <?php
+        unset($_SESSION['deleteCartStatusMessage']);
+        unset($_SESSION['deleteCartStatusCode']);
+    }
+    ?>
+
+    <!-- JJquery Validate -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="./public/js/jquery.validate.js"></script>
 
