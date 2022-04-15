@@ -32,19 +32,19 @@
     <!-- SWEETALERT2 JS -->
     <script src="public/js/sweetalert2.min.js"></script>
     <?php
-    if (isset($_SESSION['customerStatusMessage']) && $_SESSION['customerStatusMessage'] != "") {
+    if (isset($_SESSION['loginStatusMessage']) && $_SESSION['loginStatusMessage'] != "") {
     ?>
         <script>
             Swal.fire({
-                icon: '<?php echo $_SESSION['customerStatusCode'] ?>',
-                title: '<?php echo $_SESSION['customerStatusMessage'] ?>',
+                icon: '<?php echo $_SESSION['loginStatusCode'] ?>',
+                title: '<?php echo $_SESSION['loginStatusMessage'] ?>',
                 showConfirmButton: false,
                 timer: 1500
             })
         </script>
     <?php
-        unset($_SESSION['customerStatusMessage']);
-        unset($_SESSION['customerStatusCode']);
+        unset($_SESSION['loginStatusMessage']);
+        unset($_SESSION['loginStatusCode']);
     }
     ?>
     

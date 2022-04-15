@@ -24,12 +24,12 @@ if (isset($_POST['btn-login'])) {
             $_SESSION['isLogin'] = true;
             $item = userDetail($email);
             $_SESSION['userLogin'] = $item;
-            $_SESSION['customerStatusMessage'] = "Đăng nhập thành công!";
-            $_SESSION['customerStatusCode'] = "success";
+            $_SESSION['loginStatusMessage'] = "Đăng nhập thành công!";
+            $_SESSION['loginStatusCode'] = "success";
             redirect();
         } else {
-            $_SESSION['customerStatusMessage'] = 'Tên đăng nhập hoặc mật khẩu không đúng!';
-            $_SESSION['customerStatusCode'] = 'error';
+            $_SESSION['loginStatusMessage'] = 'Tên đăng nhập hoặc mật khẩu không đúng!';
+            $_SESSION['loginStatusCode'] = 'error';
         }
     }
 }
@@ -91,19 +91,34 @@ if (isset($_POST['btn-login'])) {
 <script src="public/js/sweetalert2.min.js"></script>
 
 <?php
-if (isset($_SESSION['customerStatusCode']) && $_SESSION['customerStatusCode'] == 'error') {
+if (isset($_SESSION['loginStatusCode']) && $_SESSION['loginStatusCode'] == 'error') {
 ?>
     <script>
         Swal.fire({
-            icon: '<?php echo $_SESSION['customerStatusCode'] ?>',
-            title: '<?php echo $_SESSION['customerStatusMessage'] ?>',
+            icon: '<?php echo $_SESSION['loginStatusCode'] ?>',
+            title: '<?php echo $_SESSION['loginStatusMessage'] ?>',
             showConfirmButton: false,
             timer: 2000
         })
     </script>
+    <?php
+    unset($_SESSION['loginStatusMessage']);
+    unset($_SESSION['loginStatusCode']);
+} else {
+    if (isset($_SESSION['signupStatusCode']) && $_SESSION['signupStatusCode'] == 'success') {
+    ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['signupStatusCode'] ?>',
+                title: '<?php echo $_SESSION['signupStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 2000
+            })
+        </script>
 <?php
-    unset($_SESSION['customerStatusMessage']);
-    unset($_SESSION['customerStatusCode']);
+        unset($_SESSION['signupStatusMessage']);
+        unset($_SESSION['signupStatusCode']);
+    }
 }
 ?>
 

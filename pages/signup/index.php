@@ -43,12 +43,16 @@
                 show_array($result);
 
                 if ($result) {
+                    $_SESSION['signupStatusMessage'] = "Đăng ký thành công!";
+                    $_SESSION['signupStatusCode'] = "success";
                     redirect("?page=login");
                 } else {
-                    echo "Thất bại";
+                    $_SESSION['signupStatusMessage'] = "Đăng ký thất bại!";
+                    $_SESSION['signupStatusCode'] = "error";
                 }
             } else {
-                $error['existAccount'] = 'Email đã tồn tại';
+                $_SESSION['signupStatusMessage'] = 'Email đã tồn tại!';
+                $_SESSION['signupStatusCode'] = 'error';
             }
         }
     }
@@ -64,6 +68,9 @@
      <title>Document</title>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
+     <link rel="icon" href="./public/img/book.png" sizes="16x16">
+     <link rel="icon" href="./public/img/book.png" sizes="192x192">
+
      <link rel="stylesheet" href="./public/css/main.css">
 
  </head>
@@ -72,11 +79,6 @@
      <div class="login__background" style="height:100%">
          <form id="signupForm" class="login__form" action="" method="post">
              <h1 class="login__form__title">Đăng ký tài khoản <br> Dat's Bookstore</h1>
-             <?php if (!empty($error['existAccount'])) : ?>
-                 <div class="errorMessage">
-                     <p class="error"><?php echo $error['existAccount'] ?></p>
-                 </div>
-             <?php endif; ?>
              <div class="login__form__input">
                  <label for="HoTenKH">Họ tên <span style="color:red; font-weight: normal;">(*)</span></label>
                  <input value="" id="HoTenKH" type="text" name="HoTenKH" placeholder="Nhập họ tên của bạn...">
@@ -192,6 +194,26 @@
              })
          })
      </script>
+
+     <!-- SWEETALERT2 JS -->
+     <script src="public/js/sweetalert2.min.js"></script>
+
+     <?php
+        if (isset($_SESSION['signupStatusCode']) && $_SESSION['signupStatusCode'] == 'error') {
+        ?>
+         <script>
+             Swal.fire({
+                 icon: '<?php echo $_SESSION['signupStatusCode'] ?>',
+                 title: '<?php echo $_SESSION['signupStatusMessage'] ?>',
+                 showConfirmButton: false,
+                 timer: 2000
+             })
+         </script>
+     <?php
+            unset($_SESSION['signupStatusMessage']);
+            unset($_SESSION['signupStatusCode']);
+        }
+        ?>
  </body>
 
  </html>
