@@ -12,17 +12,25 @@ if (isset($_POST['key'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dat's Bookstore</title>
-    <link rel="icon" href="./public/img/icon.svg" sizes="16x16">
-    <link rel="icon" href="./public/img/icon.svg" sizes="192x192">
+
+    <link rel="icon" href="./public/img/book.png" sizes="16x16">
+    <link rel="icon" href="./public/img/book.png" sizes="192x192">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" hre f="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+    <!-- SWEETALERT2 CSS -->
+    <link rel="stylesheet" href="./public/css/sweetalert2.min.css">
+
+    <!-- MAIN CSS -->
     <link rel="stylesheet" href="./public/css/main.css">
 
 
@@ -30,18 +38,8 @@ if (isset($_POST['key'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
-    <!-- SwiperJS -->
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script src="public/js/main.js" type="text/javascript"></script>
-    <script src="public/js/swiper.js" type="text/javascript"></script>
-    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
-
-    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
 
 
 </head>
@@ -51,7 +49,7 @@ if (isset($_POST['key'])) {
         <div class="main-header pt-3">
             <div class="container header">
                 <a href="?page=home" class="header__logo">
-                    <img src="./public/img/icon.svg" alt="logo" style="width:64px;height:64px">
+                    <img src="./public/img/book.png" alt="logo" style="width:64px;height:64px">
                     <h1 class="header__name">Dat's <br> Bookstore</h1>
                 </a>
                 <form class="header__search" action="?page=search" method="post">

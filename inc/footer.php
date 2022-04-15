@@ -16,5 +16,74 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+    <!-- SwiperJS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="public/js/main.js" type="text/javascript"></script>
+    <script src="public/js/swiper.js" type="text/javascript"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+
+
+    <!-- SWEETALERT2 JS -->
+    <script src="public/js/sweetalert2.min.js"></script>
+    <?php
+    if (isset($_SESSION['customerStatusMessage']) && $_SESSION['customerStatusMessage'] != "") {
+    ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['customerStatusCode'] ?>',
+                title: '<?php echo $_SESSION['customerStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    <?php
+        unset($_SESSION['customerStatusMessage']);
+        unset($_SESSION['customerStatusCode']);
+    }
+    ?>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./public/js/jquery.validate.js"></script>
+
+    <script type="text/javascript">
+        $.validator.setDefaults({
+            submitHandler: function() {
+                form.submit();
+            }
+        })
+        $(document).ready(function() {
+            $("#checkout").validate({
+                rules: {
+                    DiaChi: "required",
+                },
+                messages: {
+                    DiaChi: "*Vui lòng nhập địa chỉ giao hàng!"
+                },
+                errorElement: "div",
+                errorPlacement: function(error, element) {
+                    error.addClass("invalid-feedback");
+                    $(".invalid-feedback").css("font-style", "italic")
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.siblings("label"))
+                    } else {
+                        error.insertAfter(element)
+                    }
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid")
+
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid")
+                },
+            })
+        })
+    </script>
 
 </footer>

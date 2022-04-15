@@ -150,43 +150,7 @@
 
    </div>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script type="text/javascript" src="./public/js/jquery.validate.js"></script>
-
-   <script type="text/javascript">
-       $.validator.setDefaults({
-           submitHandler: function() {
-               form.submit();
-           }
-       })
-       $(document).ready(function() {
-           $("#checkout").validate({
-               rules: {
-                   DiaChi: "required",
-               },
-               messages: {
-                   DiaChi: "*Vui lòng nhập địa chỉ giao hàng!"
-               },
-               errorElement: "div",
-               errorPlacement: function(error, element) {
-                   error.addClass("invalid-feedback");
-                   $(".invalid-feedback").css("font-style", "italic")
-                   if (element.prop("type") === "checkbox") {
-                       error.insertAfter(element.siblings("label"))
-                   } else {
-                       error.insertAfter(element)
-                   }
-               },
-               highlight: function(element, errorClass, validClass) {
-                   $(element).addClass("is-invalid").removeClass("is-valid")
-
-               },
-               unhighlight: function(element, errorClass, validClass) {
-                   $(element).addClass("is-valid").removeClass("is-invalid")
-               },
-           })
-       })
-   </script>
+ 
    <?php
     get_footer();
     ?>
