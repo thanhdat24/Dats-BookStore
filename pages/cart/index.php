@@ -2,16 +2,6 @@
 get_header();
 ?>
 
-<style>
-    .update {
-        color: #fff !important;
-    }
-
-    .update:hover {
-        color: inherit !important;
-    }
-</style>
-
 <div class="main-content-products">
     <div class="container">
         <h3 class="title mt-5">Giỏ hàng</h3>

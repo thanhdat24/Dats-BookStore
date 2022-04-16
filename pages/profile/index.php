@@ -4,13 +4,13 @@
     <?php
     if (isset($_SESSION['userLogin'])) {
         $email = $_SESSION['userLogin']['Email'];
-        $sql = "SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
+        $sql_dathang = "SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
-        $query = mysqli_query($con, $sql);
+        $chitietdathang  = db_fetch_array($sql_dathang);
 
-        $chitietdathang  = db_fetch_array($sql);
-        $dondathang  = db_fetch_array("SELECT *FROM dondathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ");
-        
+        $sql_dondathang = "SELECT *FROM dondathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ";
+        $dondathang  = db_fetch_array($sql_dondathang);
+
         $_SESSION['userLogin'] = userDetail($email);
     }
     ?>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="profile__order">
-            <h3>Lịch sử mua hàng</h3>
+            <h3>Lịch sử đơn hàng</h3>
             <?php
             foreach ($dondathang as $key => $item) :
             ?>
@@ -67,9 +67,12 @@
                     </ul>
                 <?php endif; ?>
             <?php endforeach; ?>
-            <div class="profile__order__item__state">
+            <div class="profile__order__item__price">
                 <b>Tổng tiền: <span class="profile__order__item__info__price"><?= currency_format($item['TongTien']) ?></span>
                 </b>
+            </div>
+            <div class="profile__order__item__detail">
+                <a href="?page=profile&action=detailOrder&id=<?= $item['SoDonDH'] ?>" class="btn btn--white">Xem chi tiết</a>
             </div>
                 </div>
             <?php endforeach; ?>

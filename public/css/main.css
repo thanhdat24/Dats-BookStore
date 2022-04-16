@@ -46,8 +46,11 @@ a {
 }
 
 p.error {
-  color: #ff4842 !important;
-  font-size: 13px !important;
+  color: #ff4842;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.1;
+  font-family: "Nunito", sans-serif;
   margin-top: 3px;
   margin-right: 14px;
   margin-left: 17px;
@@ -55,13 +58,14 @@ p.error {
 }
 
 .invalid-feedback {
-  font-size: 14px !important;
-  margin-top: 3px;
-  margin-right: 14px;
-  margin-left: 17px;
-  color: #ff4842 !important;
+  color: #ff4842;
+  font-size: 14px;
   font-weight: bold;
-  font-style: italic;
+  line-height: 1.1;
+  font-family: "Nunito", sans-serif;
+  margin-top: 3px;
+  margin-left: 17px;
+  font-style: oblique;
 }
 
 .back__home {
@@ -80,7 +84,7 @@ p.error {
   display: flex;
   align-items: center;
   padding: 6px 8px;
-  color: #000 !important;
+  color: #000000 !important;
   font-weight: 600;
 }
 
@@ -88,7 +92,7 @@ p.error {
   background-color: rgba(145, 158, 171, 0.08);
   border-radius: 8px;
   padding: 6px 8px;
-  color: #000;
+  color: #000000;
 }
 
 .disabled a {
@@ -447,6 +451,108 @@ p {
   margin-bottom: 15px;
 }
 
+.cart-detail__order {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+  border-radius: 15px;
+  height: 40%;
+  padding: 40px 30px;
+  width: 100%;
+  height: fit-content;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+}
+
+.cart-detail__order__detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  color: black;
+}
+
+.cart-detail__order__detail p {
+  color: #212529;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.1;
+  font-family: "Nunito", sans-serif;
+}
+
+.cart-detail__order__detail .cart-detail__order__detail__address {
+  grid-column: 1 / span 2;
+  line-height: 25px;
+}
+
+.cart-detail__order__detail .cart-detail__order__detail__total {
+  margin-top: 5px;
+  grid-column: 1 / span 2;
+}
+
+.cart-detail__order__detail .cart-detail__order__detail__total button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.cart-detail__order__detail .cart-detail__order__detail__total .price {
+  color: #ec455a;
+}
+
+.cart-detail__order__detail input {
+  font-family: "Nunito", sans-serif;
+  border-radius: 15px;
+  border: 2px solid rgba(192, 192, 192, 0);
+  outline: none;
+  padding: 7px 17px;
+  background-color: #e4e3e3b8;
+  transition: all 200ms ease-out;
+}
+
+.cart-detail__order__detail input:focus {
+  border: 2px solid #ec455b8c;
+  transition: all 200ms ease-in;
+}
+
+.cart-detail__order__detail input[type="text"] {
+  font-size: 15px;
+}
+
+.cart-detail__order__detail textarea {
+  width: 100%;
+  border: 2px solid #e4e4e4;
+  transition: all 200ms ease-out;
+  margin-top: 20px;
+  padding: 7px;
+}
+
+.cart-detail__order__detail textarea:focus {
+  border: 2px solid #ec455b8c;
+  transition: all 200ms ease-in;
+}
+
+.cart-detail__order__title {
+  color: #212529;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
+}
+
+.cart-detail__order__text {
+  line-height: 25px;
+}
+
+.cart-detail__order__text a {
+  color: #ec455a;
+  font-weight: 700;
+}
+
+.cart-detail__order__text a:hover {
+  text-decoration: underline;
+  color: #ec455a;
+}
+
 .btn--primary {
   color: #fff;
   background-color: #ec455a;
@@ -468,8 +574,24 @@ p {
 }
 
 .btn--primary:hover {
-  background-color: #D23F57;
+  background-color: #d23f57;
   color: #fff;
+}
+
+.btn--white {
+  color: #ec455a;
+  background-color: #fff;
+  border: 1px solid #ec455a;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  padding: 7px 7px;
+  cursor: pointer;
+}
+
+.btn--white:hover {
+  color: #d23f57;
 }
 
 .title-nav {
@@ -602,7 +724,9 @@ p {
 }
 
 .main-content-products .container .products-cart__book table.table thead tr th:nth-of-type(4),
-.main-content-products .container .products-cart__book table.table tbody tr th:nth-of-type(4) {
+.main-content-products .container .products-cart__book table.table thead tr :nth-of-type(3),
+.main-content-products .container .products-cart__book table.table tbody tr th:nth-of-type(4),
+.main-content-products .container .products-cart__book table.table tbody tr :nth-of-type(3) {
   white-space: nowrap;
 }
 
@@ -1698,7 +1822,7 @@ p {
   font-weight: bold;
 }
 
-.profile__order__item__state {
+.profile__order__item__price, .profile__order__item__detail {
   margin-top: 10px;
   line-height: 25px;
   display: flex;
@@ -1706,7 +1830,11 @@ p {
   align-items: flex-end;
 }
 
-.profile__order__item__state .profile__order__item__info__price {
+.profile__order__item__price b, .profile__order__item__detail b {
+  font-size: 17px;
+}
+
+.profile__order__item__price .profile__order__item__info__price, .profile__order__item__detail .profile__order__item__info__price {
   color: #ec455a;
   font-weight: bold;
 }

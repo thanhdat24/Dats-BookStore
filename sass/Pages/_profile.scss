@@ -130,7 +130,11 @@
           }
         }
       }
-      &__state {
+      &__price,
+      &__detail {
+        b {
+          font-size: $fs-7 - 1;
+        }
         margin-top: 10px;
         line-height: 25px;
         display: flex;

@@ -29,21 +29,17 @@ a {
   color: $content-color;
 }
 p.error {
-  color: #ff4842 !important;
-  font-size: 13px !important;
+  @include styleText($color-red-2, $fs-5 - 2, $fw-0, $lh-1, $font-title);
   margin-top: 3px;
   margin-right: 14px;
   margin-left: 17px;
   font-style: oblique;
 }
 .invalid-feedback {
-  font-size: 14px !important;
+  @include styleText($color-red-2, $fs-5 - 1, $fw-b, $lh-1, $font-title);
   margin-top: 3px;
-  margin-right: 14px;
   margin-left: 17px;
-  color: #ff4842 !important;
-  font-weight: bold;
-  font-style: italic;
+  font-style: oblique;
 }
 .back__home {
   position: absolute;
@@ -58,28 +54,28 @@ p.error {
     display: flex;
     align-items: center;
     padding: 6px 8px;
-    color: #000 !important;
-    font-weight: 600;
+    color: $color-dark-0 !important;
+    font-weight: $fw-1;
     &:hover {
       background-color: rgba(145, 158, 171, 0.08);
       border-radius: $border-radius-2;
       padding: 6px 8px;
-      color: #000;
+      color: $color-dark-0;
     }
   }
 }
 .disabled {
   a {
-    color: rgba(145, 158, 171, 0.8) !important;
+    color: $color-gray-2 !important;
     box-shadow: none !important;
-    background-color: rgba(145, 158, 171, 0.24) !important;
+    background-color: $color-gray-3 !important;
     pointer-events: none;
     cursor: default;
   }
   button {
-    color: rgba(145, 158, 171, 0.8) !important;
+    color: $color-gray-2 !important;
     box-shadow: none !important;
-    background-color: rgba(145, 158, 171, 0.24) !important;
+    background-color: $color-gray-3 !important;
     pointer-events: none;
     cursor: default;
   }

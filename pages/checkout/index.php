@@ -70,7 +70,7 @@
                                    <p class="ml-3"><?= $_SESSION['userLogin']['SoDienThoai'] ?></p>
                                    <div class="cart-detail__user-info__detail__address">
                                        <b>Địa chỉ nhận hàng:</b>
-                                       <div> <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."></textarea></div>
+                                       <div> <textarea name="DiaChi" rows="3" cols="50" id="addressOfBook<?= $key ?>" placeholder="Nhập địa chỉ giao hàng của bạn..."><?= $_SESSION['userLogin']['DiaChi'] ?></textarea></div>
                                    </div>
 
                                    <div class="cart-detail__user-info__detail__total">

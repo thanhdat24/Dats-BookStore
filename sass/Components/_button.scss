@@ -20,3 +20,19 @@
     color: $color-white-0;
   }
 }
+.btn--white {
+  @include styleButton(
+    $primary-color,
+    $color-white-0,
+    $primary-color,
+    $border-radius-1,
+    $fs-5 - 1,
+    $fw-4,
+    $font-title,
+    7px,
+    7px
+  );
+  &:hover {
+    color: $hover-color;
+  }
+}

@@ -90,10 +90,6 @@
         table.table {
           width: 100%;
           border-collapse: collapse;
-
-          // @include media(sm) {
-          //   display: none;
-          // }
           thead {
             color: rgb(99, 115, 129);
             background-color: rgb(244, 246, 248);
@@ -118,7 +114,8 @@
                 border-bottom-right-radius: 8px;
                 box-shadow: rgb(255, 255, 255) -8px, 0px, 0px, inset;
               }
-              th:nth-of-type(4) {
+              th:nth-of-type(4),
+              :nth-of-type(3) {
                 white-space: nowrap;
               }
               th,
