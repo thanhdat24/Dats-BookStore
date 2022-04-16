@@ -14,7 +14,7 @@ get_header();
 
 <div class="main-content-products">
     <div class="container">
-        <h3 class="title">Giỏ hàng</h3>
+        <h3 class="title mt-5">Giỏ hàng</h3>
         <?php
         $_SESSION['SoLuongGioHang'] = 0;
         if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
@@ -27,9 +27,9 @@ get_header();
                                 <tr>
                                     <th>Sản phẩm</th>
 
-                                    <th>Giá</th>
+                                    <th>Đơn giá</th>
                                     <th>Số lượng</th>
-                                    <th>Tổng</th>
+                                    <th>Thành tiền</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -57,8 +57,8 @@ get_header();
                                                 <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>" class="InputAmountProduct">
                                             </div>
                                         </td>
-                                        <td> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
-                                                ?>
+                                        <td class="product-item-cart__total-price"> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
+                                                                        ?>
                                         </td>
                                         <td>
                                             <a href="?page=cart&action=delete&id=<?php echo $value['MSHH'] ?>">

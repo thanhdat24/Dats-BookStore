@@ -28,7 +28,6 @@
                 </div>
             </div>
             <div class="profile__item">
-                <!-- <?php require "./pages/shared/noti.php" ?> -->
                 <form action="?page=profile&action=update" method="post" class="profile__info">
                     <input hidden type="text" name="MSKH" value="<?= $_SESSION['userLogin']['MSKH'] ?>">
                     <label for="name">Họ tên: </label>

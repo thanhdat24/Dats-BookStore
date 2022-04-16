@@ -14,7 +14,7 @@
     <section class="trending trending-bottom">
         <div class="container p-80">
             <div class="trending-product">
-                <h3>Kết quả tìm kiếm cho: "<?= isset($key) ? $key : "" ?>"</h3>
+                <h3 class="mt-5">Kết quả tìm kiếm cho: "<?= isset($key) ? $key : "" ?>"</h3>
                 <?php if (isset($data) && is_array($data)) : ?>
                     <div class="category-book">
                         <div class="listProduct row" id="category-book">
@@ -45,7 +45,8 @@
                 <?php elseif (isset($data) && is_string($data)) : ?>
                     <div class="d-flex flex-column align-items-center">
                         <div><img src="./public/img/404.svg" display="block" alt="Not Found" style="display: block; max-width: 400px; width: 100%; margin-bottom: 1.5rem; "></div>
-                        <button class="btn btn--primary align-items-center"><a class="text-white" href="?page=home">Trang Chủ</a></button>
+                        <h6 class="mt-3">Không tìm thấy kết quả liên quan nào</h6>
+                        <button class="btn btn--primary align-items-center mt-3"><a class="text-white" href="?page=home">Quay trở lại trang chủ</a></button>
                     </div>
                 <?php endif; ?>
             </div>

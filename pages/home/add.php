@@ -1,6 +1,6 @@
 <?php
 redirect("?page=cart");
-$_SESSION['addCartStatusMessage'] = "Thêm sản phẩm thành công";
+$_SESSION['addCartStatusMessage'] = "Sản phẩm đã được thêm vào Giỏ hàng";
 $_SESSION['addCartStatusCode'] = "success";
 if (isset($_GET['id'])) {
     $id = (int) $_GET['id'];

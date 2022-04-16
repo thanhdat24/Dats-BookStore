@@ -1,6 +1,6 @@
 .main-content-checkout {
   .container {
-    max-width: 1210px;
+    max-width: 1170px;
     padding: 0 15px;
     margin: 0 auto;
     .cart-detail {
@@ -26,7 +26,8 @@
         position: relative;
         img {
           width: 100%;
-          height: 55%;
+          height: 57%;
+          margin-bottom: 15px;
         }
         p {
           margin: 0px;
@@ -52,7 +53,7 @@
           padding: 15px;
           &:hover {
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
-            border-radius:$border-radius-3;
+            border-radius: $border-radius-3;
           }
           img {
             width: 80px;
@@ -60,7 +61,7 @@
 
             margin-right: 10px;
 
-            border-radius:$border-radius-3;
+            border-radius: $border-radius-3;
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.158);
             object-fit: cover;
           }
@@ -89,7 +90,7 @@
                 padding: 5px 10px;
                 outline: none;
 
-                border-radius:$border-radius-2;
+                border-radius: $border-radius-2;
                 border: 2px solid rgb(228, 228, 228);
                 transition: all 200ms ease-out;
               }

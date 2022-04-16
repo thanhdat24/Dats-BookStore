@@ -35,7 +35,7 @@
     ?>
    <div class="main-content-checkout">
        <div class="container">
-           <h3 class="title">Thanh toán</h3>
+           <h3 class="title mt-5">Thanh toán</h3>
            <?php
             if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
             ?>
@@ -74,7 +74,7 @@
                                    </div>
 
                                    <div class="cart-detail__user-info__detail__total">
-                                       <b>Thành tiền:</b>
+                                       <b>Tổng tiền:</b>
                                        <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                    </div>
                                    <div class="cart-detail__user-info__detail__total">
@@ -122,7 +122,7 @@
                                </div>
 
                                <div class="cart-detail__user-info__detail__total">
-                                   <b>Thành tiền:</b>
+                                   <b>Tổng tiền:</b>
                                    <b id="total" class="price"> <?= currency_format(get_total_cart()) ?></b>
                                </div>
                                <div class="cart-detail__user-info__detail__total disabled">

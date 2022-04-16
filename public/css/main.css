@@ -195,7 +195,7 @@ p {
   flex-direction: row !important;
   align-items: center !important;
   width: auto !important;
-  padding: 0.625em !important;
+  padding: 1em !important;
   box-shadow: 0 0 0.625em #d9d9d9 !important;
   overflow-y: hidden !important;
 }
@@ -485,7 +485,7 @@ p {
 }
 
 .main-content-products .container {
-  max-width: 1265px;
+  max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -583,8 +583,8 @@ p {
 
 .main-content-products .container .products-cart__book table.table thead tr .heading-product,
 .main-content-products .container .products-cart__book table.table tbody tr .heading-product {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .main-content-products .container .products-cart__book table.table thead tr th:first-child,
@@ -599,6 +599,11 @@ p {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   box-shadow: white -8px, 0px, 0px, inset;
+}
+
+.main-content-products .container .products-cart__book table.table thead tr th:nth-of-type(4),
+.main-content-products .container .products-cart__book table.table tbody tr th:nth-of-type(4) {
+  white-space: nowrap;
 }
 
 .main-content-products .container .products-cart__book table.table thead tr th,
@@ -654,6 +659,11 @@ p {
   align-items: center;
 }
 
+.main-content-products .container .products-cart__book .product-item-cart__total-price {
+  color: #ec455a;
+  font-weight: 500;
+}
+
 .main-content-products .container .products-cart__book .comeback {
   padding: 10px 30px;
   margin-top: 50px;
@@ -699,6 +709,7 @@ p {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.17);
   border-radius: 16px;
   z-index: 0;
+  height: fit-content;
   margin-bottom: 24px;
 }
 
@@ -778,6 +789,7 @@ p {
   width: 100%;
   animation-duration: 10ms;
   padding: 16.5px 0px 16.5px 14px;
+  font-size: 15px;
 }
 
 .main-content-products .container .products-cart .products-cart__totals .coupon-btn {
@@ -854,7 +866,8 @@ p {
 
 .main-content-products .container .products-cart__book__empty img {
   width: 100%;
-  height: 55%;
+  height: 57%;
+  margin-bottom: 15px;
 }
 
 .main-content-products .container .products-cart__book__empty p {
@@ -1095,7 +1108,7 @@ p {
 }
 
 .main-content-checkout .container {
-  max-width: 1210px;
+  max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -1127,7 +1140,8 @@ p {
 
 .main-content-checkout .container .cart-detail__book__empty img {
   width: 100%;
-  height: 55%;
+  height: 57%;
+  margin-bottom: 15px;
 }
 
 .main-content-checkout .container .cart-detail__book__empty p {
