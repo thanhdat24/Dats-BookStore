@@ -5,4 +5,4 @@
 - PHP
 - Bootstrap
 - jQuery
-- MYSQL
+- MySQL
