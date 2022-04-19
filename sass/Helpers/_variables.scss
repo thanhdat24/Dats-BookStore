@@ -20,8 +20,12 @@ $color-red-2: #ff4842;
 
 $color-dark-0: #000000;
 $color-dark-1: #212b36;
+$color-dark-2: rgba(192, 192, 192, 0);
 
 $color-white-0: #fff;
+$color-white-1: rgba(243, 244, 246, 1);
+
+$color-green-0: rgb(0, 171, 85);
 
 /* font-size */
 $fs-0: 16px;
@@ -32,6 +36,7 @@ $fs-4: 19px;
 $fs-5: 15px;
 $fs-6: 23px;
 $fs-7: 18px;
+$fs-8: 30px;
 
 /* font-weight */
 $fw-0: normal;
@@ -46,6 +51,7 @@ $lh-0: normal;
 $lh-1: 1.1;
 $lh-2: 25px;
 $lh-3: 1.5;
+$lh-4: 35px;
 
 /* border-radius */
 $border-radius-0: 2px;

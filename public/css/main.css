@@ -111,21 +111,6 @@ p.error {
   cursor: default;
 }
 
-html::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 10px;
-  width: 3px;
-}
-
-html::-webkit-scrollbar-track {
-  background: #ccc;
-}
-
-html::-webkit-scrollbar {
-  width: 8px;
-  background-color: #f5f5f5;
-}
-
 * {
   padding: 0px;
   margin: 0px;
@@ -207,6 +192,21 @@ p {
   margin: 0 !important;
   margin-left: 5px !important;
   justify-content: center !important;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+  width: 3px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
 }
 
 .main-header {
@@ -1560,29 +1560,46 @@ p {
 
 .login__background {
   width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom right, #ffcda5, #c75764);
+  margin-top: 70px;
+  display: flex;
+  height: 100%;
+}
+
+.login__background .login__img {
+  width: 54%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.login__background .login__img img {
+  width: 55%;
+}
+
 .login__background .login__form {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
   width: 500px;
   padding: 50px 40px 40px 40px;
-  border-radius: 30px;
-  margin: 80px 0;
+  margin: 30px 0;
   display: grid;
   grid-gap: 10px;
 }
 
+.login__background .login__form__logo {
+  width: 70px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+}
+
 .login__background .login__form__title {
-  font-size: 25px;
   margin-bottom: 15px;
   text-align: center;
-  line-height: 30px;
+  color: #ec455a;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  font-family: "Nunito", sans-serif;
 }
 
 .login__background .login__form__message {
@@ -1596,6 +1613,7 @@ p {
   margin-bottom: 10px;
   display: grid;
   grid-gap: 10px;
+  font-size: 18px;
 }
 
 .login__background .login__form__input input {
@@ -1603,9 +1621,10 @@ p {
   border-radius: 30px;
   border: 2px solid rgba(192, 192, 192, 0);
   outline: none;
-  padding: 12px 20px;
+  font-size: 17px;
+  padding: 13px 20px;
   width: 100%;
-  background-color: #e4e4e4;
+  background-color: #f3f4f6;
   transition: all 200ms ease-out;
 }
 
@@ -1637,6 +1656,106 @@ p {
 }
 
 .login__background .login__form .errorMessage p {
+  padding: 8px 0;
+  font-size: 16px !important;
+}
+
+.signup__background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.signup__background .signup__img {
+  width: 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup__background .signup__img img {
+  width: 55%;
+}
+
+.signup__background .signup__form {
+  width: 570px;
+  padding: 35px 40px 30px 40px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.signup__background .signup__form__logo {
+  width: 70px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+}
+
+.signup__background .signup__form__title {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #ec455a;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 35px;
+  font-family: "Nunito", sans-serif;
+}
+
+.signup__background .signup__form__message {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.signup__background .signup__form__input {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: grid;
+  grid-gap: 10px;
+  font-size: 18px;
+}
+
+.signup__background .signup__form__input input {
+  font-family: "Nunito", sans-serif;
+  border-radius: 30px;
+  border: 2px solid rgba(192, 192, 192, 0);
+  outline: none;
+  font-size: 16px;
+  padding: 11px 20px;
+  width: 100%;
+  background-color: #f3f4f6;
+  transition: all 200ms ease-out;
+}
+
+.signup__background .signup__form__input input:focus {
+  border: 2px solid #00ab55;
+  transition: all 200ms ease-in;
+}
+
+.signup__background .signup__form__input .signupCheckMessage {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color: red;
+}
+
+.signup__background .signup__form .errorMessage {
+  border-radius: 8px;
+  box-shadow: none;
+  background-image: none;
+  line-height: 1.5714285714285714;
+  font-size: 0.875rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  justify-content: center;
+  display: flex;
+  padding: 6px 16px;
+  background-color: #ffe7d9;
+  color: #ff4842;
+}
+
+.signup__background .signup__form .errorMessage p {
   padding: 8px 0;
   font-size: 16px !important;
 }

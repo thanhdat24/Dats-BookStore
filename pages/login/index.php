@@ -56,8 +56,12 @@ if (isset($_POST['btn-login'])) {
 
 <body>
     <div class="login__background">
+        <div class="login__img">
+            <img src="./public/img/banner_kovi.svg" alt="banner">
+        </div>
         <form class="login__form" action="" method="POST">
-            <h1 class="login__form__title">Đăng nhập <br> Dat's Bookstore</h1>
+            <img class="login__form__logo" src="./public/img/book.png" alt="logo">
+            <h1 class="login__form__title">Đăng nhập <br> <span class="py-2">Dat's Bookstore!</span></h1>
             <p class="login__form__message">
                 <span style="color:red">
 
@@ -80,8 +84,8 @@ if (isset($_POST['btn-login'])) {
                     <p class="error"><?php echo $error['password'] ?></p>
                 <?php } ?>
             </div>
-            <input type="submit" name="btn-login" class="btn btn--primary" value="Đăng nhập">
-            <div style="margin-left:auto; margin-top: 10px;">Chưa có tài khoản? <a href="?page=signup" style="font-weight: bold; color: red; margin-left: 10px;">Đăng ký</a></div>
+            <input type="submit" name="btn-login" class="btn btn--primary" value="Đăng nhập" style="padding:13px 0">
+            <div style="margin-left:auto; margin-top: 10px; text-align:center; width:100%">Chưa có tài khoản? <a href="?page=signup" style="font-weight: bold; color: red; margin-left: 5px;">Đăng ký</a></div>
 
         </form>
     </div>

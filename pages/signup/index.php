@@ -76,49 +76,53 @@
  </head>
 
  <body>
-     <div class="login__background" style="height:100%">
-         <form id="signupForm" class="login__form" action="" method="post">
-             <h1 class="login__form__title">Đăng ký tài khoản <br> Dat's Bookstore</h1>
-             <div class="login__form__input">
-                 <label for="HoTenKH">Họ tên <span style="color:red; font-weight: normal;">(*)</span></label>
-                 <input value="" id="HoTenKH" type="text" name="HoTenKH" placeholder="Nhập họ tên của bạn...">
+     <div class="signup__background">
+         <div class="signup__img">
+             <img src="./public/img/banner_kovi.svg" alt="banner">
+         </div>
+         <form id="signupForm" class="signup__form" action="" method="post">
+             <img class="signup__form__logo" src="./public/img/book.png" alt="logo">
+             <h1 class="signup__form__title">Đăng ký tài khoản <br> <span style="padding:10px 0">Dat's Bookstore</span></h1>
 
+             <div class="d-flex">
+                 <div class="signup__form__input mr-2">
+                     <label for="HoTenKH">Họ tên <span style="color:red; font-weight: normal;">(*)</span></label>
+                     <input value="" id="HoTenKH" type="text" name="HoTenKH">
+                 </div>
+                 <div class="signup__form__input">
+                     <label for="phone">Số điện thoại <span style="color:red; font-weight: normal;">(*)</span></label>
+                     <input value="" id="phone" type="text" name="phone">
+                 </div>
              </div>
 
-             <div class="login__form__input">
+             <div class="signup__form__input">
                  <label for="Email">Email <span style="color:red; font-weight: normal;">(*)</span></label>
-                 <input value="" id="Email" type="email" name="Email" placeholder="Nhập email của bạn...">
-
-             </div>
-             <div class="login__form__input">
-                 <label for="phone">Số điện thoại <span style="color:red; font-weight: normal;">(*)</span></label>
-                 <input value="" id="phone" type="text" name="phone" placeholder="Nhập số điện thoại của bạn...">
-
+                 <input value="" id="Email" type="email" name="Email">
 
              </div>
 
-             <div class="login__form__input">
+             <div class="signup__form__input">
                  <label for="password">Mật khẩu <span style="color:red; font-weight: normal;">(*)</span></label>
-                 <input value="" id="password" type="password" name="password" placeholder="Nhập mật khẩu...">
+                 <input value="" id="password" type="password" name="password">
 
 
              </div>
-             <div class="login__form__input">
+             <div class="signup__form__input">
                  <label for="confirm_password">Nhập lại mật khẩu <span style="color:red; font-weight: normal;">(*)</span></label>
-                 <input value="" id="confirm_password" type="password" name="confirm_password" placeholder="Nhập lại mật khẩu...">
+                 <input value="" id="confirm_password" type="password" name="confirm_password">
 
 
              </div>
 
-             <div class="login__form__input">
+             <div class="signup__form__input">
                  <label for="DiaChi">Địa chỉ <span style="color:red; font-weight: normal;">(*)</span></label>
-                 <input value="" id="DiaChi" type="text" name="DiaChi" placeholder="Nhập địa chỉ giao hàng của bạn...">
+                 <input value="" id="DiaChi" type="text" name="DiaChi">
 
 
              </div>
 
              <button type="submit" class="btn btn--primary" name="btn-signup">Đăng ký</button>
-             <div style="margin-left:auto; margin-top: 10px;">Đã có tài khoản? <a href="?page=login" style="font-weight: bold; color: red; margin-left: 10px;">Đăng nhập</a></div>
+             <div style="margin-left:auto; margin-top: 10px; text-align:center; width:100%">Đã có tài khoản? <a href=" ?page=login" style="font-weight: bold; color: red; margin-left: 10px;">Đăng nhập</a></div>
          </form>
      </div>
 
