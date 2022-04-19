@@ -2,6 +2,13 @@
   max-width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
+  .banner {
+    margin: 20px 0;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
   .popular-book {
     width: 100%;
     display: grid;

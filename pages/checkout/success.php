@@ -9,11 +9,11 @@
     <div class="popup-detail">
       <div class="popup-detail__cart">
         <h3>Cám ơn vì đã mua hàng!</h3>
-        <lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#000000,secondary:#08a88a" stroke="40" style="width:250px;height:250px">
+        <lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="hover" colors="primary:#000000,secondary:#08a88a" stroke="40" style="width:250px;height:250px">
         </lord-icon>
         <div class="popup-detail__cart__content">
           <p>Cảm ơn bạn đã đặt hàng <a><?php
-                                        $bytes = random_bytes(12);
+                                        $bytes = random_bytes(11);
                                         echo bin2hex($bytes);
                                         ?></a></p>
           <p>Chúng tôi sẽ gửi cho bạn thông báo trong vòng 5 ngày khi hàng được gửi.</p>

@@ -16,6 +16,7 @@ $dondathang  = db_fetch_array($sql_order_detail);
 // format day
 $originalDate = $dondathang[0]['NgayDH'];
 $currentDate = date("H:i d-m-Y", strtotime($originalDate));
+
 ?>
 <div class="main-content-products">
 
@@ -25,7 +26,7 @@ $currentDate = date("H:i d-m-Y", strtotime($originalDate));
         <p class="text-right"><b>Ngày đặt hàng:</b> <?= $currentDate ?></p>
         <div class="products-cart">
             <div class="products-cart__book">
-                <table class="table">
+                <table class="table mb-0">
                     <thead>
                         <tr>
                             <th>Sản phẩm</th>
@@ -54,11 +55,11 @@ $currentDate = date("H:i d-m-Y", strtotime($originalDate));
                                     <?= currency_format($item['GiaDatHang']) ?>
                                 </td>
                                 <td>
-                                    <div class="control align-items-center">
+                                    <div class="text-center">
                                         <span><?= $item['SoLuong'] ?></span>
                                     </div>
                                 </td>
-                                <td class="product-item-cart__total-price"> <?= currency_format($item['SoLuong'] * $item['GiaDatHang']) ?>
+                                <td class=" product-item-cart__total-price"> <?= currency_format($item['SoLuong'] * $item['GiaDatHang']) ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -72,7 +73,7 @@ $currentDate = date("H:i d-m-Y", strtotime($originalDate));
                     </tfoot>
                     </tbody>
                 </table>
-                <hr>
+                <hr class="mt-0">
                 <div class="products-cart__book__update">
                     <a href="?page=profile" class="products-cart__book__update__back"><i class="fa fa-angle-left mr-2"></i>Quay lại đơn hàng của tôi</a>
                 </div>

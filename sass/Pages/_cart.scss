@@ -95,6 +95,14 @@
             background-color: rgb(244, 246, 248);
           }
           thead,
+          tfoot {
+            tr {
+              td {
+                padding: 20px 12px;
+              }
+            }
+          }
+          thead,
           tbody {
             padding-top: 10px;
             tr {
@@ -114,7 +122,8 @@
                 border-bottom-right-radius: 8px;
                 box-shadow: rgb(255, 255, 255) -8px, 0px, 0px, inset;
               }
-              th:nth-of-type(4),
+              th:nth-of-type(2),
+              :nth-of-type(4),
               :nth-of-type(3) {
                 white-space: nowrap;
               }
@@ -178,7 +187,7 @@
           display: flex;
           text-align: center;
           justify-content: space-between;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           &__back {
             display: flex;
             align-items: center;

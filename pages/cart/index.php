@@ -4,12 +4,14 @@ get_header();
 
 <div class="main-content-products">
     <div class="container">
-        <h3 class="title mt-5">Giỏ hàng</h3>
+
         <?php
         $_SESSION['SoLuongGioHang'] = 0;
         if (isset($_SESSION['carts']['buy']) && !empty($_SESSION['carts']['buy'])) {
         ?>
+
             <form action="?page=cart&action=update" method="POST">
+                <h3 class="title mt-5">Giỏ hàng</h3>
                 <div class="products-cart">
                     <div class="products-cart__book">
                         <table class="table">
@@ -44,11 +46,11 @@ get_header();
                                         </td>
                                         <td>
                                             <div class="control align-items-center">
-                                                <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>" class="InputAmountProduct">
+                                                <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>">
                                             </div>
                                         </td>
                                         <td class="product-item-cart__total-price"> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
-                                                                        ?>
+                                                                                    ?>
                                         </td>
                                         <td>
                                             <a href="?page=cart&action=delete&id=<?php echo $value['MSHH'] ?>">
@@ -109,6 +111,7 @@ get_header();
         <?php
         } else {
         ?>
+            <h3 class="title mt-5">Giỏ hàng</h3>
             <div class="products-cart">
                 <div class="products-cart__book__empty">
                     <img class="empty" src="./public/img/illustration_empty_cart.svg" alt="empty content">

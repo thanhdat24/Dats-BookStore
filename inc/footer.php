@@ -52,10 +52,10 @@
         <script>
             Swal.fire({
                 icon: '<?php echo $_SESSION['updateCartStatusCode'] ?>',
-                title: '<?php echo $_SESSION['updateCartStatusMessage'] ?>',
+                text: '<?php echo $_SESSION['updateCartStatusMessage'] ?>',
                 showConfirmButton: false,
-                timer: 2000,
-                // position: 'top-right',
+                timer: 20000,
+                position: 'top-right',
                 customClass: 'swal2-toast',
                 backdrop: false
             })
@@ -69,10 +69,10 @@
         <script>
             Swal.fire({
                 icon: '<?php echo $_SESSION['deleteCartStatusCode'] ?>',
-                title: '<?php echo $_SESSION['deleteCartStatusMessage'] ?>',
+                text: '<?php echo $_SESSION['deleteCartStatusMessage'] ?>',
                 showConfirmButton: false,
                 timer: 2000,
-                // position: 'top-right',
+                position: 'top-right',
                 customClass: 'swal2-toast',
                 backdrop: false
             })
@@ -87,10 +87,10 @@
         <script>
             Swal.fire({
                 icon: '<?php echo $_SESSION['updateProfileStatusCode'] ?>',
-                title: '<?php echo $_SESSION['updateProfileStatusMessage'] ?>',
+                text: '<?php echo $_SESSION['updateProfileStatusMessage'] ?>',
                 showConfirmButton: false,
                 timer: 2000,
-                // position: 'top-right',
+                position: 'top-right',
                 customClass: 'swal2-toast',
                 backdrop: false
             })
@@ -108,9 +108,8 @@
                 text: '<?php echo $_SESSION['addCartStatusMessage'] ?>',
                 showConfirmButton: false,
                 timer: 2000,
+                position: 'top-right',
                 customClass: 'swal2-toast',
-                iconHeight: 80,
-                iconWidth: 80,
                 backdrop: false
             })
         </script>

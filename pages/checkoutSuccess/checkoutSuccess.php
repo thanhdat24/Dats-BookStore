@@ -13,7 +13,7 @@
         </lord-icon>
         <div class="popup-detail__cart__content">
           <p>Cảm ơn bạn đã đặt hàng <a><?php
-                                        $bytes = random_bytes(12);
+                                        $bytes = random_bytes(11);
                                         echo bin2hex($bytes);
                                         ?></a></p>
           <p>Chúng tôi sẽ gửi cho bạn thông báo trong vòng 5 ngày khi hàng được gửi.</p>
