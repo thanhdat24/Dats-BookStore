@@ -36,7 +36,7 @@
     $page = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
     $products = 8;
 
-    // cong thuc tinh vi tri san pham bat dau muon lay
+    // vi tri san pham bat dau muon lay
     $startProduct =  $page * $products - $products;
 
     // show san pham

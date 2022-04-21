@@ -23,10 +23,6 @@ if (isset($_POST['key'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" hre f="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
     <!-- SWEETALERT2 CSS -->
     <link rel="stylesheet" href="./public/css/sweetalert2.min.css">
 
@@ -37,8 +33,6 @@ if (isset($_POST['key'])) {
     <!-- font icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
 
 
 

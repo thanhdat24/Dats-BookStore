@@ -13,7 +13,6 @@ require 'lib/template.php';
 require 'lib/users.php';
 require 'lib/number.php';
 require 'lib/product.php';
-require 'lib/order.php';
 ?>
 
 <?php

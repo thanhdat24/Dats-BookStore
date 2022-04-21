@@ -33,15 +33,6 @@ function db_query($query_string)
     }
     return $result;
 }
-function db_fetch_row($query_string)
-{
-    global $con;
-    $result = array();
-    $mysqli_result = db_query($query_string);
-    $result = mysqli_fetch_assoc($mysqli_result);
-    mysqli_free_result($mysqli_result);
-    return $result;
-}
 
 //Lấy một mảng trong database
 function db_fetch_array($query_string)
@@ -111,10 +102,4 @@ function checkUserExits($Email)
     } else {
         return false;
     }
-}
-
-
-function alert($msg)
-{
-    echo "<script type='text/javascript'>alert('$msg');</script>";
 }

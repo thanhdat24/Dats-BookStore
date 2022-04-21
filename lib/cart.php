@@ -35,13 +35,7 @@ function update_cart($soluong)
     }
     update_info_cart();
 }
-function get_liss_buy_cart()
-{
-    if (isset($_SESSION['carts'])) {
-        return $_SESSION['carts']['buy'];
-    }
-    return false;
-}
+
 
 function get_num_order_cart()
 {
