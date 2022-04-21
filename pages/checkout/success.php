@@ -8,9 +8,15 @@
   <div class="popup-container">
     <div class="popup-detail">
       <div class="popup-detail__cart">
-        <h3>Cám ơn vì đã mua hàng!</h3>
-        <lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="hover" colors="primary:#000000,secondary:#08a88a" stroke="40" style="width:250px;height:250px">
-        </lord-icon>
+        <h3 class="pb-4">Cám ơn vì đã mua hàng!</h3>
+        <div class="success-checkmark">
+          <div class="check-icon">
+            <span class="icon-line line-tip"></span>
+            <span class="icon-line line-long"></span>
+            <div class="icon-circle"></div>
+            <div class="icon-fix"></div>
+          </div>
+        </div>
         <div class="popup-detail__cart__content">
           <p>Cảm ơn bạn đã đặt hàng <a><?php
                                         $bytes = random_bytes(11);

@@ -29,3 +29,10 @@ function truncateString(str, num) {
   if (str.length > num) return str.slice(0, num) + "...";
   else return str;
 }
+
+$("button").click(function () {
+  $(".check-icon").hide();
+  setTimeout(function () {
+    $(".check-icon").show();
+  }, 1000);
+});
