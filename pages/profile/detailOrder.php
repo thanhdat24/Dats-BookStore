@@ -15,7 +15,7 @@ $dondathang  = db_fetch_array($sql_order_detail);
 
 // format day
 $originalDate = $dondathang[0]['NgayDH'];
-$currentDate = date("H:i d-m-Y", strtotime($originalDate));
+$currentDate = date("H:i d-m-Y", strtotime($originalDate)+7200);
 
 ?>
 <div class="main-content-products">
