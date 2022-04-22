@@ -18,7 +18,6 @@ get_header();
                             <thead>
                                 <tr>
                                     <th>Sản phẩm</th>
-
                                     <th>Đơn giá</th>
                                     <th>Số lượng</th>
                                     <th>Thành tiền</th>
@@ -46,11 +45,11 @@ get_header();
                                         </td>
                                         <td>
                                             <div class="control align-items-center">
-                                                <input type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>">
+                                                <input class="soluong" data-id="<?php echo $value['MSHH'] ?>" type="number" name="soluong[<?php echo $value['MSHH'] ?>]" min=1 max=99 value="<?php echo $value['SoLuong']; ?>">
                                             </div>
                                         </td>
-                                        <td class="product-item-cart__total-price"> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
-                                                                                    ?>
+                                        <td id="total-price-<?php echo $value['MSHH'] ?>" class="product-item-cart__total-price"> <?php echo currency_format($value['SoLuong'] * $value['Gia'])
+                                                                                                                                    ?>
                                         </td>
                                         <td>
                                             <a href="?page=cart&action=delete&id=<?php echo $value['MSHH'] ?>">
@@ -70,7 +69,6 @@ get_header();
                         <hr>
                         <div class="products-cart__book__update">
                             <a href="?page=home" class="products-cart__book__update__back"><i class="fa fa-angle-left mr-2"></i>Tiếp tục mua sắm</a>
-                            <p><input type="submit" class="btn btn--primary btn--primary--hover" name="btn_update_cart" value="Cập nhật giỏ hàng"></p>
                         </div>
                     </div>
                     <div class="products-cart__totals">
@@ -80,7 +78,7 @@ get_header();
 
                         <div class="sub-totals d-flex align-items-center justify-content-between">
                             <span>Tạm tính</span>
-                            <span class="subtotal"><?php echo currency_format(get_total_cart()) ?></span>
+                            <span id="subtotal" class="subtotal"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
                         <div class="discount d-flex align-items-center justify-content-between">
                             <span>Giảm giá</span>
@@ -92,7 +90,7 @@ get_header();
                         </div>
                         <div class="total d-flex align-items-center justify-content-between">
                             <span> Tổng cộng</span>
-                            <span class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
+                            <span id="total-product" class="total-product"><?php echo currency_format(get_total_cart()) ?></span>
                         </div>
                         <div class="coupon d-flex align-items-center justify-content-between">
                             <input type="text" placeholder="Nhập mã giảm giá (Nếu có)">

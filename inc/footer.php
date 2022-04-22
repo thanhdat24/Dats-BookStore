@@ -38,24 +38,6 @@
         unset($_SESSION['loginStatusMessage']);
         unset($_SESSION['loginStatusCode']);
     }
-
-    if (isset($_SESSION['updateCartStatusMessage']) && $_SESSION['updateCartStatusMessage'] != "") {
-    ?>
-        <script>
-            Swal.fire({
-                icon: '<?php echo $_SESSION['updateCartStatusCode'] ?>',
-                text: '<?php echo $_SESSION['updateCartStatusMessage'] ?>',
-                showConfirmButton: false,
-                timer: 20000,
-                position: 'top-right',
-                customClass: 'swal2-toast',
-                backdrop: false
-            })
-        </script>
-    <?php
-        unset($_SESSION['updateCartStatusMessage']);
-        unset($_SESSION['updateCartStatusCode']);
-    }
     if (isset($_SESSION['deleteCartStatusMessage']) && $_SESSION['deleteCartStatusMessage'] != "") {
     ?>
         <script>
@@ -108,6 +90,24 @@
     <?php
         unset($_SESSION['addCartStatusMessage']);
         unset($_SESSION['addCartStatusCode']);
+    }
+
+    if (isset($_SESSION['notifyStatusMessage']) && $_SESSION['notifyStatusMessage'] != "") {
+    ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['notifyCartStatusCode'] ?>',
+                text: '<?php echo $_SESSION['notifyStatusMessage'] ?>',
+                showConfirmButton: false,
+                timer: 3500,
+                position: 'bottom',
+                customClass: 'swal2-toast',
+                backdrop: false
+            })
+        </script>
+    <?php
+        unset($_SESSION['notifyStatusMessage']);
+        unset($_SESSION['notifyCartStatusCode']);
     }
     ?>
 

@@ -56,7 +56,7 @@ if (isset($_POST['key'])) {
                         <?php $SoLuongGioHang = get_num_order_cart();
                         if ($SoLuongGioHang > 0) {
                         ?>
-                            <span class="header__user__cart__badge"><?php echo $SoLuongGioHang ?></span>
+                            <span id="total-qty" class="header__user__cart__badge"><?php echo $SoLuongGioHang ?></span>
                         <?php } else {
                         ?>
                             <span class="header__user__cart__badge">0</span>

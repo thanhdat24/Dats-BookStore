@@ -36,3 +36,31 @@ $("button").click(function () {
     $(".check-icon").show();
   }, 1000);
 });
+
+$(document).ready(function () {
+  $(".soluong").change(function () {
+    var SoLuong = $(this).val();
+    if (SoLuong < 1) {
+      window.location.href = '?page=notify';
+       $(this).val() = 1;
+    }
+    var id = $(this).attr("data-id");
+    var data = { id: id, SoLuong: SoLuong };
+    $.ajax({
+      url: "?page=cart&action=update",
+      method: "POST",
+      data: data,
+      dataType: "json",
+      success: function (data) {
+     
+        if (SoLuong > 0) {
+          $("#total-price-" + id).text(data.Tong_Tien);
+          $("#total-product").text(data.Tong);
+          $("#subtotal").text(data.Tong);
+          $("#total-qty").text(data.SoLuongGH);
+          // console.log("data",data)
+        }
+      },
+    });
+  });
+});
