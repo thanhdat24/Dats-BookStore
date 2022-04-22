@@ -29,7 +29,7 @@ a {
   color: $content-color;
 }
 p.error {
-  @include styleText($color-red-2, $fs-5 - 2, $fw-0, $lh-1, $font-title);
+  @include styleText($color-red-2, $fs-5 - 1, $fw-1, $lh-1, $font-title);
   margin-top: 3px;
   margin-right: 14px;
   margin-left: 17px;

@@ -39,7 +39,7 @@
       margin-bottom: 10px;
       display: grid;
       grid-gap: 10px;
-      font-size: $fs-7;
+      font-size: $fs-7 - 1;
       input {
         font-family: $font-title;
         border-radius: $border-radius-6 + 5;

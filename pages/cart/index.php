@@ -73,7 +73,7 @@ get_header();
                     </div>
                     <div class="products-cart__totals">
                         <div class="heading">
-                            Tổng giỏ hàng
+                            Tóm tắt đơn hàng
                         </div>
 
                         <div class="sub-totals d-flex align-items-center justify-content-between">
@@ -121,7 +121,7 @@ get_header();
                 </div>
                 <div class="products-cart__totals totals__empty">
                     <div class="heading">
-                        Tổng giỏ hàng
+                        Tóm tắt đơn hàng
                     </div>
 
                     <div class="sub-totals d-flex align-items-center justify-content-between">

@@ -71,15 +71,15 @@ if (isset($_POST['btn-login'])) {
                 </span>
             </p>
             <div class="login__form__input">
-                <label for="email">Email</label>
-                <input value="datb1910205@student.ctu.edu.vn" id="email" type="text" name="email" placeholder="Nhập email của bạn...">
+                <label for="email">Email (Kiểm thử: datb1910205@student.ctu.edu.vn)</label>
+                <input id="email" type="text" name="email" placeholder="Nhập email của bạn...">
                 <?php if (!empty($error['email'])) { ?>
                     <p class="error"><?php echo $error['email'] ?></p>
                 <?php } ?>
             </div>
             <div class="login__form__input">
-                <label for="password">Mật khẩu</label>
-                <input value="Dat123456" id="password" type="password" name="password" placeholder="Nhập mật khẩu...">
+                <label for="password">Mật khẩu (Kiểm thử: Dat123456)</label>
+                <input id="password" type="password" name="password" placeholder="Nhập mật khẩu...">
                 <?php if (!empty($error['password'])) { ?>
                     <p class="error"><?php echo $error['password'] ?></p>
                 <?php } ?>

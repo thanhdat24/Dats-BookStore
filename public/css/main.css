@@ -47,8 +47,8 @@ a {
 
 p.error {
   color: #ff4842;
-  font-size: 13px;
-  font-weight: normal;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.1;
   font-family: "Nunito", sans-serif;
   margin-top: 3px;
@@ -1820,7 +1820,7 @@ html::-webkit-scrollbar {
   margin-bottom: 10px;
   display: grid;
   grid-gap: 10px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .login__background .login__form__input input {
@@ -1920,7 +1920,7 @@ html::-webkit-scrollbar {
   margin-bottom: 10px;
   display: grid;
   grid-gap: 10px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .signup__background .signup__form__input input {
