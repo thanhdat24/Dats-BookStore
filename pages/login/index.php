@@ -3,20 +3,15 @@
 if (isset($_POST['btn-login'])) {
 
     $error = array();
-    if (empty($_POST['email'])) {
-        $error['email'] = "*Email không được bỏ trống!";
-    } else {
-        $re = '/\S+@\S+\.\S+/';
-        if (!preg_match($re, $_POST['email'])) {
-            $error['email'] = "*Email không đúng định dạng!";
-        } else {
-            $email = $_POST['email'];
-        }
-    }
     if (empty($_POST['password'])) {
-        $error['password'] = "*Password không được bỏ trống!";
+        $error['password'] = "error";
     } else {
         $password = $_POST['password'];
+    }
+    if (empty($_POST['email'])) {
+        $error['email'] = "error";
+    } else {
+        $email = $_POST['email'];
     }
 
     if (empty($error)) {
@@ -59,7 +54,7 @@ if (isset($_POST['btn-login'])) {
         <div class="login__img">
             <img src="./public/img/banner_kovi.svg" alt="banner">
         </div>
-        <form class="login__form" action="" method="POST">
+        <form id="loginForm" class="login__form" action="" method="POST">
             <img class="login__form__logo" src="./public/img/book.png" alt="logo">
             <h1 class="login__form__title">Đăng nhập <br> <span class="py-2">Dat's Bookstore!</span></h1>
             <p class="login__form__message">
@@ -93,6 +88,51 @@ if (isset($_POST['btn-login'])) {
 
 <!-- SWEETALERT2 JS -->
 <script src="public/js/sweetalert2.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="./public/js/jquery.validate.js"></script>
+
+
+
+<script type="text/javascript">
+    $.validator.setDefaults({
+        submitHandler: function() {
+            form.submit();
+        }
+    })
+    $(document).ready(function() {
+        $("#loginForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                },
+            },
+            messages: {
+                email: "*Email không hợp lệ!",
+                password: {
+                    required: "*Vui lòng nhập mật khẩu!",
+                },
+            },
+            errorElement: "div",
+            errorPlacement: function(error, element) {
+                error.addClass("invalid-feedback");
+                $(".invalid-feedback").css("font-style", "italic")
+                error.insertAfter(element)
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid")
+
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid")
+            },
+        })
+    })
+</script>
 
 <?php
 if (isset($_SESSION['loginStatusCode']) && $_SESSION['loginStatusCode'] == 'error') {

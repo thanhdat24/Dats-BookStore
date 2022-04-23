@@ -182,11 +182,7 @@
                  errorPlacement: function(error, element) {
                      error.addClass("invalid-feedback");
                      $(".invalid-feedback").css("font-style", "italic")
-                     if (element.prop("type") === "checkbox") {
-                         error.insertAfter(element.siblings("label"))
-                     } else {
                          error.insertAfter(element)
-                     }
                  },
                  highlight: function(element, errorClass, validClass) {
                      $(element).addClass("is-invalid").removeClass("is-valid")

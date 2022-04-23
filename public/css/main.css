@@ -612,13 +612,12 @@ html::-webkit-scrollbar {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
   border-radius: 15px;
   height: 40%;
-  padding: 40px 30px;
   width: 100%;
   height: fit-content;
   justify-self: start;
   display: flex;
   flex-direction: column;
-  padding: 40px 30px;
+  padding: 35px 18px;
 }
 
 .cart-detail__order__detail {
@@ -1525,8 +1524,6 @@ html::-webkit-scrollbar {
 .main-content-checkout .container .cart-detail .cart-detail__user-info {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
   border-radius: 15px;
-  height: 40%;
-  padding: 40px 30px;
   width: 100%;
   height: fit-content;
   justify-self: start;

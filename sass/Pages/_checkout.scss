@@ -105,8 +105,6 @@
       .cart-detail__user-info {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
         border-radius: $border-radius-3;
-        height: 40%;
-        padding: 40px 30px;
         width: 100%;
         height: fit-content;
         justify-self: start;
@@ -209,7 +207,7 @@
         p {
           padding-bottom: 16px;
           a {
-            font-family:$font-title;
+            font-family: $font-title;
             font-weight: bold;
             color: $primary-color;
             &:hover {
