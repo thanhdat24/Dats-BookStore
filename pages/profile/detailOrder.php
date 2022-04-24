@@ -9,9 +9,9 @@ if (isset($_GET['id'])) {
     $id = "";
 }
 
-$sql_order_detail = "SELECT d.SoDonDH,d.NgayDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien ,d.DiaChi, h.Hinh1, k.HoTenKH, k.SoDienThoai FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE d.SoDonDH='$id'";
 
-$dondathang  = db_fetch_array($sql_order_detail);
+
+$dondathang  = db_fetch_array("SELECT d.SoDonDH,d.NgayDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien ,d.DiaChi, h.Hinh1, k.HoTenKH, k.SoDienThoai FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE d.SoDonDH='$id'");
 
 // format day
 $originalDate = $dondathang[0]['NgayDH'];

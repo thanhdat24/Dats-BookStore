@@ -2,11 +2,6 @@
     get_header();
     ?>
    <?php
-    // if (isset($_SESSION['userLogin'])) {
-    //     $item = userDetail($_SESSION['userLogin']['email']);
-    //     $_SESSION['userLogin'] = $item;
-    //     // show_array($_SESSION['userLogin']);
-    // }
     global   $MSKH, $DiaChi, $TongTien;
     if (!empty(($_SESSION['carts']['buy']))) {
         foreach ($_SESSION['carts']['buy'] as $key => $book) {
@@ -15,17 +10,17 @@
             $TongTien += $book['SoLuong'] * $book['Gia'];
         }
     }
-    // show_array($_SESSION['carts']['buy']);
+
 
     if (isset($_POST['btn-order'])) {
         $MSKH = $_POST['MSKH'];
         $DiaChi = $_POST['DiaChi'];
-        $sql_dondathang = "INSERT INTO dondathang(MSKH,DiaChi,TongTien) VALUES ('$MSKH','$DiaChi','$TongTien')";
-        $result_dondathang = mysqli_query($con, $sql_dondathang);
+        $result_dondathang = db_query("INSERT INTO dondathang(MSKH,DiaChi,TongTien) VALUES ('$MSKH','$DiaChi','$TongTien')");
+
         if ($result_dondathang) {
             $SoDonDH = mysqli_insert_id($con);
             foreach ($_SESSION['carts']['buy'] as $value) {
-                mysqli_query($con, "INSERT INTO chitietdathang(SoDonDH,MSHH, SoLuong,GiaDatHang) VALUES ('$SoDonDH','$value[MSHH]','$value[SoLuong]','$value[Gia]')");
+                db_query("INSERT INTO chitietdathang(SoDonDH,MSHH, SoLuong,GiaDatHang) VALUES ('$SoDonDH','$value[MSHH]','$value[SoLuong]','$value[Gia]')");
             }
             redirect("?page=checkout&action=success");
         } else {

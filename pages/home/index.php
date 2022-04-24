@@ -7,7 +7,7 @@
     } else {
         $id = "";
     }
-    $sql_product = mysqli_query($con, "SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
+    $sql_product = db_query("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
     $list_product = array();
     if (mysqli_num_rows($sql_product) > 0) {
         while ($row = mysqli_fetch_assoc($sql_product)) {
@@ -15,7 +15,7 @@
         }
     }
 
-    $sql_product_all = mysqli_query($con, "SELECT *FROM hanghoa");
+    $sql_product_all = db_query("SELECT *FROM hanghoa");
     $list_product_all = array();
     if (mysqli_num_rows($sql_product_all) > 0) {
         while ($row = mysqli_fetch_assoc($sql_product_all)) {
@@ -24,7 +24,7 @@
     }
 
 
-    $sql_product_type = mysqli_query($con, "SELECT *FROM loaihanghoa");
+    $sql_product_type = db_query("SELECT *FROM loaihanghoa");
     $list_product_type = array();
     if (mysqli_num_rows($sql_product_type) > 0) {
         while ($row = mysqli_fetch_assoc($sql_product_type)) {

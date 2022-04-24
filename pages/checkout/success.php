@@ -4,6 +4,9 @@
   <?php
   // Thanh toán xong, xoá sp giỏ hàng
   unset($_SESSION['carts']);
+
+  $dondathang  = db_fetch_array("SELECT SoDonDH FROM chitietdathang ORDER BY SoDonDH DESC");
+
   ?>
   <div class="popup-container">
     <div class="popup-detail">
@@ -16,14 +19,6 @@
             <div class="icon-circle"></div>
             <div class="icon-fix"></div>
           </div>
-        </div>
-        <div class="popup-detail__cart__content">
-          <p>Cảm ơn bạn đã đặt hàng <a><?php
-                                        $bytes = random_bytes(11);
-                                        echo bin2hex($bytes);
-                                        ?></a></p>
-          <p>Chúng tôi sẽ gửi cho bạn thông báo trong vòng 5 ngày khi hàng được gửi.</p>
-          <p>Nếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào thì hãy liên hệ với chúng tôi.</p>
         </div>
         <hr>
         <div class="back__home d-flex w-100 justify-content-between">

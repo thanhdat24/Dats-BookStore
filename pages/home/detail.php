@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $id = "";
 }
 
-$sql_detail = mysqli_query($con, "SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE MSHH='$id'");
+$sql_detail = db_query("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE MSHH='$id'");
 ?>
 <?php
 while ($item = mysqli_fetch_array($sql_detail)) {

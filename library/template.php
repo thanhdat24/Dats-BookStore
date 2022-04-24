@@ -1,7 +1,7 @@
 <?php
 function get_header()
 {
-    $file = 'inc/header.php';
+    $file = 'include/header.php';
     if (file_exists($file)) {
         require $file;
     }
@@ -9,7 +9,7 @@ function get_header()
 
 function get_footer()
 {
-    $file = 'inc/footer.php';
+    $file = 'include/footer.php';
     if (file_exists($file)) {
         require $file;
     }

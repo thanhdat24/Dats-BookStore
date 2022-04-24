@@ -4,12 +4,10 @@
     <?php
     if (isset($_SESSION['userLogin'])) {
         $email = $_SESSION['userLogin']['Email'];
-        $sql_dathang = "SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC";
 
-        $chitietdathang  = db_fetch_array($sql_dathang);
+        $chitietdathang  = db_fetch_array("SELECT d.SoDonDH, h.TenHH, h.MSHH, c.GiaDatHang, c.SoLuong, d.TongTien , h.Hinh1 FROM khachhang k join dondathang d on k.MSKH = d.MSKH join chitietdathang c on c.SoDonDH = d.SoDonDH join hanghoa h on h.MSHH = c.MSHH WHERE Email='$email' ORDER BY d.SoDonDH DESC");
 
-        $sql_dondathang = "SELECT *FROM dondathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ";
-        $dondathang  = db_fetch_array($sql_dondathang);
+        $dondathang  = db_fetch_array("SELECT *FROM dondathang d join khachhang k on d.MSKH = k.MSKH WHERE Email='$email' ORDER BY SoDonDH DESC ");
 
         $_SESSION['userLogin'] = userDetail($email);
     }

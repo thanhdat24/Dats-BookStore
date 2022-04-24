@@ -66,8 +66,6 @@ function checkLogin($email, $password)
     }
 }
 
-
-
 function logout()
 {
     unset($_SESSION['isLogin']);
