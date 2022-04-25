@@ -4,9 +4,7 @@
   <?php
   // Thanh toán xong, xoá sp giỏ hàng
   unset($_SESSION['carts']);
-
-  $dondathang  = db_fetch_array("SELECT SoDonDH FROM chitietdathang ORDER BY SoDonDH DESC");
-
+  
   ?>
   <div class="popup-container">
     <div class="popup-detail">

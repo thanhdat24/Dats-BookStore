@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $item = get_product_by_id($id); // Lấy ra sản phẩm muốn mua
     // $_SESSION['carts']; // bién lưu sản phẩm khách hàng muốn mua 
 
-    if (!isset($_SESSION['carts']) || empty($_SESSION['carts'])) {
+    if (!isset($_SESSION['carts'])) {
         $_SESSION['carts']['buy'][$id] = $item;
         $_SESSION['carts']['buy'][$id]['SoLuong'] = 1;
     } else {
@@ -17,7 +17,6 @@ if (isset($_GET['id'])) {
             $_SESSION['carts']['buy'][$id] = $item;
             $_SESSION['carts']['buy'][$id]['SoLuong'] = 1;
         }
-        redirect("?page=cart");
     }
     update_info_cart();
 }

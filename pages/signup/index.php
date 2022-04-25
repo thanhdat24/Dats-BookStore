@@ -169,7 +169,7 @@
                      confirm_password: {
                          required: "*Vui lòng nhập mật khẩu!",
                          minlength: "*Mật khẩu phải có ít nhất 8 ký tự",
-                         equalTo: "*Mật khẩu và mật khẩu xác phải trùng khớp khớp!"
+                         equalTo: "*Mật khẩu và mật khẩu xác phải trùng khớp!"
                      },
                      phone: {
                          required: "*Vui lòng nhập số điện thoại!",

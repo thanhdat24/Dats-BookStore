@@ -7,31 +7,11 @@
     } else {
         $id = "";
     }
-    $sql_product = db_query("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
-    $list_product = array();
-    if (mysqli_num_rows($sql_product) > 0) {
-        while ($row = mysqli_fetch_assoc($sql_product)) {
-            $list_product[] = $row;
-        }
-    }
+    $list_product = db_fetch_array("SELECT *FROM hanghoa h join loaihanghoa l on h.MaLoaiHang = l.MaLoaiHang WHERE h.MALOAIHANG = '$id'");
 
-    $sql_product_all = db_query("SELECT *FROM hanghoa");
-    $list_product_all = array();
-    if (mysqli_num_rows($sql_product_all) > 0) {
-        while ($row = mysqli_fetch_assoc($sql_product_all)) {
-            $list_product_all[] = $row;
-        }
-    }
+    $list_product_all = db_fetch_array("SELECT *FROM hanghoa");
 
-
-    $sql_product_type = db_query("SELECT *FROM loaihanghoa");
-    $list_product_type = array();
-    if (mysqli_num_rows($sql_product_type) > 0) {
-        while ($row = mysqli_fetch_assoc($sql_product_type)) {
-            $list_product_type[] = $row;
-        }
-    }
-    // show_array($list_popular)
+    $list_product_type = db_fetch_array("SELECT *FROM loaihanghoa");
 
     $page = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
     $products = 8;
