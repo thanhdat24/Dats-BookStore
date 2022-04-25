@@ -8,4 +8,4 @@
 - MySQL
 
  ## UI
-![UI](https://user-images.githubusercontent.com/54407533/165107445-52112d5c-6025-4775-86c2-2d321020bf51.png)
+![Frame](https://user-images.githubusercontent.com/54407533/165107586-724d73a3-c28f-4bb1-a486-19b678153b19.png)
