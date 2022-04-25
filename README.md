@@ -3,7 +3,8 @@
 
 ## Tech Stack
 - PHP
-- Bootstrap 4
+- Bootstrap
+- SCSS
 - jQuery
 - MySQL
 
