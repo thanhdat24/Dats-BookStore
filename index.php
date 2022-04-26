@@ -5,6 +5,7 @@ session_start();
 //data
 require 'data/popularBook.php';
 require('db/connect.php');
+
 // lib
 require 'library/url.php';
 require 'library/data.php';
@@ -23,5 +24,6 @@ $path = "./pages/{$page}/{$act}.php";
 
 if (file_exists($path)) {
     require "{$path}";
+} else {
+    require "./include/404.php";
 }
-
