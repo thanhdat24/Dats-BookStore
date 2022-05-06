@@ -1,8 +1,6 @@
 # Dats-BookStore
 - Projects for school subjects - Web Technology 
 
-![Restaurant-Manager](https://user-images.githubusercontent.com/54407533/167086425-213aef83-f9c7-4321-ac64-fa2e5ca1b551.png)
-
 ## Tech Stack
 - PHP
 - Bootstrap
